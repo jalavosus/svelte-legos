@@ -1,4 +1,6 @@
-# Svelte Legos (blue)
+# sveltelegos-blue
+
+A fork of [ankurrsinghal/svelte-legos](https://github.com/ankurrsinghal/svelte-legos), hopefully with more consistent releases and maintenance.
 
 Collection of essential Svelte Composition Utilities
 <br>
@@ -6,7 +8,7 @@ Collection of essential Svelte Composition Utilities
 
 ## 🚀 Features
 
-- 🎪 [**Interactive docs & demos**](https://svelte-legos.surge.sh)
+- 🎪 [**Interactive docs & demos**](https://sveltelegos-blue.vercel.app)
 - ⚡ **Fully tree shakeable**: Only take what you want, [bundle size]
 - 🦾 **Type Strong**: Written in [TypeScript](https://www.typescriptlang.org/), with [TS Docs](https://github.com/microsoft/tsdoc)
 - 🔋 **SSR Friendly**
@@ -48,7 +50,7 @@ Refer to [functions list](https://svelte-legos.surge.sh/guides) or [documentatio
 ## 📦 Install
 
 ```bash
-npm i svelte-legos
+npm i @sveltelegos-blue/svelte-legos
 ```
 
 ## Local setup
