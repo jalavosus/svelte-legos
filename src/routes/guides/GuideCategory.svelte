@@ -8,9 +8,11 @@
 	let basePath = $derived(`/guides/${path}`);
 	const makePath = (p: string): string => `${basePath}/${p}`
 
-	const isActive = (p: string): boolean => p === page.data.hookName
+	const isActiveHook = (p: string): boolean => p === page.data.hookName
 
-	let isOpen = $state(false);
+	const pathName = page.route.id?.split("/").filter(p => p)[1];
+
+	let isOpen = $state(pathName === path);
 
 	const setOpen = () => isOpen = !isOpen;
 </script>
@@ -30,7 +32,7 @@
 	<li>
 		<a
 			href={makePath(guide)}
-			class="hover:underline {isActive(guide) ? 'font-bold underline' : ''}">{guide}</a
+			class="hover:underline {isActiveHook(guide) ? 'font-bold underline' : ''}">{guide}</a
 		>
 	</li>
 {/each}
