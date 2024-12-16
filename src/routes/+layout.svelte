@@ -26,7 +26,7 @@
 	/>
 </svelte:head>
 
-<div class="bg-gray-50">
+<div class="bg-gray-50 dark:bg-slate-800">
 	<Header />
 	<main class="pt-16 w-full min-h-[100vh]">
 		<div class="container mx-auto">

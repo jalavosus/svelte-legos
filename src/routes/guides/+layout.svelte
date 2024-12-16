@@ -7,6 +7,8 @@
 	import GuideCategory from "./GuideCategory.svelte";
 	import type { GuideCategoryProps } from "./guide";
 
+	import { clickOutsideAction } from "$lib";
+
 	type Props = {
 		data: LayoutData;
 	}
@@ -23,7 +25,9 @@
 		{ label: "Watchers", path: "watchers", guides: data.watchers }
 	]);
 
-	let isMenuOpened = $state(false);
+	let menuOpen = $state(false);
+
+	const handleClickOutside = () => menuOpen = false;
 
 	let currentPath = $derived(page.data.hookName);
 
@@ -32,6 +36,7 @@
 		flex-col
 		bg-slate-100
 		lg:bg-gray-50
+		dark:bg-gray-700
 		p-10
 		fixed
 		top-0
@@ -48,11 +53,11 @@
 		lg:py-16
 		lg:left-auto
 		overflow-auto
-		${isMenuOpened ? "visible" : "hidden"}
+		${menuOpen ? "visible" : "hidden"}
 	`);
 
 	function handleClick() {
-		isMenuOpened = !isMenuOpened;
+		menuOpen = !menuOpen;
 	}
 </script>
 
@@ -130,7 +135,7 @@
 </svelte:head>
 
 <div>
-	<div class="p-4 border-b border-black lg:hidden">
+	<div class="p-4 border-b border-black lg:hidden dark:text-gray-50">
 		<button
 			class="relative flex items-center cursor-pointer"
 			onclick={handleClick}
@@ -152,6 +157,7 @@
 			.map((c) => c.trim())
 			.filter(Boolean)
 			.join(" ")}
+		use:clickOutsideAction={handleClickOutside}
 	>
 		<button
 			onclick={handleClick}
@@ -160,7 +166,7 @@
 			╳
 		</button>
 		<div class="fixed top-0 bottom-0 bg-black right-0"></div>
-		<ul class="space-y-3 lg:mt-8 lg:p-4 p-2">
+		<ul class="space-y-3 lg:mt-8 lg:p-4 p-2 dark:text-slate-200">
 			<li>
 				<a
 					href="/guides/"

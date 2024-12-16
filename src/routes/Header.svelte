@@ -3,12 +3,12 @@
 	import SearchIcon from "./SearchIcon.svelte";
 </script>
 
-<section class="border-b border-black fixed top-0 h-16 w-screen z-10 bg-white px-8">
+<section class="border-b border-black fixed top-0 h-16 w-screen z-10 bg-white dark:bg-gray-900 px-8">
 	<nav class="container flex items-center justify-between h-full m-auto">
 		<a href="/" class="flex items-center space-x-2">
-			<span class="text-xl font-bold">svelte-<span class="text-prime">legos (blue)</span></span>
+			<span class="text-xl font-bold dark:text-gray-50">svelte-<span class="text-prime">legos (blue)</span></span>
 		</a>
-		<ul class="flex space-x-8 lg:space-x-10">
+		<ul class="flex space-x-8 lg:space-x-10 dark:text-white">
 			<li>
 				<a class="font-extralight" href="/guides">Guides</a>
 			</li>

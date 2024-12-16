@@ -14,11 +14,11 @@
 <section class="py:20 lg:py-36 container mx-auto p-8">
 	<div>
 		<div class="max-w-xl space-y-4">
-			<h1 class="text-2xl lg:text-5xl tracking-wider font-bold text-second">
+			<h1 class="text-2xl lg:text-5xl tracking-wider font-bold text-second dark:text-gray-50">
 				svelte-<b class="text-prime">legos (blue)</b>
 			</h1>
-			<h3 class="text-xl lg:text-3xl font-light text-text">{SiteTitle}</h3>
-			<h3 class="text-md lg:text-xl font-light text-text">
+			<h3 class="text-xl lg:text-3xl font-light text-white">{SiteTitle}</h3>
+			<h3 class="text-md lg:text-xl font-light text-white">
 				Forked from <a href="https://github.com/ankurrsinghal/svelte-legos" class="text-oldprime">ankurrsingal/svelte-legos</a>.
 				Give them the credit they are due for building such an incredible library.
 			</h3>
@@ -61,6 +61,8 @@
 			rel="noreferrer"
 		>
 			Work In Progress! 🚜. Current status: {data.utilsLength} utilities.
+			<br />
+			Dark mode won't suck at some point!
 		</a>
 	</div>
 </section>

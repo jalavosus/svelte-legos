@@ -19,7 +19,7 @@
 
 <li class="py-2"></li>
 <li class="w-4/5">
-	<button class="w-full flex flex-row justify-between" onclick={setOpen}>
+	<button class="w-full flex flex-row justify-between dark:text-slate-200" onclick={setOpen}>
 		<span class="text-md capitalize">{label}</span>
 		<ChevronButton rotate={isOpen ? "down" : undefined} />
 	</button>
