@@ -1,40 +1,59 @@
 <script lang="ts">
-import type { LayoutData } from "./$types";
-import { page } from "$app/stores";
-import MenuIcon from "./MenuIcon.svelte";
-export let data: LayoutData;
+	import type { LayoutData } from "./$types";
+	import type { HTMLButtonAttributes } from "svelte/elements";
 
-let isMenuOpened = false;
+	import { page } from "$app/state";
+	import MenuIcon from "./MenuIcon.svelte";
+	import GuideCategory from "./GuideCategory.svelte";
+	import type { GuideCategoryProps } from "./guide";
 
-$: currentPath = $page.data.hookName;
+	type Props = {
+		data: LayoutData;
+	}
 
-$: sidebarClassNames = `
-	flex
-	flex-col
-	bg-slate-100
-	lg:bg-gray-50
-	p-10
-	fixed
-	top-0
-	left-0
-	h-screen
-	border-r
-	border-black
-	z-10
-	w-full
-	max-w-[300px]
-	lg:block
-	lg:z-0
-	lg:p-0
-	lg:py-16
-	lg:left-auto
-	overflow-auto
-	${isMenuOpened ? "visible" : "hidden"}
-`;
+	let { data, children }: Props & HTMLButtonAttributes = $props();
 
-function handleClick() {
-	isMenuOpened = !isMenuOpened;
-}
+	let categories: GuideCategoryProps[] = $derived([
+		{ label: "Actions", path: "actions", guides: data.actions },
+		{ label: "Stores", path: "stores", guides: data.stores },
+		{ label: "Utilities", path: "utilities", guides: data.utilities },
+		{ label: "Transitions", path: "transitions", guides: data.transitions },
+		{ label: "Store Middlewares", path: "middlewares", guides: data.middlewares },
+		{ label: "Store Derivatives", path: "derivatives", guides: data.derivatives },
+		{ label: "Watchers", path: "watchers", guides: data.watchers }
+	]);
+
+	let isMenuOpened = $state(false);
+
+	let currentPath = $derived(page.data.hookName);
+
+	let sidebarClassNames = $derived(`
+		flex
+		flex-col
+		bg-slate-100
+		lg:bg-gray-50
+		p-10
+		fixed
+		top-0
+		left-0
+		h-screen
+		border-r
+		border-black
+		z-10
+		w-full
+		max-w-[300px]
+		lg:block
+		lg:z-0
+		lg:p-0
+		lg:py-16
+		lg:left-auto
+		overflow-auto
+		${isMenuOpened ? "visible" : "hidden"}
+	`);
+
+	function handleClick() {
+		isMenuOpened = !isMenuOpened;
+	}
 </script>
 
 <svelte:head>
@@ -112,20 +131,19 @@ function handleClick() {
 
 <div>
 	<div class="p-4 border-b border-black lg:hidden">
-		<div
+		<button
 			class="relative flex items-center cursor-pointer"
-			on:click={handleClick}
-			aria-hidden="true"
+			onclick={handleClick}
 		>
-			<div class="w-6 h-6">
+			<span class="w-6 h-6">
 				<MenuIcon />
-			</div>
-			<div class="ml-4">Menu</div>
-		</div>
+			</span>
+			<span class="ml-4">Menu</span>
+		</button>
 	</div>
 	<section class="lg:pl-80" id="main-container">
 		<div class="p-8 pb-20">
-			<slot />
+			{@render children?.()}
 		</div>
 	</section>
 	<section
@@ -135,105 +153,30 @@ function handleClick() {
 			.filter(Boolean)
 			.join(" ")}
 	>
-		<div
-			on:click={handleClick}
-			aria-hidden="true"
+		<button
+			onclick={handleClick}
 			class="monospace text-sm absolute right-4 top-4 w-8 h-8 rounded-full bg-slate-300 flex items-center justify-center cursor-pointer lg:hidden"
 		>
 			╳
-		</div>
-		<div class="fixed top-0 bottom-0 bg-black right-0" />
+		</button>
+		<div class="fixed top-0 bottom-0 bg-black right-0"></div>
 		<ul class="space-y-3 lg:mt-8 lg:p-4 p-2">
 			<li>
 				<a
 					href="/guides/"
-					class="hover:underline {!currentPath && $page.route.id === '/guides'
+					class="hover:underline {!currentPath && page.route.id === '/guides'
 						? 'font-bold underline'
 						: ''}"
 				>
-					Getting Started ({data.totalUtilsLength})
+					Getting Started
 				</a>
 			</li>
-			<li class="py-2" />
-			<li class="text-sm">Actions:</li>
-			{#each data.actions as action}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/actions/" + action}
-						class="hover:underline {action === currentPath ? 'font-bold underline' : ''}"
-						>{action}</a
-					>
-				</li>
-			{/each}
-			<li class="py-2" />
-			<li class="text-sm">Stores:</li>
-			{#each data.stores as store}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/stores/" + store}
-						class="hover:underline {store === currentPath ? 'font-bold underline' : ''}">{store}</a
-					>
-				</li>
-			{/each}
-
-			<li class="py-2" />
-			<li class="text-sm">Utilities:</li>
-			{#each data.utilities as utility}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/utilities/" + utility}
-						class="hover:underline {utility === currentPath ? 'font-bold underline' : ''}"
-						>{utility}</a
-					>
-				</li>
-			{/each}
-
-			<li class="py-2" />
-			<li class="text-sm">Transitions:</li>
-			{#each data.transitions as transition}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/transitions/" + transition}
-						class="hover:underline {transition === currentPath ? 'font-bold underline' : ''}"
-						>{transition}</a
-					>
-				</li>
-			{/each}
-
-			<li class="py-2" />
-			<li class="text-sm">Store Middlewares:</li>
-			{#each data.middlewares as middleware}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/middlewares/" + middleware}
-						class="hover:underline {middleware === currentPath ? 'font-bold underline' : ''}"
-						>{middleware}</a
-					>
-				</li>
-			{/each}
-
-			<li class="py-2" />
-			<li class="text-sm">Store Derivatives:</li>
-			{#each data.derivatives as derivative}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/derivatives/" + derivative}
-						class="hover:underline {derivative === currentPath ? 'font-bold underline' : ''}"
-						>{derivative}</a
-					>
-				</li>
-			{/each}
-
-			<li class="py-2" />
-			<li class="text-sm">Watchers:</li>
-			{#each data.watchers as watcher}
-				<li on:click={handleClick} aria-hidden="true">
-					<a
-						href={"/guides/watchers/" + watcher}
-						class="hover:underline {watcher === currentPath ? 'font-bold underline' : ''}"
-						>{watcher}</a
-					>
-				</li>
+			{#each categories as category}
+				<GuideCategory
+					label={category.label}
+					path={category.path}
+					guides={category.guides}
+				/>
 			{/each}
 		</ul>
 	</section>

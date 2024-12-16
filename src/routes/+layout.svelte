@@ -1,7 +1,10 @@
-<script>
-import "../app.css";
-import Header from "./Header.svelte";
-import { SiteDescription, SiteName, SiteTitle } from "./constants";
+<script lang="ts">
+	import "../app.css";
+	import type { HTMLButtonAttributes } from "svelte/elements";
+	import Header from "./Header.svelte";
+	import { SiteDescription, SiteName, SiteTitle } from "./constants";
+
+	let { children }: HTMLButtonAttributes = $props();
 </script>
 
 <svelte:head>
@@ -27,7 +30,7 @@ import { SiteDescription, SiteName, SiteTitle } from "./constants";
 	<Header />
 	<main class="pt-16 w-full min-h-[100vh]">
 		<div class="container mx-auto">
-			<slot />
+			{@render children?.()}
 		</div>
 	</main>
 </div>

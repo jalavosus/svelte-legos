@@ -1,7 +1,12 @@
 <script lang="ts">
-import type { PageData } from "./$types";
+	import type { PageData } from "./$types";
+	import type { HTMLButtonAttributes } from "svelte/elements";
 
-export let data: PageData;
+	type Props = {
+		data: PageData;
+	}
+
+	let { data, children }: Props & HTMLButtonAttributes = $props();
 </script>
 
 <div id="legos-main-container">
@@ -14,7 +19,7 @@ export let data: PageData;
 	<div class="my-20">
 		<h1 class="text-xl lg:text-2xl">Demo</h1>
 		<div>
-			<slot />
+			{@render children?.()}
 		</div>
 	</div>
 	<div class="my-20">

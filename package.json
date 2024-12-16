@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.6",
-		"@sveltejs/kit": "^2.7.7",
+		"@sveltejs/kit": "^2.12.1",
 		"@sveltejs/package": "^2.3.7",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/canvas-confetti": "^1.6.4",

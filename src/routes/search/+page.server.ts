@@ -1,7 +1,9 @@
 import { all } from "../directories";
 
-export const load = ({ url }) => {
-	const bricks = Object.entries(all)
+import type { Brick } from "./brick";
+
+export const load = () => {
+	const bricks: Brick[] = Object.entries(all)
 		.map(([category, bricks]) => {
 			return bricks.map((brick) => {
 				return {
@@ -13,8 +15,8 @@ export const load = ({ url }) => {
 		.flat();
 
 	try {
-		return { bricks, query: url.searchParams.get("query")?.trim() || "" };
+		return { bricks };
 	} catch (e) {
-		return { bricks, query: "" };
+		return { bricks };
 	}
 };

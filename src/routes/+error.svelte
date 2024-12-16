@@ -1,8 +1,8 @@
 <script lang="ts">
-import { page } from "$app/stores";
+	import { page } from "$app/state";
 
-$: errorCode = $page.status;
-$: errorMessage = $page.error?.message || "Something went wrong";
+	let errorCode = $derived(page.status);
+	let errorMessage = $derived(page.error?.message ?? "something went wrong");
 </script>
 
 <section class="py:20 lg:py-36 container mx-auto p-8">

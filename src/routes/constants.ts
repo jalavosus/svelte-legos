@@ -1,3 +1,3 @@
-export const SiteName = "SvelteLegos";
+export const SiteName = "sveltelegos-blue";
 export const SiteTitle = "Collection of Essential Svelte utilities with Actions & Stores";
-export const SiteDescription = "SvelteLegos is a Collection of Essential Svelte Utilities";
+export const SiteDescription = "sveltelegos-blue is a Collection of Essential Svelte Utilities.";

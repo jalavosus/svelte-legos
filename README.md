@@ -1,4 +1,4 @@
-# Svelte Legos
+# Svelte Legos (blue)
 
 Collection of essential Svelte Composition Utilities
 <br>
