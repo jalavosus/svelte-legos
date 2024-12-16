@@ -67,7 +67,12 @@
 		}
 	},
 	"files": [
-		"dist"
+		"dist",
+		"!dist/**/*/*.svelte",
+		"!dist/**/*/*.svelte.d.ts",
+		"!dist/**/*/meta.json",
+		"!dist/**/*/usage.txt",
+		"!dist/shared/components"
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
