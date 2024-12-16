@@ -1,6 +1,6 @@
 {
 	"name": "@sveltelegos-blue/svelte-legos",
-	"version": "0.1",
+	"version": "0.1.0",
 	"description": "A framework for Svelte Utilities",
 	"author": "Jamie Alavosus",
 	"license": "MIT",
@@ -23,6 +23,7 @@
 		"format": "prettier --plugin-search-dir . --write ./src",
 		"watch:docs": "node page-gen.js",
 		"start:dev": "concurrently --kill-others \"npm run watch:docs\" \"npm run dev\"",
+		"build:lib": "svelte-kit sync && svelte-package",
 		"build:docs": "vite build",
 		"deploy:docs": "npm run build:docs && ./deploy.sh"
 	},
