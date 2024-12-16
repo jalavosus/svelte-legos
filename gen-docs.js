@@ -8,12 +8,16 @@ function createDirectoriesFn(base, dirName) {
 		try {
 			fs.mkdirSync(dest);
 		} catch (err) {
-			console.error(err.message);
+			if (err.code !== "EEXIST")
+				console.error(err.message);
 		}
 
-		const createFiles = createFilesFn(dirName, libDir, hookName);
+		const stat = fs.statSync(libDir);
 
-		fs.readdirSync(libDir).forEach(createFiles);
+		if (stat.isDirectory()) {
+			const createFiles = createFilesFn(dirName, libDir, hookName);
+			fs.readdirSync(libDir).forEach(createFiles);
+		}
 	}
 }
 
@@ -33,8 +37,9 @@ function generate(dirName) {
 
 	try {
 		fs.mkdirSync(`./src/routes/guides/${dirName}`);
-	} catch (e) {
-		console.log(e.message);
+	} catch (err) {
+		if (err.code !== "EEXIST")
+			console.error(err.message);
 	}
 
 	const createDirectories = createDirectoriesFn(base, dirName);
@@ -43,9 +48,6 @@ function generate(dirName) {
 	fs.copyFileSync("./src/routes/guides/layout-hook.svelte", `./src/routes/guides/${dirName}/+layout.svelte`);
 	fs.copyFileSync("./src/routes/guides/layout-hook.server.ts", `./src/routes/guides/${dirName}/+layout.server.ts`);
 }
-
-console.log(fs.readdirSync("./"));
-
 
 [
 	"actions",
