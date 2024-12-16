@@ -29,7 +29,7 @@ function createFilesFn(dirName, libDir, hookName) {
 }
 
 function generate(dirName) {
-	const base = `src/lib/${dirName}`;
+	const base = `./src/lib/${dirName}`;
 
 	try {
 		fs.mkdirSync(`./src/routes/guides/${dirName}`);
@@ -43,6 +43,9 @@ function generate(dirName) {
 	fs.copyFileSync("./src/routes/guides/layout-hook.svelte", `./src/routes/guides/${dirName}/+layout.svelte`);
 	fs.copyFileSync("./src/routes/guides/layout-hook.server.ts", `./src/routes/guides/${dirName}/+layout.server.ts`);
 }
+
+console.log(fs.readdirSync("./"));
+
 
 [
 	"actions",
