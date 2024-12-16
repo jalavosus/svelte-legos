@@ -13,10 +13,10 @@
 		<ul class="space-y-10">
 			<FAQItem>
 				{#snippet question()}
-					<p class="text-2xl">Why <span class="text-prime">blue</span>?</p>
+					<p class="text-2xl dark:text-gray-50">Why <span class="text-prime">blue</span>?</p>
 				{/snippet}
 				{#snippet answer()}
-					<p class="text-lg">
+					<p class="text-lg dark:text-gray-50">
 						I chose <span class="text-prime">blue</span> as I both love the colour blue,
 						and because it's a lovely compliment to the original colour theme used by <a href="https://github.com/ankurrsinghal/svelte-legos" class="text-oldprime">ankurrsingal/svelte-legos</a>.
 					</p>
@@ -26,7 +26,7 @@
 				question="But really, why sveltelegos-blue?"
 			>
 				{#snippet answer()}
-					<div class="text-lg whitespace-pre-line">
+					<div class="text-lg whitespace-pre-line dark:text-gray-50">
 						<a href="https://github.com/ankurrsinghal/svelte-legos" class="text-oldprime">ankurrsingal/svelte-legos</a> doesn't have consistent maintenance/updates.
 						That is <i class="font-bold">NOT</i> something to knock the original author for. OSS project maintainers don't owe us anything, and I am beyond grateful for the time they put in to building this project.
 						That being said, this is a library which should have more regular maintenance and releases. So, I forked it.
