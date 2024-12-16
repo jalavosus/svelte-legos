@@ -3,7 +3,11 @@
 	import type { GuideCategoryProps } from "./guide";
 	import ChevronButton from "./ChevronButton.svelte";
 
-	let { label, path, guides }: GuideCategoryProps = $props();
+	type Props = {
+		handleCloseMenu: () => void;
+	}
+
+	let { label, path, guides, handleCloseMenu }: GuideCategoryProps & Props = $props();
 
 	let basePath = $derived(`/guides/${path}`);
 	const makePath = (p: string): string => `${basePath}/${p}`
@@ -31,6 +35,7 @@
 {#each guides as guide}
 	<li>
 		<a
+			onclick={handleCloseMenu}
 			href={makePath(guide)}
 			class="hover:underline {isActiveHook(guide) ? 'font-bold underline' : ''}">{guide}</a
 		>

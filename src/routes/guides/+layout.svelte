@@ -8,6 +8,7 @@
 	import type { GuideCategoryProps } from "./guide";
 
 	import { clickOutsideAction } from "$lib";
+	import { slide } from "$lib";
 
 	type Props = {
 		data: LayoutData;
@@ -27,7 +28,7 @@
 
 	let menuOpen = $state(false);
 
-	const handleClickOutside = () => menuOpen = false;
+	const handleCloseMenu = () => menuOpen = false;
 
 	let currentPath = $derived(page.data.hookName);
 
@@ -140,7 +141,7 @@
 			class="relative flex items-center cursor-pointer"
 			onclick={handleClick}
 		>
-			<span class="w-6 h-6">
+			<span class="w-6 h-6 dark:text-gray-50">
 				<MenuIcon />
 			</span>
 			<span class="ml-4">Menu</span>
@@ -157,7 +158,8 @@
 			.map((c) => c.trim())
 			.filter(Boolean)
 			.join(" ")}
-		use:clickOutsideAction={handleClickOutside}
+		use:clickOutsideAction={handleCloseMenu}
+		transition:slide
 	>
 		<button
 			onclick={handleClick}
@@ -171,8 +173,8 @@
 				<a
 					href="/guides/"
 					class="hover:underline {!currentPath && page.route.id === '/guides'
-						? 'font-bold underline'
-						: ''}"
+					? 'font-bold underline'
+					: ''}"
 				>
 					Getting Started
 				</a>
@@ -182,6 +184,7 @@
 					label={category.label}
 					path={category.path}
 					guides={category.guides}
+					{handleCloseMenu}
 				/>
 			{/each}
 		</ul>
