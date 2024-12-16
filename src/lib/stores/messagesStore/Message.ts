@@ -65,16 +65,16 @@ export default class Message {
     `;
 		switch (this.type) {
 			case "success":
-				attr(icon, "src", success);
+				icon.setAttribute("src", success);
 				break;
 			case "error":
-				attr(icon, "src", error);
+				icon.setAttribute("src", error);
 				break;
 			case "info":
-				attr(icon, "src", info);
+				icon.setAttribute("src", info);
 				break;
 			case "warning":
-				attr(icon, "src", warn);
+				icon.setAttribute("src", warn);
 				break;
 		}
 		icon.setAttribute("style", iconStyles);
