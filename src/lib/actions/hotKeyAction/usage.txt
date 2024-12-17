@@ -1,5 +1,5 @@
 <script>
-  import { hotKeyAction } from "svelte-legos";
+  import { hotKeyAction } from "@sveltelegos-blue/svelte-legos";
 
   let timesClicked = 0;
   let timesClickedCallback = 0;

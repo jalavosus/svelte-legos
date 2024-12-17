@@ -1,5 +1,5 @@
 <script lang="ts">
-import { toNumber } from "svelte-legos";
+import { toNumber } from "@sveltelegos-blue/svelte-legos";
 import { writable } from "svelte/store";
 
 const str = writable("1.0");

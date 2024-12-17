@@ -1,5 +1,5 @@
 <script lang="ts">
-import { watchWithFilter } from "svelte-legos";
+import { watchWithFilter } from "@sveltelegos-blue/svelte-legos";
 import { writable } from "svelte/store";
 
 const counter = writable(0);

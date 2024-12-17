@@ -1,5 +1,5 @@
 <script lang="ts">
-import { fetchWithTimeoutAndRetry } from "svelte-legos";
+import { fetchWithTimeoutAndRetry } from "@sveltelegos-blue/svelte-legos";
 
 function handleRetry() {
 	// handle retry if you want

@@ -1,5 +1,5 @@
 <script>
-import { messagesStore } from "svelte-legos";
+import { messagesStore } from "@sveltelegos-blue/svelte-legos";
 
 function handleClick() {
   messagesStore("Here is your message");

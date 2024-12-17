@@ -1,5 +1,5 @@
 <script>
-  import { focusAction } from "svelte-legos";
+  import { focusAction } from "@sveltelegos-blue/svelte-legos";
   let isFocused = true;
 </script>
 

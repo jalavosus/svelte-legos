@@ -1,5 +1,5 @@
 <script lang="ts">
-import { reduceable } from "svelte-legos";
+import { reduceable } from "@sveltelegos-blue/svelte-legos";
 
 function reducer(state: number, action: string) {
 	switch (action) {

@@ -1,5 +1,5 @@
 <script>
-import { draggableAction } from "svelte-legos";
+import { draggableAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <div class="box" use:draggableAction />

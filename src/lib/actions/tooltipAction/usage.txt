@@ -1,5 +1,5 @@
 <script>
-import { tooltipAction } from "svelte-legos";
+import { tooltipAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <div use:tooltipAction={"Tooltip Content"}>

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { preferredContrast } from "svelte-legos";
+import { preferredContrast } from "@sveltelegos-blue/svelte-legos";
 
 const contrast = preferredContrast();
 

@@ -1,5 +1,5 @@
 <script>
-import { dropAction } from "svelte-legos";;
+import { dropAction } from "@sveltelegos-blue/svelte-legos";;
 
 let filesData = [];
 

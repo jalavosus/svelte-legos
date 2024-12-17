@@ -1,5 +1,5 @@
 <script lang="ts">
-import { preferredReduceMotion } from "svelte-legos";
+import { preferredReduceMotion } from "@sveltelegos-blue/svelte-legos";
 
 const motion = preferredReduceMotion();
 

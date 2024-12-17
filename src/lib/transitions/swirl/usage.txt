@@ -1,5 +1,5 @@
 <script>
-import { swirl } from "svelte-legos";
+import { swirl } from "@sveltelegos-blue/svelte-legos";
 
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { geolocationStore } from "svelte-legos";
+import { geolocationStore } from "@sveltelegos-blue/svelte-legos";
 
 const geolocation = geolocationStore({ watch: true });
 $: ({ status, position, error } = $geolocation)

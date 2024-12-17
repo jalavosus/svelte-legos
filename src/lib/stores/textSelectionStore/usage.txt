@@ -1,5 +1,5 @@
 <script>
-import { textSelectionStore } from "svelte-legos";
+import { textSelectionStore } from "@sveltelegos-blue/svelte-legos";
 
 const selectionStore = textSelectionStore();
 

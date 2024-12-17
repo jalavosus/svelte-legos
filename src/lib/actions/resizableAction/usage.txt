@@ -1,5 +1,5 @@
 <script>
-import { resizableAction } from "svelte-legos";
+import { resizableAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <div class="box" use:resizableAction />

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { preferredDark } from "svelte-legos";
+import { preferredDark } from "@sveltelegos-blue/svelte-legos";
 
 const prefersDark = preferredDark();
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { intervalFnStore } from "svelte-legos";
+import { intervalFnStore } from "@sveltelegos-blue/svelte-legos";
 
 const { pause, resume, isActive, changeIntervalTime } = intervalFnStore(() => {
   /* your function */

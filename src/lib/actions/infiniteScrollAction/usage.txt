@@ -1,5 +1,5 @@
 <script lang="ts">
-import { infiniteScrollAction } from "svelte-legos";
+import { infiniteScrollAction } from "@sveltelegos-blue/svelte-legos";
 
 let isLoading = false;
 

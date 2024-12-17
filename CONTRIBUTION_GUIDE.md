@@ -47,7 +47,7 @@ export function yourLegoBrick() {
 
 ```svelte
 <script lang="ts">
-import { yourLegoBrick } from "svelte-legos";
+import { yourLegoBrick } from "@sveltelegos-blue/svelte-legos";
 
 const beingUsed = yourLegoBrick();
 </script>

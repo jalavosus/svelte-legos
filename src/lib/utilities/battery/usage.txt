@@ -1,5 +1,5 @@
 <script lang="ts">
-import { battery } from "svelte-legos";
+import { battery } from "@sveltelegos-blue/svelte-legos";
 
 const info = battery();
 

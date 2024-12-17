@@ -1,5 +1,5 @@
 <script>
-import { sortableTableAction } from "svelte-legos";
+import { sortableTableAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <table use:sortableTableAction>

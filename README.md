@@ -19,7 +19,7 @@ Collection of essential Svelte Composition Utilities
 
 ```svelte
 <script lang="ts">
-import { counterStore } from "svelte-legos";
+import { counterStore } from "@sveltelegos-blue/svelte-legos";
 
 const { counter, inc, dec, set, reset } = counterStore();
 </script>
@@ -33,7 +33,7 @@ const { counter, inc, dec, set, reset } = counterStore();
 
 ```svelte
 <script lang="ts">
-import { clickOutsideAction } from "svelte-legos";
+import { clickOutsideAction } from "@sveltelegos-blue/svelte-legos";
 
 let hidden = false;
 

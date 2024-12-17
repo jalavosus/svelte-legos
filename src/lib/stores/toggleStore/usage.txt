@@ -1,5 +1,5 @@
 <script lang="ts">
-import { toggleStore } from "svelte-legos";
+import { toggleStore } from "@sveltelegos-blue/svelte-legos";
 
 const { toggle, on, off, set, value } = toggleStore();
 
