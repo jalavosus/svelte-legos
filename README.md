@@ -61,9 +61,9 @@ npm run start:dev
 
 ## Current Todos/Projects
 
-- [] Actual dark mode design, not just haphazard application of colours where they look good.
-- [] Styles consolidation (ie. actual themes)
-- [] Dark mode on demo components in /guides.
+- [ ] Actual dark mode design, not just haphazard application of colours where they look good.
+- [ ] Styles consolidation (ie. actual themes)
+- [ ] Dark mode on demo components in /guides.
 
 Contributions to these lofty goals are welcome. 
 
