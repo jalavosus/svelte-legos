@@ -1,5 +1,5 @@
 <script>
-import { notifyAction } from "svelte-legos";
+import { notifyAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <button

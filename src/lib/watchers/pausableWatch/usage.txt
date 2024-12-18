@@ -1,5 +1,5 @@
 <script>
-import { pausableWatch } from "svelte-legos";
+import { pausableWatch } from "@sveltelegos-blue/svelte-legos";
 import { writable } from "svelte/store";
 
 const source = writable("");

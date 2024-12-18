@@ -1,5 +1,5 @@
 <script>
-import { slide } from "svelte-legos";
+import { slide } from "@sveltelegos-blue/svelte-legos";
 
 </script>
 

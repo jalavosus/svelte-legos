@@ -1,5 +1,5 @@
 <script lang="ts">
-import { hoverAction } from "svelte-legos";
+import { hoverAction } from "@sveltelegos-blue/svelte-legos";
 
 function handleHover(e: CustomEvent<{ hover: boolean }>) {
   alert(`Box hovered: ${e.detail.hover}`);

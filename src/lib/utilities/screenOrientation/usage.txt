@@ -1,5 +1,5 @@
 <script lang="ts">
-import { screenOrientation } from "svelte-legos";
+import { screenOrientation } from "@sveltelegos-blue/svelte-legos";
 
 const data = screenOrientation();
 $: ({ isSupported, orientation, angle } = $data);

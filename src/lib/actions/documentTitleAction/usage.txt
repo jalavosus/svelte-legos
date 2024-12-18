@@ -1,5 +1,5 @@
 <script>
-  import { documentTitleAction } from "svelte-legos";
+  import { documentTitleAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <input use:documentTitleAction />

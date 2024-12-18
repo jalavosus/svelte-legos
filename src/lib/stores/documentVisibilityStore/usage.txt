@@ -1,5 +1,5 @@
 <script lang="ts">
-import { documentVisibilityStore } from "svelte-legos";
+import { documentVisibilityStore } from "@sveltelegos-blue/svelte-legos";
 
 const visibility = documentVisibilityStore();
 

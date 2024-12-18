@@ -1,5 +1,5 @@
 <script>
-import { clickToCopyAction } from "svelte-legos";
+import { clickToCopyAction } from "@sveltelegos-blue/svelte-legos";
 
 function handleCopyDone() {
   // handle copy done here

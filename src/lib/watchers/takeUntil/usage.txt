@@ -1,5 +1,5 @@
 <script lang="ts">
-import { takeUntil } from "svelte-legos";
+import { takeUntil } from "@sveltelegos-blue/svelte-legos";
 import { writable } from "svelte/store";
 
 const counter = writable(0);

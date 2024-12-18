@@ -1,5 +1,5 @@
 <script>
-import { alertAction } from "svelte-legos";
+import { alertAction } from "@sveltelegos-blue/svelte-legos";
 
 function onClose() {
   // handle on alert close

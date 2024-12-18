@@ -1,5 +1,5 @@
 <script lang="ts">
-import { preferredLanguages } from "svelte-legos";
+import { preferredLanguages } from "@sveltelegos-blue/svelte-legos";
 
 const languages = preferredLanguages();
 

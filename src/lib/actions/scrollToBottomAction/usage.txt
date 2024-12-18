@@ -1,5 +1,5 @@
 <script>
-import { scrollToBottomAction } from "svelte-legos";
+import { scrollToBottomAction } from "@sveltelegos-blue/svelte-legos";
 
 // messages data
 let messages = [];

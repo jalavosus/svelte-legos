@@ -1,5 +1,5 @@
 <script lang="ts">
-import { history } from "svelte-legos";
+import { history } from "@sveltelegos-blue/svelte-legos";
 import { writable } from "svelte/store";
 
 const counter = history(writable(0));

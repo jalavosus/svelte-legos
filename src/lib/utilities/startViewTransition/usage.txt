@@ -1,7 +1,7 @@
 <script lang="ts">
   // Root layout.svelte file
   
-  import { startViewTransition } from "svelte-legos";
+  import { startViewTransition } from "@sveltelegos-blue/svelte-legos";
 
   startViewTransition();
 

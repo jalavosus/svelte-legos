@@ -1,5 +1,5 @@
 <script>
-  import { portalAction } from "svelte-legos";
+  import { portalAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 // This action takes only one optional parameter: a target

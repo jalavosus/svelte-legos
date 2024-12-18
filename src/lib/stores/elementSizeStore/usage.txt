@@ -1,5 +1,5 @@
 <script lang="ts">
-import { elementSizeStore } from "svelte-legos";
+import { elementSizeStore } from "@sveltelegos-blue/svelte-legos";
 
 let ref: HTMLElement | null = null;
 

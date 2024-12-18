@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { debounceClickAction } from "svelte-legos";
+  import { debounceClickAction } from "@sveltelegos-blue/svelte-legos";
 
   function onClick() {
     // main click
