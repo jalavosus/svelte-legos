@@ -24,11 +24,11 @@ import { counterStore } from "@sveltelegos-blue/svelte-legos";
 const { counter, inc, dec, set, reset } = counterStore();
 </script>
 
-<button on:click={() => inc()}>Increment</button>
+<button onclick={() => inc()}>Increment</button>
 
 {counter}
 
-<button on:click={() => dec()}>Decrement</button>
+<button onclick={() => dec()}>Decrement</button>
 ```
 
 ```svelte
@@ -56,7 +56,7 @@ npm i @sveltelegos-blue/svelte-legos
 ## Local setup
 
 ```bash
-npm run start:dev
+npm run dev
 ```
 
 ## Current Todos/Projects
