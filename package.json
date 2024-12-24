@@ -1,6 +1,6 @@
 {
 	"name": "@sveltelegos-blue/svelte-legos",
-	"version": "0.1.2",
+	"version": "0.1.1",
 	"description": "A framework for Svelte Utilities",
 	"author": "Jamie Alavosus",
 	"license": "MIT",
