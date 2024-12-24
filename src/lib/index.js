@@ -43,6 +43,7 @@ export { notifyAction } from "./actions/notifyAction";
 export { loadingAction } from "./actions/loadingAction";
 export { messageAction } from "./actions/messageAction";
 export { alertAction } from "./actions/alertAction";
+export { confirmAction } from "./actions/confirmAction";
 export { clickToCopyAction } from "./actions/clickToCopyAction";
 export { lazyLoadImageAction } from "./actions/lazyLoadImageAction";
 export { documentTitleAction } from "./actions/documentTitleAction";

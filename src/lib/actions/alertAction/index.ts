@@ -1,14 +1,14 @@
 import { eventListenerStore } from "$lib/stores/eventListenerStore";
 import Alert from "./Alert";
 
-interface LoadingActionParams {
+interface AlertActionParams {
 	title: string;
 	description: string;
 	onClose?: () => void;
 	onOk?: () => void;
 }
 
-export function alertAction<T extends HTMLElement>(node: T, params: LoadingActionParams) {
+export function alertAction<T extends HTMLElement>(node: T, params: AlertActionParams) {
 	let stop: () => void;
 
 	const destroy = () => {
@@ -17,7 +17,7 @@ export function alertAction<T extends HTMLElement>(node: T, params: LoadingActio
 
 	let alert: Alert | undefined;
 
-	const update = ({ title, description, onClose, onOk }: LoadingActionParams) => {
+	const update = ({ title, description, onClose, onOk }: AlertActionParams) => {
 		destroy();
 
 		function handleClick() {

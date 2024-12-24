@@ -1,6 +1,6 @@
 {
 	"name": "@sveltelegos-blue/svelte-legos",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A framework for Svelte Utilities",
 	"author": "Jamie Alavosus",
 	"license": "MIT",
@@ -21,7 +21,8 @@
 		"format": "prettier --plugin-search-dir . --write ./src",
 		"build:lib": "svelte-kit sync && svelte-package",
 		"build:docs": "pnpm run docs:compile && vite build",
-		"docs:compile": "node gen-docs.js"
+		"docs:compile": "node gen-docs.js",
+		"docs:watch": "node watch-docs.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "3.0.8",
