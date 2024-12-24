@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-npm run build:lib
-npm publish --access public
+pnpm run build:lib
+pnpm publish --access public
