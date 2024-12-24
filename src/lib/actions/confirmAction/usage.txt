@@ -1,0 +1,25 @@
+<script>
+import { confirmAction } from "@sveltelegos-blue/svelte-legos";
+
+function onCancel() {
+  // handle on alert close or cancel
+}
+
+function onConfirm() {
+  // handle on Confirm click
+}
+
+</script>
+
+<button
+  use:confirmAction={{
+    title: "Title",
+    description: "You can put your little description here.",
+    onCancel,
+    onConfirm,
+    confirmText: "OK",
+    cancelText: "Cancel"
+  }}
+>
+  Show Confirmation Alert
+</button>
