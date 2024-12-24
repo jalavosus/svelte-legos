@@ -1,14 +1,45 @@
+export interface BaseAlertParams {
+	title: string;
+	description: string;
+	onCancel?: () => void;
+	onConfirm?: () => void;
+	confirmText?: string;
+	cancelText?: string;
+}
+
 export default class BaseAlert<T extends HTMLElement = HTMLElement> {
 	protected __container: HTMLDivElement;
 
-	constructor(
-		readonly title: string,
-		readonly description: string,
-		readonly onClose?: () => void,
-		readonly onOk?: () => void,
-		readonly okButtonText: string = "OK"
-	) {
+	protected title: string;
+	protected description: string;
+
+	protected onCancel?: () => void;
+	protected onConfirm?: () => void;
+
+	private readonly confirmText: string;
+	// hiding this here for extensibility.
+	// turns out, I can do whatever I want in this class.
+	// Huzzah.
+	protected readonly cancelText: string;
+
+	constructor({
+		title,
+		description,
+		onCancel,
+		onConfirm,
+		confirmText = "OK",
+		cancelText = "Cancel",
+	}: BaseAlertParams) {
 		this.__container = this.makeContainer();
+
+		this.title = title;
+		this.description = description;
+		this.onCancel = onCancel;
+		this.onConfirm = onConfirm;
+		this.confirmText = confirmText;
+		this.cancelText = cancelText;
+
+		this.addDialog();
 	}
 
 	protected makeContainer(): HTMLDivElement {
@@ -53,34 +84,34 @@ export default class BaseAlert<T extends HTMLElement = HTMLElement> {
 	protected addHeader(dialog: HTMLDivElement) {
 		const header = document.createElement("div");
 		const headerStyles = `
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      `;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		`;
 		header.setAttribute("style", headerStyles);
 
 		const title = document.createElement("h2");
 		const titleStyles = `
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        color: #303133;
-        margin: 0;
-      `;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 24px;
+			color: #303133;
+			margin: 0;
+		`;
 		title.textContent = this.title;
 		title.setAttribute("style", titleStyles);
 		header.append(title);
 
 		const closeBtn = document.createElement("div");
 		const closeBtnStyles = `
-        cursor: pointer;
-        font-size: 12px;
-      `;
+			cursor: pointer;
+			font-size: 12px;
+		`;
 		closeBtn.textContent = "╳";
 		closeBtn.setAttribute("style", closeBtnStyles);
 
 		closeBtn.addEventListener("click", () => {
-			this.onClose?.();
+			this.onCancel?.();
 		});
 
 		header.append(closeBtn)
@@ -103,8 +134,8 @@ export default class BaseAlert<T extends HTMLElement = HTMLElement> {
 		buttonRow.setAttribute("class", "btn-row");
 		buttonRow.setAttribute("style", buttonRowStyles);
 
-		const oKBtn = document.createElement("button");
-		const oKBtnStyles = `
+		const confirmBtn = document.createElement("button");
+		const confirmBtnStyles = `
       cursor: pointer;
       font-size: 12px;
       background-color: #eee;
@@ -112,14 +143,14 @@ export default class BaseAlert<T extends HTMLElement = HTMLElement> {
       border-radius: 8px;
       margin-top: 8px;
     `;
-		oKBtn.textContent = this.okButtonText;
-		oKBtn.setAttribute("style", oKBtnStyles);
+		confirmBtn.textContent = this.confirmText;
+		confirmBtn.setAttribute("style", confirmBtnStyles);
 
-		oKBtn.addEventListener("click", () => {
-			this.onOk?.();
+		confirmBtn.addEventListener("click", () => {
+			this.onConfirm?.();
 		});
 
-		buttonRow.append(oKBtn);
+		buttonRow.append(confirmBtn);
 
 		dialog.append(header);
 		dialog.append(description);
