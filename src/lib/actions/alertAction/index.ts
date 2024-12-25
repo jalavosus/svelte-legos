@@ -17,22 +17,22 @@ export function alertAction<T extends HTMLElement>(node: T, params: AlertActionP
 
 	let alert: Alert | undefined;
 
-	const update = ({ title, description, onClose, onOk }: AlertActionParams) => {
+	const update = (params: AlertActionParams) => {
 		destroy();
 
-		function handleClick() {
-			alert = new Alert(
-				title,
-				description,
+		const makeCleanup =
+			(fn?: () => void): () => void =>
 				() => {
-					onClose && onClose();
-					alert?.unmount();
-				},
-				() => {
-					onOk && onOk();
+					fn?.();
 					alert?.unmount();
 				}
-			);
+
+		function handleClick() {
+			alert = new Alert({
+				...params,
+				onCancel: makeCleanup(params.onClose),
+				onConfirm: makeCleanup(params.onOk),
+			});
 
 			alert.mount();
 		}
