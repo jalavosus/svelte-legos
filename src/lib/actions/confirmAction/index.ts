@@ -19,24 +19,22 @@ export function confirmAction<T extends HTMLElement>(node: T, params: ConfirmAct
 
 	let alert: ConfirmAlert | undefined;
 
-	const update = ({ title, description, onCancel, onConfirm, cancelText="Cancel", confirmText="OK" }: ConfirmActionParams) => {
+	const update = (params: ConfirmActionParams) => {
 		destroy();
 
+		const makeCleanup =
+			(fn?: () => void): () => void =>
+				() => {
+					fn?.();
+					alert?.unmount();
+				}
+
 		function handleClick() {
-			alert = new ConfirmAlert(
-				title,
-				description,
-				() => {
-					onCancel?.();
-					alert?.unmount();
-				},
-				() => {
-					onConfirm?.();
-					alert?.unmount();
-				},
-				confirmText,
-				cancelText,
-			);
+			alert = new ConfirmAlert({
+				...params,
+				onCancel: makeCleanup(params.onCancel),
+				onConfirm: makeCleanup(params.onConfirm),
+			});
 
 			alert.mount();
 		}
