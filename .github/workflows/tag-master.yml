@@ -1,0 +1,39 @@
+name: 'Tag Main'
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: 'Tag new code and publish to NPM'
+
+    steps:
+      - uses: 'actions/checkout@v4'
+
+      - uses: 'actions/setup-node@v4'
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 'Parse package.json'
+        run: echo "TAG_VERSION=v$(pnpm pkg get version | tr -d \")" >> $GITHUB_ENV
+
+      - name: 'Push tag'
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git tag ${{ env.TAG_VERSION }}
+          git push origin ${{ env.TAG_VERSION }}
+
+      - run: pnpm ci
+
+      - run: pnpm build:lib
+
+      - name: 'Publish to npmjs registry'
+        run: pnpm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
