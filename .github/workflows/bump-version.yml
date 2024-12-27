@@ -36,12 +36,14 @@ jobs:
         run: echo "NEW_VERSION=$(npm version ${{ env.BUMP_TYPE }} --no-git-tag-version)" >> $GITHUB_ENV
 
       - name: 'Commit new package.json'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.json
-          git commit -m "Bump package.json version to ${{ env.NEW_VERSION }}"
-          git push
+        uses: 'planetscale/ghcommit-action@v0.2.0'
+        with:
+          commit_message: "Bump package.json version to ${{ env.NEW_VERSION }}"
+          repo: ${{ github.repository }}
+          branch: ${{ github.head_ref }}
+          file_pattern: 'package.json'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: 'Cleanup Label'
         run: |
