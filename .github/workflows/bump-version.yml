@@ -36,7 +36,7 @@ jobs:
         run: echo "NEW_VERSION=$(npm version ${{ env.BUMP_TYPE }} --no-git-tag-version)" >> $GITHUB_ENV
 
       - name: 'Commit new package.json'
-        uses: 'planetscale/ghcommit-action@v0.2.0'
+        uses: 'planetscale/ghcommit-action@v0.2.4'
         with:
           commit_message: "Bump package.json version to ${{ env.NEW_VERSION }}"
           repo: ${{ github.repository }}
