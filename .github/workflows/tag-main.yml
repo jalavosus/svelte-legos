@@ -35,7 +35,7 @@ jobs:
           git tag ${{ env.TAG_VERSION }}
           git push origin ${{ env.TAG_VERSION }}
 
-      - run: pnpm ci
+      - run: pnpm install --frozen-lockfile
 
       - run: pnpm build:lib
 
