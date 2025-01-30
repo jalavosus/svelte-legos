@@ -1,0 +1,54 @@
+name: 'Bump package.json version'
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+    types:
+      - 'labeled'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump-version:
+    name: 'Bump package.json version'
+    runs-on: ubuntu-latest
+
+    if: ${{ contains(github.event.label.name, 'bump-version') }}
+
+    steps:
+      - uses: 'actions/checkout@v4'
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: 'actions/setup-node@v4'
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 'Get bump type'
+        env:
+          LABEL_NAME: ${{ github.event.label.name }}
+        run: echo "BUMP_TYPE=${LABEL_NAME##*-}" >> $GITHUB_ENV
+
+      - name: 'Bump version (NO GIT TAG)'
+        run: echo "NEW_VERSION=$(npm version ${{ env.BUMP_TYPE }} --no-git-tag-version)" >> $GITHUB_ENV
+
+      - name: 'Commit new package.json'
+        uses: 'planetscale/ghcommit-action@v0.2.4'
+        with:
+          commit_message: "Bump package.json version to ${{ env.NEW_VERSION }}"
+          repo: ${{ github.repository }}
+          branch: ${{ github.head_ref }}
+          file_pattern: 'package.json'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: 'Cleanup Label'
+        run: |
+          curl --silent --fail-with-body \
+            -X DELETE \
+            -H 'Accept: application/vnd.github.v3+json' \
+            -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+            'https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.number }}/labels/${{ github.event.label.name }}'

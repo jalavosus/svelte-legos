@@ -1,11 +1,11 @@
 <script lang="ts">
-import { scrollStore } from "$lib";
-import BooleanDisplay from "$lib/shared/components/BooleanDisplay.svelte";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { InputClass } from "$lib/shared/tailwind";
+	import { scrollStore } from "$lib";
+	import BooleanDisplay from "$lib/shared/components/BooleanDisplay.svelte";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { InputClass } from "$lib/shared/tailwind";
 
-let el: HTMLElement | null = null;
-let smooth = false;
+	let el: HTMLElement | null = null;
+	let smooth = false;
 
 // Format the numbers with toFixed() to make them
 // nicer to display
@@ -26,26 +26,26 @@ let smooth = false;
 // 	},
 // });
 
-$: myScrollStore = el !== null ? scrollStore(el, { behavior }) : null;
-$: behavior = smooth ? "smooth" : "auto";
-$: displayX = $myScrollStore?.x;
-$: displayY = $myScrollStore?.y;
-$: isScrolling = $myScrollStore?.isScrolling;
-$: arrivedState = $myScrollStore?.arrivedState;
-$: directions = $myScrollStore?.directions;
-$: left = arrivedState?.left || false;
-$: right = arrivedState?.right || false;
-$: bottom = arrivedState?.bottom || false;
-$: top = arrivedState?.top || false;
-$: toLeft = directions?.left || false;
-$: toRight = directions?.right || false;
-$: toTop = directions?.bottom || false;
-$: toBottom = directions?.top || false;
+	$: myScrollStore = el !== null ? scrollStore(el, { behavior }) : null;
+	$: behavior = smooth ? "smooth" : "auto";
+	$: displayX = $myScrollStore?.x;
+	$: displayY = $myScrollStore?.y;
+	$: isScrolling = $myScrollStore?.isScrolling;
+	$: arrivedState = $myScrollStore?.arrivedState;
+	$: directions = $myScrollStore?.directions;
+	$: left = arrivedState?.left || false;
+	$: right = arrivedState?.right || false;
+	$: bottom = arrivedState?.bottom || false;
+	$: top = arrivedState?.top || false;
+	$: toLeft = directions?.left || false;
+	$: toRight = directions?.right || false;
+	$: toTop = directions?.bottom || false;
+	$: toBottom = directions?.top || false;
 </script>
 
 <DemoContainer>
 	<div class="flex">
-		<div bind:this={el} class="w-[300px] h-[300px] m-auto overflow-scroll bg-gray-500/5 rounded">
+		<div bind:this={el} class="w-[300px] h-[300px] m-auto overflow-scroll bg-gray-500/5 rounded-sm">
 			<div class="w-[500px] h-[400px] relative">
 				<div class="absolute left-0 top-0 gray-500/5 x-2 y-1">TopLeft</div>
 				<div class="absolute left-0 bottom-0 gray-500/5 x-2 y-1">BottomLeft</div>
@@ -55,7 +55,7 @@ $: toBottom = directions?.top || false;
 			</div>
 		</div>
 		<div class="m-auto w-[280px] pl-4">
-			<div class="px-6 py-4 rounded grid grid-cols-[120px_auto] gap-2 bg-gray-500/5">
+			<div class="px-6 py-4 rounded-sm grid grid-cols-[120px_auto] gap-2 bg-gray-500/5">
 				<span class="right py-4 opacity-75">X Position</span>
 				<div class="text-primary">
 					<div>

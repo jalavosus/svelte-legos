@@ -33,7 +33,7 @@ let showPortal = false;
 		class:fixed={target === "body"}
 		class:absolute={target === "#container"}
 	>
-		<div class="bg-white rounded text-center p-4">
+		<div class="bg-white rounded-sm text-center p-4">
 			<p class="mb-4">This element will render as a direct child of "{target}"</p>
 			<button class={PrimaryButtonClassName} on:click={() => (showPortal = false)}>
 				Close portal content

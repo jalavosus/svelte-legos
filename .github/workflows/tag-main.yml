@@ -1,0 +1,45 @@
+name: 'Tag Main'
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: 'Tag new code and publish to NPM'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: 'actions/checkout@v4'
+
+      - uses: 'pnpm/action-setup@v4'
+        with:
+          version: 9
+          run_install: false
+
+      - uses: 'actions/setup-node@v4'
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 'Parse package.json'
+        run: echo "TAG_VERSION=v$(pnpm pkg get version | tr -d \")" >> $GITHUB_ENV
+
+      - name: 'Push tag'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag ${{ env.TAG_VERSION }}
+          git push origin ${{ env.TAG_VERSION }}
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build:lib
+
+      - name: 'Publish to npmjs registry'
+        run: pnpm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
