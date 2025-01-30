@@ -31,8 +31,8 @@ importers:
         specifier: 5.0.3
         version: 5.0.3(svelte@5.19.5)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
       '@tailwindcss/postcss':
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.0.1
+        version: 4.0.1
       '@types/canvas-confetti':
         specifier: 1.9.0
         version: 1.9.0
@@ -542,8 +542,8 @@ packages:
     resolution: {integrity: sha512-3z1SpWoDeaA6K6jd92CRrGyDghOcRILEgyWVHRhaUm/tcpiazwJpU9BSG0xB7GGGnl9capojaC+zme/nKsZd/w==}
     engines: {node: '>= 10'}
 
-  '@tailwindcss/postcss@4.0.0':
-    resolution: {integrity: sha512-lI2bPk4TvwavHdehjr5WiC6HnZ59hacM6ySEo4RM/H7tsjWd8JpqiNW9ThH7rO/yKtrn4mGBoXshpvn8clXjPg==}
+  '@tailwindcss/postcss@4.0.1':
+    resolution: {integrity: sha512-fZHL49vCDauQymdm2U1jehuUeX8msYVDKB/2v+jWhTQleH3QE8J1dJ2dnL5tqRvB0udjBP4kwUC1ZIVIdv66YA==}
 
   '@types/canvas-confetti@1.9.0':
     resolution: {integrity: sha512-aBGj/dULrimR1XDZLtG9JwxX1b4HPRF6CX9Yfwh3NvstZEm1ZL7RBnel4keCPSqs1ANRu1u2Aoz9R+VmtjYuTg==}
@@ -1378,9 +1378,6 @@ packages:
     resolution: {integrity: sha512-vVAntseegJX80sgbY8CxQISSE/VoDSfP7VZHoQaf2+z+2XOPOz/N+k455HJmO9O0g8oxTtuE0TBhC/5LAP4lPg==}
     engines: {node: '>=18'}
 
-  tailwindcss@4.0.0:
-    resolution: {integrity: sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ==}
-
   tailwindcss@4.0.1:
     resolution: {integrity: sha512-UK5Biiit/e+r3i0O223bisoS5+y7ZT1PM8Ojn0MxRHzXN1VPZ2KY6Lo6fhu1dOfCfyUAlK7Lt6wSxowRabATBw==}
 
@@ -1903,14 +1900,14 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.0.1
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.1
 
-  '@tailwindcss/postcss@4.0.0':
+  '@tailwindcss/postcss@4.0.1':
     dependencies:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.0.1
       '@tailwindcss/oxide': 4.0.1
       lightningcss: 1.29.1
       postcss: 8.5.1
-      tailwindcss: 4.0.0
+      tailwindcss: 4.0.1
 
   '@types/canvas-confetti@1.9.0': {}
 
@@ -2749,8 +2746,6 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.17
       zimmerframe: 1.1.2
-
-  tailwindcss@4.0.0: {}
 
   tailwindcss@4.0.1: {}
 
