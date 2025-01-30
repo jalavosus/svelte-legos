@@ -10,6 +10,7 @@ permissions:
 jobs:
   publish:
     name: 'Tag new code and publish to NPM'
+    runs-on: ubuntu-latest
 
     steps:
       - uses: 'actions/checkout@v4'
