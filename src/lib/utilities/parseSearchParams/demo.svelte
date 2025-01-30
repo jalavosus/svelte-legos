@@ -9,7 +9,7 @@ updateParams("vueuse", "awesome");
 
 <DemoContainer>
 	<div>
-		<ul class="!m-0">
+		<ul class="m-0!">
 			{#each Object.keys($params) as key}
 				<li>
 					{key}={$params[key]}
