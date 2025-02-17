@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { fullScreenAction } from "@sveltelegos-blue/svelte-legos";
   let ref;
 </script>

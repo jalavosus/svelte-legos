@@ -4,8 +4,8 @@
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 	import { InputClass } from "$lib/shared/tailwind";
 
-	let el: HTMLElement | null = null;
-	let smooth = false;
+	let el: HTMLElement | null = $state(null);
+	let smooth = $state(false);
 
 // Format the numbers with toFixed() to make them
 // nicer to display
@@ -26,21 +26,23 @@
 // 	},
 // });
 
-	$: myScrollStore = el !== null ? scrollStore(el, { behavior }) : null;
-	$: behavior = smooth ? "smooth" : "auto";
-	$: displayX = $myScrollStore?.x;
-	$: displayY = $myScrollStore?.y;
-	$: isScrolling = $myScrollStore?.isScrolling;
-	$: arrivedState = $myScrollStore?.arrivedState;
-	$: directions = $myScrollStore?.directions;
-	$: left = arrivedState?.left || false;
-	$: right = arrivedState?.right || false;
-	$: bottom = arrivedState?.bottom || false;
-	$: top = arrivedState?.top || false;
-	$: toLeft = directions?.left || false;
-	$: toRight = directions?.right || false;
-	$: toTop = directions?.bottom || false;
-	$: toBottom = directions?.top || false;
+	let behavior: ScrollBehavior = $derived(smooth ? "smooth" : "auto"),
+		myScrollStore = $derived(el !== null ? scrollStore(el, { behavior }) : null);
+
+	let
+		displayX = $derived($myScrollStore?.x),
+		displayY = $derived($myScrollStore?.y),
+		isScrolling = $derived($myScrollStore?.isScrolling),
+		arrivedState = $derived($myScrollStore?.arrivedState),
+		directions = $derived($myScrollStore?.directions),
+		left = $derived(arrivedState?.left || false),
+		right = $derived(arrivedState?.right || false),
+		bottom = $derived(arrivedState?.bottom || false),
+		top = $derived(arrivedState?.top || false),
+		toLeft = $derived(directions?.left || false),
+		toRight = $derived(directions?.right || false),
+		toTop = $derived(directions?.bottom || false),
+		toBottom = $derived(directions?.top || false);
 </script>
 
 <DemoContainer>
@@ -85,7 +87,7 @@
 				<label for="smooth-scrolling-option" class="right opacity-75">Smooth scrolling</label>
 				<span><input id="smooth-scrolling-option" bind:value={smooth} type="checkbox" /></span>
 				<span class="opacity-75 right">isScrolling</span>
-				<BooleanDisplay value={$isScrolling} />
+				<BooleanDisplay value={$isScrolling ?? false} />
 				<div class="opacity-75 right">Top Arrived</div>
 				<BooleanDisplay value={top} />
 				<div class="opacity-75 right">Right Arrived</div>

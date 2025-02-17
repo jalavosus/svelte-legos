@@ -1,5 +1,9 @@
 <script lang="ts">
-export let value: boolean;
+	type Props = {
+		value: boolean;
+	}
+
+	let { value }: Props = $props();
 </script>
 
 <div>

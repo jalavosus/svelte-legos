@@ -1,14 +1,11 @@
 <script lang="ts">
-import { elementBoundingStore } from 'svelte-legos';
+    import type {Readable} from "svelte/store";
+    import { elementBoundingStore } from "@sveltelegos-blue/svelte-legos";
 
-let el = null;
-let rect = null;
+	let ref: HTMLElement | null = $state(null);
+	let rect: Readable<DOMRect> | null = $derived(ref ? elementBoundingStore(ref) : null);
 
-$: el && (rect = elementBoundingStore(el));
-$: {
-  const { x, y, top, right, bottom, left, width, height } = rect
-}
-
+    const { x, y, top, right, bottom, left, width, height } = $rect ?? {};
 </script>
 
-<div bind:this={el} />
+<div bind:this={ref} />

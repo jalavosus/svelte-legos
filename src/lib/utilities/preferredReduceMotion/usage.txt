@@ -1,7 +1,7 @@
 <script lang="ts">
-import { preferredReduceMotion } from "@sveltelegos-blue/svelte-legos";
+    import { preferredReduceMotion } from "@sveltelegos-blue/svelte-legos";
 
-const motion = preferredReduceMotion();
+    const motion = preferredReduceMotion();
 
-// $motion => "reduce" | "no-preference"
+    // $motion => "reduce" | "no-preference"
 </script>

@@ -1,5 +1,5 @@
-<script>
-import { confettiAction } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { confettiAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 
 <button

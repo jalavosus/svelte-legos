@@ -1,9 +1,9 @@
-<script>
-import { eyeDropperAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+<script lang="ts">
+	import { eyeDropperAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let color = "";
+	let color = "";
 </script>
 
 <DemoContainer>

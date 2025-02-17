@@ -1,9 +1,9 @@
 <script lang="ts">
-import { onlineStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+	import { onlineStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-const isOnline = onlineStore();
+	const isOnline = onlineStore();
 </script>
 
 <DemoContainer>

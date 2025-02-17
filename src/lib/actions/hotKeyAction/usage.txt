@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
   import { hotKeyAction } from "@sveltelegos-blue/svelte-legos";
 
-  let timesClicked = 0;
-  let timesClickedCallback = 0;
+  let timesClicked = $state(0);
+  let timesClickedCallback = $state(0);
 </script>
 
 <button
   use:hotKeyAction={{ shift: true, code: 'Digit1' }}
-  on:click={() => timesClicked++}
+  onclick={() => timesClicked++}
 >
   Triggers a click on Shift + 1
 </button>

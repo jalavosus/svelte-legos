@@ -1,9 +1,7 @@
 <script lang="ts">
-import { elementVisibilityStore } from "@sveltelegos-blue/svelte-legos";
+    import type {Readable} from "svelte/store";
+    import { elementVisibilityStore } from "@sveltelegos-blue/svelte-legos";
 
-let ref: HTMLElement | null = null;
-
-$: ({ isVisible } = elementVisibilityStore(ref));
-
-// use reactive boolean property as $isVisible
+	let ref: HTMLElement | null = $state(null);
+	let isVisible: Readable<boolean> = $derived(elementVisibilityStore(ref).isVisible);
 </script>

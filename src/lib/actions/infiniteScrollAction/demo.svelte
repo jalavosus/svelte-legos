@@ -1,31 +1,31 @@
 <script lang="ts">
-import { infiniteScrollAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import LoadingDots from "$lib/shared/components/LoadingDots.svelte";
+	import { infiniteScrollAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import LoadingDots from "$lib/shared/components/LoadingDots.svelte";
 
-function createMessages(startFrom: number) {
-	return Array(10)
-		.fill(0)
-		.map((_, i) => `Message: #${startFrom + i + 1}`);
-}
+	function createMessages(startFrom: number) {
+		return Array(10)
+			.fill(0)
+			.map((_, i) => `Message: #${startFrom + i + 1}`);
+	}
 
-let page = 0;
-let messages: string[] = createMessages(page);
-let isLoading = false;
-let delay = 200;
-let distance = 0;
-let immediate = true;
-let disabled = false;
+	let page = $state(0);
+	let messages: string[] = $state(createMessages(page));
+	let isLoading = $state(false);
+	let delay = $state(200);
+	let distance = $state(0);
+	let immediate = $state(true);
+	let disabled = $state(false);
 
-function loadMessages() {
-	if (isLoading) return;
-	isLoading = true;
-	setTimeout(() => {
-		page = page + 1;
-		messages = messages.concat(createMessages(page * 10));
-		isLoading = false;
-	}, 3000);
-}
+	function loadMessages() {
+		if (isLoading) return;
+		isLoading = true;
+		setTimeout(() => {
+			page = page + 1;
+			messages = messages.concat(createMessages(page * 10));
+			isLoading = false;
+		}, 3000);
+	}
 </script>
 
 <DemoContainer>

@@ -1,15 +1,15 @@
 <script lang="ts">
-import { rafFnStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { rafFnStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
 
-let counter = 0;
+	let counter = $state(0);
 
-function handler() {
-	counter += 1;
-}
+	function handler() {
+		counter += 1;
+	}
 
-const { pause, resume } = rafFnStore(handler);
+	const { pause, resume } = rafFnStore(handler);
 </script>
 
 <DemoContainer>

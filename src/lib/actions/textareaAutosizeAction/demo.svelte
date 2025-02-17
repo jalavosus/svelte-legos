@@ -1,6 +1,6 @@
-<script>
-import { textareaAutosizeAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+<script lang="ts">
+	import { textareaAutosizeAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 </script>
 
 <DemoContainer>

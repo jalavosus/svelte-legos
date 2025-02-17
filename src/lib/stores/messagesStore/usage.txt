@@ -1,17 +1,17 @@
-<script>
-import { messagesStore } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { messagesStore } from "@sveltelegos-blue/svelte-legos";
 
-function handleClick() {
-  messagesStore("Here is your message");
+    function handleClick() {
+      messagesStore("Here is your message");
 
-  // or send type as "success" | "warning" | "error" | "info" (default)
+      // or send type as "success" | "warning" | "error" | "info" (default)
 
-  messagesStore("Here is your message", "success");
-}
+      messagesStore("Here is your message", "success");
+    }
 </script>
 
 <button
-  on:click={handleClick}
+  onclick={handleClick}
 >
   Show Message
 </button>

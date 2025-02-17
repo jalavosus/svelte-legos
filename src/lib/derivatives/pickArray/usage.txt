@@ -1,22 +1,22 @@
 <script lang="ts">
-import { pick } from "@sveltelegos-blue/svelte-legos";
-import { writable } from "svelte/store";
+    import { pick } from "@sveltelegos-blue/svelte-legos";
+    import { writable } from "svelte/store";
 
-const data = writable([
-	{
-		name: "Svelte",
-		author: "Rich",
-		createdAt: Date.now(),
-	},
-	{
-		name: "Vue",
-		author: "Evan",
-		createdAt: Date.now(),
-	},
-]);
+    const data = writable([
+        {
+            name: "Svelte",
+            author: "Rich",
+            createdAt: Date.now(),
+        },
+        {
+            name: "Vue",
+            author: "Evan",
+            createdAt: Date.now(),
+        },
+    ]);
 
-const names = pickArray(data, "name"); // $names => ["Svelte", "Vue"]
+    const names = pickArray(data, "name"); // $names => ["Svelte", "Vue"]
 
-const namesAndAuthors = pickArray(data, "name", "author");
-// $namesAndAuthors => [{ name: "Svelte", author: "Rich" }, { name: "Vue", author: "Evan" }]
+    const namesAndAuthors = pickArray(data, "name", "author");
+    // $namesAndAuthors => [{ name: "Svelte", author: "Rich" }, { name: "Vue", author: "Evan" }]
 </script>

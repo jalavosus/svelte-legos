@@ -1,8 +1,8 @@
 <script lang="ts">
-import { mouseLeftPage } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { mouseLeftPage } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const hasLeft = mouseLeftPage();
+	const hasLeft = mouseLeftPage();
 </script>
 
 <DemoContainer>

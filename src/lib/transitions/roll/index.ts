@@ -1,7 +1,7 @@
 import type { EasingFunction, TransitionConfig } from "svelte/transition";
 import { linear } from "svelte/easing";
 
-type Direction = "top" | "right" | "bottom" | "left";
+export type Direction = "top" | "right" | "bottom" | "left";
 
 interface SlideParams {
 	delay?: number;

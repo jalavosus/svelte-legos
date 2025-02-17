@@ -1,6 +1,6 @@
-<script>
-import { documentTitleAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+<script lang="ts">
+	import { documentTitleAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 </script>
 
 <DemoContainer>

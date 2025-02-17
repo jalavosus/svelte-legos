@@ -1,11 +1,11 @@
 <script lang="ts">
-import { activeElementStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import Text from "$lib/shared/components/Text.svelte";
+	import { activeElementStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import Text from "$lib/shared/components/Text.svelte";
 
-const activeElement = activeElementStore();
+	const activeElement = activeElementStore();
 
-$: id = $activeElement?.id || "null";
+	let id = $state($activeElement?.id || "null");
 </script>
 
 <DemoContainer>

@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 
-import { longPressAction } from "@sveltelegos-blue/svelte-legos";
+    import { longPressAction } from "@sveltelegos-blue/svelte-legos";
 
-let pressed = false;
-let duration = 2000;
+    let pressed = $state(false);
+    let duration = $state(2000);
 
 </script>
 

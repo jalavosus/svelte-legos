@@ -1,5 +1,7 @@
 import { hoverStore } from "$lib/stores/hoverStore";
-type Placement = "center" | "left" | "right";
+
+export type Placement = "center" | "left" | "right";
+
 class Tooltip<T extends HTMLElement> {
 	contents: string;
 	private anchorRect: DOMRect;
@@ -46,8 +48,6 @@ class Tooltip<T extends HTMLElement> {
 	public position(window: Window, anchorRect: DOMRect) {
 		let top, left;
 
-		const { height, width } = anchorRect;
-
 		const {
 			top: anchorTop,
 			height: anchorHeight,
@@ -58,15 +58,15 @@ class Tooltip<T extends HTMLElement> {
 		const { scrollY, scrollX } = window;
 
 		if (this.__placement === "center") {
-			top = anchorTop + scrollY - height - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
-			left = anchorLeft + scrollX + anchorWidth / 4 - width / 2;
+			top = anchorTop + scrollY - anchorHeight - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
+			left = anchorLeft + scrollX + (anchorWidth / 4) - (anchorWidth / 2);
 		} else if (this.__placement === "left") {
-			top = anchorTop + scrollY - height - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
+			top = anchorTop + scrollY - anchorHeight - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
 			left = anchorLeft + scrollX;
 		} else {
 			// right
-			top = anchorTop + scrollY - height - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
-			left = anchorLeft + scrollX + anchorWidth / 2 - width;
+			top = anchorTop + scrollY - anchorHeight - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
+			left = anchorLeft + scrollX + (anchorWidth / 2) - anchorWidth;
 		}
 
 		this.__container.style.setProperty("top", top + "px");

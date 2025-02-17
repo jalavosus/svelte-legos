@@ -1,8 +1,8 @@
 <script>
-import { loadingAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { loadingAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let loading = false;
+	let loading = $state(false);
 </script>
 
 <DemoContainer>

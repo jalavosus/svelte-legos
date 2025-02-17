@@ -1,8 +1,8 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { battery } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { battery } from "$lib";
 
-const data = battery();
+	const data = battery();
 </script>
 
 <DemoContainer>

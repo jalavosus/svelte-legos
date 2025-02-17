@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { confirmAction } from "$lib";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 	import { PrimaryButtonClassName } from "$lib/shared/tailwind";

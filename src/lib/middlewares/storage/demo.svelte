@@ -1,9 +1,9 @@
 <script lang="ts">
-import { storage } from "$lib/middlewares";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { writable } from "svelte/store";
+	import { storage } from "$lib/middlewares";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { writable } from "svelte/store";
 
-const name = storage(writable(""), "name");
+	const name = storage(writable(""), "name");
 </script>
 
 <DemoContainer>

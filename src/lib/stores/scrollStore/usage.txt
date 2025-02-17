@@ -1,14 +1,13 @@
-<script>
-import { scrollStore } from 'svelte-legos'
+<script lang="ts">
+    import { scrollStore } from 'svelte-legos'
 
-let el;
+    let el: HTMLElement | null = $state(null);
 
-$: myScroll = scrollStore(el);
-$: x = $myScroll.x // usage $x => scrollLeft
-$: y = $myScroll.y // usage $y => scrollTop
-$: isScrolling = $myScroll.isScrolling // usage $isScrolling => boolean
-$: arrivedState = $myScroll.arrivedState
-$: directions = $myScroll.directions
+    let myScroll = $derived(scrollStore(el));
+    let x = $derived($myScroll.x), // usage $x => scrollLeft
+        y = $derived($myScroll.y); // usage $y => scrollTop
+
+    let {isScrolling, arrivedState, directions} = $derived($myScroll)
 </script>
 
 <template>
