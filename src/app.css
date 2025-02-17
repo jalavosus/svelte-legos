@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source './**/*.{html,js,svelte,ts}';
 
@@ -33,20 +33,22 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
 }
 
 @font-face {
 	font-family: Overpass;
 	font-style: normal;
 	font-weight: 300;
-	src: local("Overpass Light "), local("Overpass-Light"),
+	src:
+		local("Overpass Light "),
+		local("Overpass-Light"),
 		url(/fonts/overpass-latin-300.woff2) format("woff2");
 }
 
@@ -54,7 +56,9 @@
 	font-family: Overpass;
 	font-style: normal;
 	font-weight: 600;
-	src: local("Overpass Bold "), local("Overpass-Bold"),
+	src:
+		local("Overpass Bold "),
+		local("Overpass-Bold"),
 		url(/fonts/overpass-latin-600.woff2) format("woff2");
 }
 
@@ -62,7 +66,9 @@
 	font-family: Fira Mono;
 	font-style: normal;
 	font-weight: 400;
-	src: local("Fira Mono Regular "), local("Fira Mono-Regular"),
+	src:
+		local("Fira Mono Regular "),
+		local("Fira Mono-Regular"),
 		url(/fonts/fira-mono-latin-400.woff2) format("woff2");
 }
 
@@ -71,8 +77,9 @@ code {
 }
 
 :root {
-	--font-body: "Overpass", Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	--font-body:
+		"Overpass", Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	--font-mono: "Fira", monospace;
 	--color-bg-0: rgb(202, 216, 228);
 	--color-bg-1: hsl(209, 36%, 86%);

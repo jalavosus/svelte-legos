@@ -59,7 +59,7 @@ export function eventListenerStore<
 	function start() {
 		const targetElement: T | Window = element ?? window;
 		if (!(targetElement && targetElement.addEventListener)) return;
-		targetElement && targetElement.addEventListener(eventName, listener, options);
+		targetElement?.addEventListener(eventName, listener, options);
 	}
 
 	function stop() {

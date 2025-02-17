@@ -6,20 +6,20 @@ function getCurrentWindowDimenstions() {
 	if (typeof window === "object" && "innerWidth" in window && "innerHeight" in window) {
 		return {
 			width: window.innerWidth,
-			height: window.innerHeight,
+			height: window.innerHeight
 		};
 	}
 
 	return {
 		width: 0,
-		height: 0,
+		height: 0
 	};
 }
 
 export function windowSizeStore({ window = defaultWindow }: ConfigurableWindow = {}) {
 	const size = readable(getCurrentWindowDimenstions(), (set) => {
-		let stop = () => {};
-		
+		let stop = () => {}; // eslint-disable-line @typescript-eslint/no-unused-vars, prefer-const
+
 		function handler() {
 			set(getCurrentWindowDimenstions());
 		}
@@ -30,9 +30,9 @@ export function windowSizeStore({ window = defaultWindow }: ConfigurableWindow =
 			window.addEventListener("resize", handler);
 			cleanup = () => {
 				window.removeEventListener("resize", handler);
-			}
+			};
 		}
-		
+
 		return () => {
 			cleanup();
 		};

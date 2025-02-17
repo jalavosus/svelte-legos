@@ -4,13 +4,13 @@
 </script>
 
 <DemoContainer>
-	<p class="p-2 mb-4">Try clicking on the columns to sort the rows</p>
-	<table use:sortableTableAction class="table-auto w-full">
+	<p class="mb-4 p-2">Try clicking on the columns to sort the rows</p>
+	<table use:sortableTableAction class="w-full table-auto">
 		<thead>
 			<tr>
-				<th class="text-left p-2">Column 1</th>
-				<th class="text-left p-2">Column 2</th>
-				<th class="text-left p-2">Column 3</th>
+				<th class="p-2 text-left">Column 1</th>
+				<th class="p-2 text-left">Column 2</th>
+				<th class="p-2 text-left">Column 3</th>
 			</tr>
 		</thead>
 		<tbody>

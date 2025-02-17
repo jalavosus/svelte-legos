@@ -19,9 +19,9 @@ export function watchWithFilter<T>(
 	let oldVal: T;
 	const unsub = store.subscribe((value) => {
 		if (immediate && times === 0) {
-			predicateFn(value) && callback(value, oldVal);
+			if (predicateFn(value)) callback(value, oldVal);
 		} else if (times > 0) {
-			predicateFn(value) && callback(value, oldVal);
+			if (predicateFn(value)) callback(value, oldVal);
 		}
 		oldVal = value;
 		times++;

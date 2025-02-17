@@ -11,7 +11,7 @@ function isCurrentWindowFocused(window = defaultWindow): boolean {
 }
 
 export function windowFocusStore({
-	window = defaultWindow,
+	window = defaultWindow
 }: ConfigurableWindow = {}): Readable<boolean> {
 	const visibility = readable(isCurrentWindowFocused(), (set) => {
 		function handler() {

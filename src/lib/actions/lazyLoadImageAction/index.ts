@@ -9,13 +9,14 @@ export function lazyLoadImageAction(node: HTMLImageElement) {
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = () => {
 		destroy();
 		const store = elementVisibilityStore(node);
 
+		// eslint-disable-next-line prefer-const -- I'm pretty sure eslint is a little stupid.
 		let unsub: Unsubscriber | undefined;
 
 		function handleVisibility(isVisible: boolean) {
@@ -24,14 +25,14 @@ export function lazyLoadImageAction(node: HTMLImageElement) {
 				if (url) {
 					node.src = url;
 				}
-				unsub && unsub();
+				unsub?.();
 			}
 		}
 
 		unsub = store.isVisible.subscribe(handleVisibility);
 
 		stop = () => {
-			unsub && unsub();
+			unsub?.();
 			store.stop();
 		};
 	};
@@ -40,6 +41,6 @@ export function lazyLoadImageAction(node: HTMLImageElement) {
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

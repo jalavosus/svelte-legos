@@ -1,17 +1,18 @@
 {
-	"svelteIndentScriptAndStyle": false,
-	"printWidth": 100,
-	"tabWidth": 3,
 	"useTabs": true,
-	"semi": true,
 	"singleQuote": false,
-	"quoteProps": "as-needed",
-	"trailingComma": "es5",
-	"bracketSpacing": true,
+	"trailingComma": "none",
+	"semi": true,
+	"printWidth": 100,
 	"bracketSameLine": true,
-	"arrowParens": "always",
-	"proseWrap": "preserve",
-	"htmlWhitespaceSensitivity": "css",
-	"embeddedLanguageFormatting": "auto",
-	"singleAttributePerLine": false
+	"bracketSpacing": true,
+	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
+	"overrides": [
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
+			}
+		},
+	]
 }

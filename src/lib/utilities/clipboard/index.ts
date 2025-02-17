@@ -1,4 +1,4 @@
-import { defaultWindow, isReadable, tryOnDestroy, unwrapReadable } from "$lib/shared";
+import { defaultWindow, unwrapReadable } from "$lib/shared";
 import { type Readable, readable } from "svelte/store";
 import { hasPermission } from "../hasPermission";
 import { timeoutFnStore } from "$lib/stores/timeoutFnStore";
@@ -63,7 +63,7 @@ export function clipboard(options: UseClipboardOptions = {}): Readable<UseClipbo
 		ta.remove();
 	}
 
-	let copy = async () => {};
+	let copy = async () => {}; // eslint-disable-line prefer-const
 
 	return readable<UseClipboardReturn>(
 		{ isSupported, text: "", copy, copied: false },
@@ -71,7 +71,7 @@ export function clipboard(options: UseClipboardOptions = {}): Readable<UseClipbo
 			const timeout = timeoutFnStore(() => {
 				update((store) => ({
 					...store,
-					copied: false,
+					copied: false
 				}));
 			}, copiedDuring);
 
@@ -85,7 +85,7 @@ export function clipboard(options: UseClipboardOptions = {}): Readable<UseClipbo
 					update((store) => ({
 						...store,
 						text: unwrappedValue,
-						copied: true,
+						copied: true
 					}));
 					timeout.start();
 				}
@@ -93,7 +93,7 @@ export function clipboard(options: UseClipboardOptions = {}): Readable<UseClipbo
 
 			update((store) => ({
 				...store,
-				copy,
+				copy
 			}));
 
 			function updateText() {
@@ -101,13 +101,13 @@ export function clipboard(options: UseClipboardOptions = {}): Readable<UseClipbo
 					navigator!.clipboard.readText().then((value) => {
 						update((store) => ({
 							...store,
-							text: value,
+							text: value
 						}));
 					});
 				} else {
 					update((store) => ({
 						...store,
-						text: legacyRead(),
+						text: legacyRead()
 					}));
 				}
 			}

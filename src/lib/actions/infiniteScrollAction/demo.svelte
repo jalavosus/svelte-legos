@@ -10,7 +10,8 @@
 	}
 
 	let page = $state(0);
-	let messages: string[] = $state(createMessages(page));
+	const _page = () => page;
+	let messages: string[] = $state(createMessages(_page()));
 	let isLoading = $state(false);
 	let delay = $state(200);
 	let distance = $state(0);
@@ -38,36 +39,35 @@
 			<input type="range" bind:value={delay} min={100} step={100} max={1000} />
 			<span>{delay}ms</span>
 		</div>
-		<div class="flex items-center space-x-2 mt-4">
+		<div class="mt-4 flex items-center space-x-2">
 			<label for="distance">Distance:</label>
 			<input type="range" bind:value={distance} min={0} step={1} max={100} />
 			<span>{distance}px</span>
 		</div>
-		<div class="flex items-center space-x-2 mt-4">
+		<div class="mt-4 flex items-center space-x-2">
 			<label for="immediate">Immediate?:</label>
 			<input id="immediate" type="checkbox" bind:checked={immediate} />
 		</div>
-		<div class="flex items-center space-x-2 mt-4">
+		<div class="mt-4 flex items-center space-x-2">
 			<label for="disabled">Disabled?:</label>
 			<input id="disabled" type="checkbox" bind:checked={disabled} />
 		</div>
 	</div>
 
 	<div
-		class="bg-slate-200 h-60 overflow-auto rounded-md flex flex-col space-y-4 p-4 items-start"
+		class="flex h-60 flex-col items-start space-y-4 overflow-auto rounded-md bg-slate-200 p-4"
 		use:infiniteScrollAction={{
 			delay,
 			distance,
 			immediate,
 			disabled,
-			cb: loadMessages,
-		}}
-	>
+			cb: loadMessages
+		}}>
 		{#each messages as message}
-			<div class="text-sm px-3 py-2 rounded-md bg-prime text-white">{message}</div>
+			<div class="bg-prime rounded-md px-3 py-2 text-sm text-white">{message}</div>
 		{/each}
 		{#if isLoading}
-			<div class="text-sm px-3 py-2 rounded-md bg-slate-400 text-white">
+			<div class="rounded-md bg-slate-400 px-3 py-2 text-sm text-white">
 				Loading <LoadingDots />
 			</div>
 		{/if}

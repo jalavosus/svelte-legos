@@ -13,12 +13,12 @@
 		"Bonjour",
 		"Salut!",
 		"你好",
-		"Привет",
+		"Привет"
 	];
 	let word = "Hello";
 	let interval = writable(500);
 
-	const { pause, resume, isActive, changeIntervalTime } = intervalFnStore(handler, interval);
+	const { pause, resume, isActive } = intervalFnStore(handler, interval);
 
 	function handler() {
 		word = greetings[Math.floor(Math.random() * greetings.length)];
@@ -32,7 +32,7 @@
 	<div class="mb-4">
 		<p class="mb-2">Interval:</p>
 		<p>
-			<input class="p-2 rounded-md" bind:value={$interval} type="number" placeholder="interval" />
+			<input class="rounded-md p-2" bind:value={$interval} type="number" placeholder="interval" />
 		</p>
 	</div>
 	<div>

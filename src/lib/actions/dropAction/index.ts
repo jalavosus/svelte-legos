@@ -22,10 +22,10 @@ export function dropAction<T extends HTMLElement>(
 	let stopDrop: () => void;
 
 	const destroy = () => {
-		stopDragEnter && stopDragEnter();
-		stopDragOver && stopDragOver();
-		stopDragLeave && stopDragLeave();
-		stopDrop && stopDrop();
+		stopDragEnter?.();
+		stopDragOver?.(); // @ts-ignore potentially undefined/uninitialized functions. It's fine.
+		stopDragLeave?.(); // @ts-ignore potentially undefined/uninitialized functions. It's fine.
+		stopDrop?.(); // @ts-ignore potentially undefined/uninitialized functions. It's fine.
 	};
 
 	const update = (options: UseDropZoneOptions | UseDropZoneOptions["onDrop"] = {}) => {
@@ -50,8 +50,8 @@ export function dropAction<T extends HTMLElement>(
 						typeof dataTypes === "function"
 							? dataTypes(types)
 							: dataTypes
-							? dataTypes.some((item) => types.includes(item))
-							: true;
+								? dataTypes.some((item) => types.includes(item))
+								: true;
 					if (!isDataTypeIncluded) return;
 				}
 				event.preventDefault();
@@ -97,6 +97,6 @@ export function dropAction<T extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

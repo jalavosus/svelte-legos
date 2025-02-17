@@ -15,8 +15,8 @@
 				class="m-auto rounded-md"
 				src="https://cdn.coverr.co/videos/coverr--07-022-22-gardening_0037-7179/1080p.mp4"
 				width="600"
-				controls
-			/>
+				controls>
+			</video>
 		</div>
 		<div class="space-x-4">
 			<button class={PrimaryButtonClassName} use:fullScreenAction={ref}> Fullscreen Video </button>

@@ -14,7 +14,7 @@
 			<PrimaryButton disabled={!$canUndo} on:click={undo}>Undo</PrimaryButton>
 			<PrimaryButton disabled={!$canRedo} on:click={redo}>Redo</PrimaryButton>
 		</div>
-		<div class="text-4xl my-8">
+		<div class="my-8 text-4xl">
 			{$counter}
 		</div>
 		<div>

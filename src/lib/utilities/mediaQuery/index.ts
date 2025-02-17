@@ -1,4 +1,4 @@
-import { defaultWindow, tryOnDestroy } from "$lib/shared";
+import { defaultWindow } from "$lib/shared";
 import { readable } from "svelte/store";
 
 export function mediaQuery(query: string) {
@@ -10,11 +10,8 @@ export function mediaQuery(query: string) {
 
 		function cleanup() {
 			if (!mediaQuery) return;
-			if ("removeEventListener" in mediaQuery)
-				// eslint-disable-next-line @typescript-eslint/no-use-before-define
-				mediaQuery.removeEventListener("change", update);
+			if ("removeEventListener" in mediaQuery) mediaQuery.removeEventListener("change", update);
 			// @ts-expect-error deprecated API
-			// eslint-disable-next-line @typescript-eslint/no-use-before-define
 			else mediaQuery.removeListener(update);
 		}
 

@@ -26,6 +26,6 @@ export function hoverAction<T extends HTMLElement>(node: T) {
 	start();
 
 	return {
-		destroy: stop,
+		destroy: stop
 	};
 }

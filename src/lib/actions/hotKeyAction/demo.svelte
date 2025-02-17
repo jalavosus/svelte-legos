@@ -15,20 +15,18 @@
 		<button
 			class={PrimaryButtonClassName}
 			use:hotKeyAction={{ shift: true, code: "Digit1" }}
-			on:click={incrementClicked}
-		>
+			onclick={incrementClicked}>
 			Triggers a click on Shift + 1
 		</button>
 		<p class="ml-4">
 			Clicked: {timesClicked}
 		</p>
 	</div>
-	<div class="flex items-center mt-4">
+	<div class="mt-4 flex items-center">
 		<div
-			class="inline-block text-sm px-4 py-2 rounded-md border border-black"
+			class="inline-block rounded-md border border-black px-4 py-2 text-sm"
 			use:hotKeyAction={{ shift: true, meta: true, code: "KeyX", cb: incrementClickedCallback }}
-			aria-hidden="true"
-		>
+			aria-hidden="true">
 			Triggers a callback on Shift + Cmd + X
 		</div>
 		<p class="ml-4">

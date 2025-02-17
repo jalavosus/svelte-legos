@@ -6,7 +6,7 @@ import {
 	transitions,
 	middlewares,
 	derivatives,
-	watchers,
+	watchers
 } from "../directories";
 
 export async function load() {
@@ -18,6 +18,6 @@ export async function load() {
 		transitions,
 		middlewares,
 		derivatives,
-		watchers,
+		watchers
 	};
 }

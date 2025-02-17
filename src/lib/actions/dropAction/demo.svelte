@@ -11,7 +11,7 @@
 				name: file.name,
 				size: file.size,
 				type: file.type,
-				lastModified: file.lastModified,
+				lastModified: file.lastModified
 			}));
 		}
 	}
@@ -24,11 +24,11 @@
 		use:dropAction={{ onDrop }}
 		on:over-drop-zone={() => (isOverDropZone = true)}
 		on:leave-drop-zone={() => (isOverDropZone = false)}
-		class="flex flex-col w-full min-h-[200px] h-auto bg-gray-400/10 justify-center items-center rounded p-8 {isOverDropZone &&
-			'border-4 border-blue-700 border-dashed'}"
-	>
-		<div class="font-bold text-2xl">DropZone</div>
-		<div class="flex self-start flex-col space-y-2 mt-4">
+		class={`flex h-auto min-h-[200px] w-full flex-col items-center justify-center rounded bg-gray-400/10 p-8 ${
+			isOverDropZone && "border-4 border-dashed border-blue-700"
+		}`}>
+		<div class="text-2xl font-bold">DropZone</div>
+		<div class="mt-4 flex flex-col space-y-2 self-start">
 			{#each filesData as file}
 				<div class="w-200px bg-black-200/10 ma-2 pa-6">
 					<p>Name: {file.name}</p>

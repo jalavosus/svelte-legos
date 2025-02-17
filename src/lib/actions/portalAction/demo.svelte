@@ -20,7 +20,7 @@
 					Portal to this container
 				</label>
 			</div>
-			<button class={PrimaryButtonClassName} on:click={() => (showPortal = true)}>
+			<button class={PrimaryButtonClassName} onclick={() => (showPortal = true)}>
 				Show portal content
 			</button>
 		</div>
@@ -29,13 +29,12 @@
 {#if showPortal}
 	<div
 		use:portalAction={target}
-		class="bg-black bg-opacity-50 inset-0 grid place-content-center p-4"
+		class="bg-opacity-50 inset-0 grid place-content-center bg-black p-4"
 		class:fixed={target === "body"}
-		class:absolute={target === "#container"}
-	>
-		<div class="bg-white rounded-sm text-center p-4">
+		class:absolute={target === "#container"}>
+		<div class="rounded-sm bg-white p-4 text-center">
 			<p class="mb-4">This element will render as a direct child of "{target}"</p>
-			<button class={PrimaryButtonClassName} on:click={() => (showPortal = false)}>
+			<button class={PrimaryButtonClassName} onclick={() => (showPortal = false)}>
 				Close portal content
 			</button>
 		</div>

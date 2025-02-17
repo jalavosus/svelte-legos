@@ -1,15 +1,13 @@
-import { defaultWindow } from "$lib/shared";
-import type { ConfigurableWindow, Position } from "$lib/shared/utils/types";
 import { mouseStore } from "$lib/stores/mouseStore";
-import { readable, type Readable } from "svelte/store";
+import { readable } from "svelte/store";
 
 function getInitialState() {
 	return {};
 }
 
 export function mouseInElement(target: HTMLElement) {
-	let elementX = 0;
-	let elementY = 0;
+	let elementX = 0; // eslint-disable-line prefer-const
+	let elementY = 0; // eslint-disable-line prefer-const
 	let elementPositionX = 0;
 	let elementPositionY = 0;
 	let elementHeight = 0;
@@ -42,7 +40,7 @@ export function mouseInElement(target: HTMLElement) {
 				elementHeight,
 				elementWidth,
 				isOutside,
-				stop,
+				stop
 			});
 		});
 

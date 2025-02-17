@@ -7,6 +7,5 @@
 	<input
 		placeholder="Enter title here."
 		use:documentTitleAction
-		class="px-3 py-2 border border-black rounded-md text-md"
-	/>
+		class="text-md rounded-md border border-black px-3 py-2" />
 </DemoContainer>

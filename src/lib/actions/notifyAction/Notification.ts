@@ -127,7 +127,7 @@ export default class Notification {
 
 		header.appendChild(closeBtn);
 
-		this.__container.appendChild(header)
+		this.__container.appendChild(header);
 	}
 
 	private addDescription() {

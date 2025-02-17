@@ -13,9 +13,8 @@
 		<label class="mr-4" for="message">Message Contents:</label>
 		<input
 			id="message"
-			class="px-3 py-2 border border-black rounded-md text-md"
-			bind:value={message}
-		/>
+			class="text-md rounded-md border border-black px-3 py-2"
+			bind:value={message} />
 	</div>
 	<div class="mb-4">
 		<label class="mr-2">
@@ -39,9 +38,8 @@
 		class={PrimaryButtonClassName}
 		use:messageAction={{
 			message,
-			type,
-		}}
-	>
+			type
+		}}>
 		Show Message
 	</button>
 </DemoContainer>

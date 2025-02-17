@@ -1,5 +1,3 @@
-import { type Readable } from "svelte/store";
-
 export function isUndefined<T>(value: T) {
 	return value === undefined;
 }

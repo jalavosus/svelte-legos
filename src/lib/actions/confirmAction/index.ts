@@ -14,7 +14,7 @@ export function confirmAction<T extends HTMLElement>(node: T, params: ConfirmAct
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	let alert: ConfirmAlert | undefined;
@@ -23,17 +23,17 @@ export function confirmAction<T extends HTMLElement>(node: T, params: ConfirmAct
 		destroy();
 
 		const makeCleanup =
-			(fn?: () => void): () => void =>
-				() => {
-					fn?.();
-					alert?.unmount();
-				}
+			(fn?: () => void): (() => void) =>
+			() => {
+				fn?.();
+				alert?.unmount();
+			};
 
 		function handleClick() {
 			alert = new ConfirmAlert({
 				...params,
 				onCancel: makeCleanup(params.onCancel),
-				onConfirm: makeCleanup(params.onConfirm),
+				onConfirm: makeCleanup(params.onConfirm)
 			});
 
 			alert.mount();
@@ -46,6 +46,6 @@ export function confirmAction<T extends HTMLElement>(node: T, params: ConfirmAct
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

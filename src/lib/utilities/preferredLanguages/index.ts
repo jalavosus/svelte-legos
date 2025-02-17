@@ -19,7 +19,7 @@ export function preferredLanguages(): Readable<readonly string[]> {
 
 			cleanup = () => {
 				window.removeEventListener("languagechange", update);
-			}
+			};
 		}
 
 		return cleanup;

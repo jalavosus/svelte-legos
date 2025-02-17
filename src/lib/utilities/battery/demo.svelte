@@ -13,7 +13,7 @@
 		</div>
 		<div class="flex items-center space-x-3">
 			<div>Battery Remaining</div>
-			<progress max={1} value={$data.level} />
+			<progress max={1} value={$data.level}></progress>
 			<div>{$data.level * 100}%</div>
 		</div>
 		<div class="flex items-center space-x-3">

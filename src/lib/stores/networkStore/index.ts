@@ -71,10 +71,10 @@ export function networkStore(options: ConfigurableWindow = {}): Readable<Network
 		downlinkMax: undefined,
 		rtt: undefined,
 		effectiveType: undefined,
-		type: "unknown",
+		type: "unknown"
 	});
 
-	const connection = isSupported && (navigator as any).connection;
+	const connection = isSupported && (navigator as any).connection; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 	function updateNetworkInformation() {
 		if (!navigator) return;
@@ -102,7 +102,7 @@ export function networkStore(options: ConfigurableWindow = {}): Readable<Network
 			store.update((state) => ({
 				...state,
 				isOnline: false,
-				offlineAt: Date.now(),
+				offlineAt: Date.now()
 			}));
 		});
 
@@ -110,7 +110,7 @@ export function networkStore(options: ConfigurableWindow = {}): Readable<Network
 			store.update((state) => ({
 				...state,
 				isOnline: true,
-				onlineAt: Date.now(),
+				onlineAt: Date.now()
 			}));
 		});
 	}

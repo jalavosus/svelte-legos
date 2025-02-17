@@ -9,7 +9,7 @@ function getCurrentDocumentVisibility(document = defaultDocument): DocumentVisib
 }
 
 export function documentVisibilityStore({
-	document = defaultDocument,
+	document = defaultDocument
 }: ConfigurableDocument = {}): Readable<DocumentVisibilityState> {
 	const visibility = readable(getCurrentDocumentVisibility(document), (set) => {
 		function handler() {

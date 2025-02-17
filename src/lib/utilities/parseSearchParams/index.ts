@@ -37,7 +37,7 @@ type ReturnType<T> = { params: Readable<T>; updateParams: (key: string, value: s
  * @param mode
  * @param options
  */
-export function parseSearchParams<T extends Record<string, any> = UrlParams>(
+export function parseSearchParams<T extends Record<string, any> = UrlParams>( // eslint-disable-line @typescript-eslint/no-explicit-any
 	mode: "history" | "hash" | "hash-params" = "history",
 	options: UseUrlSearchParamsOptions<T> = {}
 ): ReturnType<T> {
@@ -45,14 +45,15 @@ export function parseSearchParams<T extends Record<string, any> = UrlParams>(
 		initialValue = {},
 		removeNullishValues = true,
 		removeFalsyValues = false,
-		write: enableWrite = true,
+		write: enableWrite = true
 	} = options;
 
 	const window = defaultWindow!;
 
-	if (!window) return { params: readable({}), updateParams: (_, __) => {} } as ReturnType<T>;
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	if (!window) return { params: readable({}), updateParams: (_A, _B) => {} } as ReturnType<T>;
 
-	const state: Writable<Record<string, any>> = writable({});
+	const state: Writable<Record<string, any>> = writable({}); // eslint-disable-line @typescript-eslint/no-explicit-any
 
 	function getRawParams() {
 		if (mode === "history") {
@@ -150,6 +151,6 @@ export function parseSearchParams<T extends Record<string, any> = UrlParams>(
 
 	return {
 		params: writableToReadable(state as Writable<T>),
-		updateParams,
+		updateParams
 	};
 }

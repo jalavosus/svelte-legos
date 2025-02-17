@@ -8,7 +8,7 @@
 	const map = writable(
 		new Map([
 			[1, 3],
-			[2, 4],
+			[2, 4]
 		])
 	);
 
@@ -21,22 +21,22 @@
 	<div>
 		<div>
 			List Size: {$listSize}
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 {JSON.stringify($list)}
 			</pre>
 		</div>
 
 		<div>
 			Set Size: {$setSize}
-			<pre class="text-sm mt-2">
-{@html "{1, 2, 3, 4}"}
+			<pre class="mt-2 text-sm">
+{@html "{1, 2, 3, 4}"} <!-- eslint-disable-line svelte/no-at-html-tags -->
 			</pre>
 		</div>
 
 		<div>
 			Map Size: {$mapSize}
-			<pre class="text-sm mt-2">
-{@html "{1 => 3, 2 => 4}"}
+			<pre class="mt-2 text-sm">
+{@html "{1 => 3, 2 => 4}"} <!-- eslint-disable-line svelte/no-at-html-tags -->
 			</pre>
 		</div>
 	</div>

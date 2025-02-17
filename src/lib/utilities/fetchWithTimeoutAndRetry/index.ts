@@ -23,7 +23,7 @@ export async function fetchWithTimeoutAndRetry(
 	} catch (error) {
 		if (retryCount > 0) {
 			console.error(`Fetch error: ${error}. Retrying in 1 second...`);
-			onRetry && onRetry();
+			onRetry?.();
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 			return fetchWithTimeoutAndRetry(input, { ...options, retryCount: retryCount - 1 });
 		}

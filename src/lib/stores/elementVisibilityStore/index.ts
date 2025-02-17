@@ -1,6 +1,6 @@
 import { defaultWindow, tryOnDestroy, writableToReadable } from "$lib/shared";
 import type { ConfigurableWindow } from "$lib/shared/utils/types";
-import { writable, type Readable } from "svelte/store";
+import { writable } from "svelte/store";
 
 export function elementVisibilityStore(
 	target: Element | null,

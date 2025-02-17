@@ -26,7 +26,7 @@ export function eyeDropperAction<T extends HTMLElement>(
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = () => {
@@ -38,6 +38,7 @@ export function eyeDropperAction<T extends HTMLElement>(
 				console.warn("Eyedropeer is not supported");
 				return;
 			}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			const eyeDropper: EyeDropper = new (window as any).EyeDropper();
 			eyeDropper
 				.open()
@@ -54,6 +55,6 @@ export function eyeDropperAction<T extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

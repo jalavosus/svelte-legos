@@ -11,9 +11,8 @@
 		<input id="loading" type="checkbox" bind:checked={loading} />
 	</div>
 	<div
-		class="w-full h-20 bg-prime rounded-md flex items-center justify-center text-white"
-		use:loadingAction={loading}
-	>
+		class="bg-prime flex h-20 w-full items-center justify-center rounded-md text-white"
+		use:loadingAction={loading}>
 		Content
 	</div>
 </DemoContainer>

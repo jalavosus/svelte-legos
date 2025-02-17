@@ -28,6 +28,6 @@ export function counterStore(initialValue = 0, options: UseCounterOptions = {}) 
 		inc,
 		dec,
 		set,
-		reset,
+		reset
 	};
 }

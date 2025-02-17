@@ -7,13 +7,13 @@
 		{
 			name: "Svelte",
 			author: "Rich",
-			createdAt: Date.now(),
+			createdAt: Date.now()
 		},
 		{
 			name: "Vue",
 			author: "Evan",
-			createdAt: Date.now(),
-		},
+			createdAt: Date.now()
+		}
 	]);
 
 	const firstElement = first(data);
@@ -23,14 +23,14 @@
 	<div>
 		<div>
 			Store data:
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 	{JSON.stringify($data, null, 2)}
 					</pre>
 		</div>
 
 		<div>
 			First item:
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 	{JSON.stringify($firstElement, null, 2)}
 					</pre>
 		</div>

@@ -8,12 +8,11 @@
 <DemoContainer>
 	<div class="mb-4">
 		<div class="mb-2">Color Value for <span class="font-mono">--bg</span></div>
-		<input bind:value={$bgColor} class="px-3 py-2 border border-black rounded-md text-md" />
+		<input bind:value={$bgColor} class="text-md rounded-md border border-black px-3 py-2" />
 	</div>
 	<div
-		class="w-60 h-20 rounded-md flex items-center justify-center p-4 text-sm"
-		style:background="var(--bg)"
-	>
+		class="flex h-20 w-60 items-center justify-center rounded-md p-4 text-sm"
+		style:background="var(--bg)">
 		<span class="font-mon">background: var(--bg)</span>
 	</div>
 </DemoContainer>

@@ -12,14 +12,13 @@
 
 <DemoContainer>
 	<div>
-		<input class="px-3 py-2 border border-black rounded-md text-md mb-4" bind:value={text} />
+		<input class="text-md mb-4 rounded-md border border-black px-3 py-2" bind:value={text} />
 	</div>
 	<div>
 		<button
 			class={PrimaryButtonClassName}
 			use:clickToCopyAction={text}
-			on:copy-done={handleCopyDone}
-		>
+			on:copy-done={handleCopyDone}>
 			Click to copy
 		</button>
 	</div>

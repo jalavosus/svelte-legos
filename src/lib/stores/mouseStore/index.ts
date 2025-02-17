@@ -11,7 +11,7 @@ export interface UseMouseOptions extends ConfigurableWindow {
 
 const initialValue = {
 	x: 0,
-	y: 0,
+	y: 0
 };
 
 function getCurrentMousePosition(e?: MouseEvent): Position {
@@ -19,7 +19,7 @@ function getCurrentMousePosition(e?: MouseEvent): Position {
 
 	return {
 		x: e.pageX,
-		y: e.pageY,
+		y: e.pageY
 	};
 }
 

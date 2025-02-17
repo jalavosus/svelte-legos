@@ -11,16 +11,14 @@
 	<PrimaryButton on:click={() => (showModal = true)}>Show Modal</PrimaryButton>
 	{#if showModal}
 		<div
-			class="border border-black p-4 w-80 h-40 fixed top-1/2 left-1/2 bg-slate-300 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl rounded-lg"
+			class="fixed top-1/2 left-1/2 h-40 w-80 -translate-x-1/2 -translate-y-1/2 transform rounded-lg border border-black bg-slate-300 p-4 shadow-2xl"
 			use:clickOutsideAction
-			on:clickoutside={() => (showModal = false)}
-		>
+			on:clickoutside={() => (showModal = false)}>
 			<Text>Click outside me!</Text>
 		</div>
 		<div
-			class="border border-black p-4 w-80 h-40 fixed top-1/2 left-1/2 bg-slate-300 transform -translate-x-1/2 -translate-y-1/2 shadow-2xl rounded-lg"
-			use:clickOutsideAction={() => (showModal = false)}
-		>
+			class="fixed top-1/2 left-1/2 h-40 w-80 -translate-x-1/2 -translate-y-1/2 transform rounded-lg border border-black bg-slate-300 p-4 shadow-2xl"
+			use:clickOutsideAction={() => (showModal = false)}>
 			<Text>Click outside me!</Text>
 		</div>
 	{/if}

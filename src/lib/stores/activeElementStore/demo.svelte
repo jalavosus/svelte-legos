@@ -10,14 +10,14 @@
 
 <DemoContainer>
 	<Text>Select the inputs below to see the changes</Text>
-	<div class="space-y-2 my-4 flex flex-col">
+	<div class="my-4 flex flex-col space-y-2">
+		<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
 		{#each Array(4).fill(0) as el, index}
 			<div>
 				<input
 					placeholder={`Input with id ${"input-" + (index + 1)}`}
-					class="py-1 px-2 text-sm rounded-md border border-slate-500"
-					id={"input-" + (index + 1)}
-				/>
+					class="rounded-md border border-slate-500 px-2 py-1 text-sm"
+					id={"input-" + (index + 1)} />
 			</div>
 		{/each}
 	</div>

@@ -33,7 +33,7 @@ const CONTEXT_STYLE = [
 	"padding-left",
 	"padding-right",
 	"border-width",
-	"box-sizing",
+	"box-sizing"
 ];
 
 function parseNumber(value: number | string | undefined) {
@@ -187,7 +187,7 @@ class ProxyTextareaElement {
 		this.__setup({
 			styles: sourceStyles,
 			maxRows,
-			minRows,
+			minRows
 		});
 		this.hasStarted = true;
 	}

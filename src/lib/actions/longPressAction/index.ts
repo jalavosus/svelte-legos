@@ -6,7 +6,7 @@ export function longPressAction<T extends Element>(node: T, duration = 500) {
 	}
 
 	const { start, stop, changeDuration } = timeoutFnStore(handleTimeout, duration, {
-		immediate: false,
+		immediate: false
 	});
 
 	const handleMousedown = () => {
@@ -28,6 +28,6 @@ export function longPressAction<T extends Element>(node: T, duration = 500) {
 			stop();
 			node.removeEventListener("mousedown", handleMousedown);
 			node.removeEventListener("mouseup", handleMouseup);
-		},
+		}
 	};
 }

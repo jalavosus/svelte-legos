@@ -2,7 +2,7 @@ export function focusAction<T extends HTMLElement>(node: T, value = true) {
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (value: boolean) => {
@@ -19,6 +19,6 @@ export function focusAction<T extends HTMLElement>(node: T, value = true) {
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

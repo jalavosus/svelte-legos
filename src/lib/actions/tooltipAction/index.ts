@@ -52,21 +52,21 @@ class Tooltip<T extends HTMLElement> {
 			top: anchorTop,
 			height: anchorHeight,
 			width: anchorWidth,
-			left: anchorLeft,
+			left: anchorLeft
 		} = anchorRect;
 
 		const { scrollY, scrollX } = window;
 
 		if (this.__placement === "center") {
 			top = anchorTop + scrollY - anchorHeight - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
-			left = anchorLeft + scrollX + (anchorWidth / 4) - (anchorWidth / 2);
+			left = anchorLeft + scrollX + anchorWidth / 4 - anchorWidth / 2;
 		} else if (this.__placement === "left") {
 			top = anchorTop + scrollY - anchorHeight - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
 			left = anchorLeft + scrollX;
 		} else {
 			// right
 			top = anchorTop + scrollY - anchorHeight - (this.__displayPointer ? Tooltip.POINTER_SIZE : 0);
-			left = anchorLeft + scrollX + (anchorWidth / 2) - anchorWidth;
+			left = anchorLeft + scrollX + anchorWidth / 2 - anchorWidth;
 		}
 
 		this.__container.style.setProperty("top", top + "px");
@@ -94,8 +94,8 @@ class Tooltip<T extends HTMLElement> {
 			this.__placement === "center"
 				? "left: 50%;"
 				: this.__placement === "left"
-				? "left: 20%;"
-				: "right: 20%;";
+					? "left: 20%;"
+					: "right: 20%;";
 
 		const styles = `
       width: 0;
@@ -151,6 +151,6 @@ export function tooltipAction<T extends HTMLElement>(
 	return {
 		destroy() {
 			stop();
-		},
+		}
 	};
 }

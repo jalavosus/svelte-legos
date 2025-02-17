@@ -5,25 +5,25 @@
 
 	type Props = {
 		handleCloseMenu: () => void;
-	}
+	};
 
 	let { label, path, guides, handleCloseMenu }: GuideCategoryProps & Props = $props();
 
 	let basePath = $derived(`/guides/${path}`);
-	const makePath = (p: string): string => `${basePath}/${p}`
+	const makePath = (p: string): string => `${basePath}/${p}`;
 
-	const isActiveHook = (p: string): boolean => p === page.data.hookName
+	const isActiveHook = (p: string): boolean => p === page.data.hookName;
 
-	const pathName = page.route.id?.split("/").filter(p => p)[1];
+	const pathName = page.route.id?.split("/").filter((p) => p)[1];
 
 	let isOpen = $state(pathName === path);
 
-	const setOpen = () => isOpen = !isOpen;
+	const setOpen = () => (isOpen = !isOpen);
 </script>
 
 <li class="py-2"></li>
 <li class="w-4/5">
-	<button class="w-full flex flex-row justify-between dark:text-slate-200" onclick={setOpen}>
+	<button class="flex w-full flex-row justify-between dark:text-slate-200" onclick={setOpen}>
 		<span class="text-md capitalize">{label}</span>
 		<ChevronButton rotate={isOpen ? "down" : undefined} />
 	</button>
@@ -32,14 +32,12 @@
 </li>
 
 {#if isOpen}
-{#each guides as guide}
-	<li>
-		<a
-			onclick={handleCloseMenu}
-			href={makePath(guide)}
-			class="hover:underline {isActiveHook(guide) ? 'font-bold underline' : ''}">{guide}</a
-		>
-	</li>
-{/each}
+	{#each guides as guide}
+		<li>
+			<a
+				onclick={handleCloseMenu}
+				href={makePath(guide)}
+				class="hover:underline {isActiveHook(guide) ? 'font-bold underline' : ''}">{guide}</a>
+		</li>
+	{/each}
 {/if}
-

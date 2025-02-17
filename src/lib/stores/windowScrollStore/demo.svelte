@@ -21,18 +21,18 @@
 </div>
 
 <style>
-.position-view {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	background-color: #ddd;
-	width: 100px;
-	height: 100px;
-	border-radius: 6px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 16px;
-	flex-direction: column;
-}
+	.position-view {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		background-color: #ddd;
+		width: 100px;
+		height: 100px;
+		border-radius: 6px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 16px;
+		flex-direction: column;
+	}
 </style>

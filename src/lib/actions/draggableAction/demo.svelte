@@ -5,9 +5,8 @@
 
 <DemoContainer>
 	<div
-		class="w-20 h-20 rounded-lg bg-prime text-sm flex items-center justify-center text-white"
-		use:draggableAction
-	>
+		class="bg-prime flex h-20 w-20 items-center justify-center rounded-lg text-sm text-white"
+		use:draggableAction>
 		Drag me
 	</div>
 </DemoContainer>

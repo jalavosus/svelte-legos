@@ -18,7 +18,7 @@ export function screenOrientation() {
 			set({
 				isSupported,
 				orientation,
-				angle,
+				angle
 			});
 		}
 
@@ -26,7 +26,7 @@ export function screenOrientation() {
 			window.addEventListener("orientationchange", update);
 			stop = () => {
 				window.removeEventListener("orientationchange", update);
-			}
+			};
 		}
 
 		update();

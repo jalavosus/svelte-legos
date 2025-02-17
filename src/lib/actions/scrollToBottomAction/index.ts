@@ -2,7 +2,7 @@ export function scrollToBottomAction<T extends HTMLElement>(node: T, immediate =
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = () => {
@@ -14,7 +14,7 @@ export function scrollToBottomAction<T extends HTMLElement>(node: T, immediate =
 				if (node.scrollTo) {
 					node.scrollTo({
 						behavior: "smooth",
-						top: scrollHeight,
+						top: scrollHeight
 					});
 				} else {
 					node.scrollTop = scrollHeight;
@@ -36,6 +36,6 @@ export function scrollToBottomAction<T extends HTMLElement>(node: T, immediate =
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

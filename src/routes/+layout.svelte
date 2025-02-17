@@ -22,13 +22,12 @@
 
 	<meta
 		name="keywords"
-		content="sveltejs utilities, sveltejs actions, svelte actions, svelte kit actions, sveltejs stores, sveltejs use, svelte use, svelte, sveltejs, sveltekit, svelte-kit"
-	/>
+		content="sveltejs utilities, sveltejs actions, svelte actions, svelte kit actions, sveltejs stores, sveltejs use, svelte use, svelte, sveltejs, sveltekit, svelte-kit" />
 </svelte:head>
 
 <div>
 	<Header />
-	<main class="pt-16 w-full min-h-[100vh]">
+	<main class="min-h-[100vh] w-full pt-16">
 		<div class="container mx-auto">
 			{@render children?.()}
 		</div>

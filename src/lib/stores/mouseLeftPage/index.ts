@@ -8,7 +8,7 @@ export function mouseLeftPage(): Readable<boolean> {
 		function handler(event: MouseEvent) {
 			if (!window) return;
 
-			event = event || (window.event as any);
+			event = event || (window.event as any); // eslint-disable-line @typescript-eslint/no-explicit-any
 			// @ts-expect-error missing types
 			const from = event.relatedTarget || event.toElement;
 			set(!from);

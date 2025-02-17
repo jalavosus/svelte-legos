@@ -10,7 +10,7 @@ function getCurrentActiveElement(window = defaultWindow): Element | null {
 }
 
 export function activeElementStore({
-	window = defaultWindow,
+	window = defaultWindow
 }: ConfigurableWindow = {}): Readable<Element | null> {
 	const activeElement = readable(getCurrentActiveElement(), (set) => {
 		function handler() {

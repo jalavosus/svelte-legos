@@ -13,7 +13,7 @@ export function debounceClickAction<T extends HTMLElement>(
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = ({ duration, onClick }: DebounceClickActionParams) => {
@@ -36,6 +36,6 @@ export function debounceClickAction<T extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

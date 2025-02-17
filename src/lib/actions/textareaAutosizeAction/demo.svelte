@@ -6,7 +6,6 @@
 <DemoContainer>
 	<textarea
 		placeholder="Auto resize textarea."
-		class="min-w-[250px] p-4 border border-slate-400 rounded-md focus-visible:border-prime focus:border-prime focus-within:border-prime"
-		use:textareaAutosizeAction
-	/>
+		class="focus-visible:border-prime focus:border-prime focus-within:border-prime min-w-[250px] rounded-md border border-slate-400 p-4"
+		use:textareaAutosizeAction></textarea>
 </DemoContainer>

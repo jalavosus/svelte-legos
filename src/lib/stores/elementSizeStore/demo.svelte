@@ -3,11 +3,15 @@
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
 	let ref: HTMLElement | null = $state(null);
-
-	let size = $state(elementSizeStore(ref));
-	$effect(() => { size = elementSizeStore(ref) });
+	const _ref = () => ref;
+	let size = $state(elementSizeStore(_ref()));
+	$effect(() => {
+		size = elementSizeStore(ref);
+	});
 	let stringify = $state(`width: ${$size.width}\nheight: ${$size.height}`);
-	$effect(() => { stringify = `width: ${$size.width}\nheight: ${$size.height}` });
+	$effect(() => {
+		stringify = `width: ${$size.width}\nheight: ${$size.height}`;
+	});
 </script>
 
 <DemoContainer>
@@ -15,6 +19,6 @@
 	<textarea
 		bind:this={ref}
 		bind:value={stringify}
-		class="resize p-4 min-w-[100%] min-h-[100px] lg:min-w-[320px] lg:min-h-[100px] rounded-md"
-	/>
+		class="min-h-[100px] min-w-[100%] resize rounded-md p-4 lg:min-h-[100px] lg:min-w-[320px]"
+	></textarea>
 </DemoContainer>

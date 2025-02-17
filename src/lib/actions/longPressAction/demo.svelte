@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { longPressAction, messagesStore, timeoutFnStore } from "$lib";
+	import { longPressAction, messagesStore } from "$lib";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
@@ -19,8 +19,7 @@
 		<button
 			class={PrimaryButtonClassName}
 			use:longPressAction={duration}
-			on:longpress={handleLongPress}
-		>
+			onlongpress={handleLongPress}>
 			press and hold
 		</button>
 	</div>

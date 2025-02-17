@@ -1,8 +1,10 @@
 import { isClient } from "$lib/shared";
-import { derived, get, writable, type Updater, type Writable } from "svelte/store";
+import { get, type Updater, type Writable } from "svelte/store";
+
+// eslint-disable-file  @typescript-eslint/no-unused-vars
 
 export function storage<T>(store: Writable<T>, key: string, type: "Map" | "other" = "other") {
-	if (!key || typeof key !== "string" || key.trim() === "") {
+	if (!key || key.trim() === "") {
 		console.warn("Local storage key not provided or invalid!");
 	}
 
@@ -14,23 +16,29 @@ export function storage<T>(store: Writable<T>, key: string, type: "Map" | "other
 				if (valueStr !== null) {
 					const json = JSON.parse(valueStr);
 					if (type === "Map") {
+						// @ts-ignore _wat_
 						store.set(new Map(Object.entries(json)));
 					} else {
 						store.set(json);
 					}
 				}
 			} catch (e) {
+				console.error(e);
 				if (valueStr === "") {
+					// @ts-ignore _wat_
 					store.set("");
 				}
 				// probably it was a primitive
 				else {
 					if (valueStr === "false" || valueStr === "true") {
 						// boolean state
-						store.set(valueStr === "false" ? false : true);
+						// @ts-ignore _wat_
+						store.set(valueStr !== "false");
 					} else if (!Number.isNaN(Number(valueStr))) {
+						// @ts-ignore _wat_
 						store.set(Number(valueStr));
 					} else {
+						// @ts-ignore _wat_
 						store.set(valueStr);
 					}
 				}
@@ -68,6 +76,6 @@ export function storage<T>(store: Writable<T>, key: string, type: "Map" | "other
 	return {
 		subscribe: store.subscribe,
 		set,
-		update,
+		update
 	};
 }

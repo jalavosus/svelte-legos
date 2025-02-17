@@ -1,12 +1,14 @@
 import Loader from "./Loader";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface LoadingActionParams {}
 
 export function loadingAction<T extends HTMLElement>(node: T, params: LoadingActionParams) {
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		// @ts-ignore it doesn't _matter_ if it's unassigned...
+		stop?.();
 	};
 
 	let loader: Loader | undefined;
@@ -48,6 +50,6 @@ export function loadingAction<T extends HTMLElement>(node: T, params: LoadingAct
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

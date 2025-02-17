@@ -46,6 +46,6 @@ export function slide(node: HTMLElement, params: SlideParams = {}): TransitionCo
 		delay,
 		duration,
 		easing,
-		css: (t, u) => `transform: ${getTransform(direction, u * 100)}; opacity: ${t}`,
+		css: (t, u) => `transform: ${getTransform(direction, u * 100)}; opacity: ${t}`
 	};
 }

@@ -35,6 +35,7 @@ export function timeoutFnStore(
 		}
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	function start(...args: any) {
 		stop();
 		set(true);
@@ -59,6 +60,6 @@ export function timeoutFnStore(
 		isPending: { subscribe },
 		stop,
 		start,
-		changeDuration,
+		changeDuration
 	};
 }

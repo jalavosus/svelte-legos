@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { messagesStore } from "$lib";
-	import type {MessageType} from "$lib/types/messages";
+	import type { MessageType } from "$lib/types/messages";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
@@ -16,9 +16,8 @@
 		<label class="mr-4" for="message">Message Contents:</label>
 		<input
 			id="message"
-			class="px-3 py-2 border border-black rounded-md text-md"
-			bind:value={message}
-		/>
+			class="text-md rounded-md border border-black px-3 py-2"
+			bind:value={message} />
 	</div>
 	<div class="mb-4">
 		<label class="mr-2">
@@ -38,5 +37,5 @@
 			Info (default)
 		</label>
 	</div>
-	<button class={PrimaryButtonClassName} on:click={handleClick}> Show Message </button>
+	<button class={PrimaryButtonClassName} onclick={handleClick}> Show Message </button>
 </DemoContainer>

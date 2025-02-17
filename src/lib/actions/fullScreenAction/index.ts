@@ -18,7 +18,7 @@ const functionsMap: FunctionMap[] = [
 		"fullscreenElement",
 		"fullscreenEnabled",
 		"fullscreenchange",
-		"fullscreenerror",
+		"fullscreenerror"
 	],
 	// New WebKit
 	[
@@ -27,7 +27,7 @@ const functionsMap: FunctionMap[] = [
 		"webkitFullscreenElement",
 		"webkitFullscreenEnabled",
 		"webkitfullscreenchange",
-		"webkitfullscreenerror",
+		"webkitfullscreenerror"
 	],
 	// Safari iOS WebKit
 	[
@@ -36,7 +36,7 @@ const functionsMap: FunctionMap[] = [
 		"webkitFullscreenElement",
 		"webkitFullscreenEnabled",
 		"webkitfullscreenchange",
-		"webkitfullscreenerror",
+		"webkitfullscreenerror"
 	],
 	// Old WebKit
 	[
@@ -45,7 +45,7 @@ const functionsMap: FunctionMap[] = [
 		"webkitCurrentFullScreenElement",
 		"webkitCancelFullScreen",
 		"webkitfullscreenchange",
-		"webkitfullscreenerror",
+		"webkitfullscreenerror"
 	],
 	[
 		"mozRequestFullScreen",
@@ -53,7 +53,7 @@ const functionsMap: FunctionMap[] = [
 		"mozFullScreenElement",
 		"mozFullScreenEnabled",
 		"mozfullscreenchange",
-		"mozfullscreenerror",
+		"mozfullscreenerror"
 	],
 	[
 		"msRequestFullscreen",
@@ -61,9 +61,9 @@ const functionsMap: FunctionMap[] = [
 		"msFullscreenElement",
 		"msFullscreenEnabled",
 		"MSFullscreenChange",
-		"MSFullscreenError",
-	],
-] as any;
+		"MSFullscreenError"
+	]
+] as any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export function fullScreenAction<T extends HTMLElement, P extends HTMLElement>(
 	node: T,
@@ -72,7 +72,7 @@ export function fullScreenAction<T extends HTMLElement, P extends HTMLElement>(
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (target?: P) => {
@@ -110,6 +110,6 @@ export function fullScreenAction<T extends HTMLElement, P extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

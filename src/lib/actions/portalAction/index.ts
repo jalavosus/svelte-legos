@@ -37,6 +37,6 @@ export function portalAction<T extends HTMLElement>(
 	update(target);
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

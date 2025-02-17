@@ -8,7 +8,7 @@ export const load = () => {
 			return bricks.map((brick) => {
 				return {
 					url: `/guides/${category}/${brick}`,
-					text: brick,
+					text: brick
 				};
 			});
 		})
@@ -17,6 +17,7 @@ export const load = () => {
 	try {
 		return { bricks };
 	} catch (e) {
+		console.error(e);
 		return { bricks };
 	}
 };

@@ -1,8 +1,8 @@
 import { derived, get, writable, type Updater, type Writable } from "svelte/store";
 
 export function history<T>(store: Writable<T>) {
-	let past = writable<T[]>([]);
-	let future = writable<T[]>([]);
+	let past = writable<T[]>([]); // eslint-disable-line prefer-const
+	let future = writable<T[]>([]); // eslint-disable-line prefer-const
 	let present: T = get(store);
 
 	function undo() {
@@ -52,7 +52,7 @@ export function history<T>(store: Writable<T>) {
 			undo,
 			redo,
 			canUndo: derived(past, ($past) => $past.length !== 0),
-			canRedo: derived(future, ($future) => $future.length !== 0),
-		},
+			canRedo: derived(future, ($future) => $future.length !== 0)
+		}
 	};
 }
