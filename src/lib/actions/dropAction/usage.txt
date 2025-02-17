@@ -24,8 +24,8 @@
 
 <div
   use:dropAction={{ onDrop, onEnter, onOver, onLeave }}
-  on:over-drop-zone={() => (isOverDropZone = true)}
-  on:leave-drop-zone={() => (isOverDropZone = false)}
+  onover-drop-zone={() => (isOverDropZone = true)}
+  onleave-drop-zone={() => (isOverDropZone = false)}
 >
   <div>DropZone</div>
   <div>

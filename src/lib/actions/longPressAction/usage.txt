@@ -1,16 +1,14 @@
 <script lang="ts">
-
     import { longPressAction } from "@sveltelegos-blue/svelte-legos";
 
     let pressed = $state(false);
     let duration = $state(2000);
-
 </script>
 
 
 <button
   use:longPressAction={duration}
-  on:longpress={() => (pressed = true)}
+  onlongpress={() => (pressed = true)}
 >
   press and hold
 </button>

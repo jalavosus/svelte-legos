@@ -23,9 +23,12 @@ export function dropAction<T extends HTMLElement>(
 
 	const destroy = () => {
 		stopDragEnter?.();
-		stopDragOver?.(); // @ts-ignore potentially undefined/uninitialized functions. It's fine.
-		stopDragLeave?.(); // @ts-ignore potentially undefined/uninitialized functions. It's fine.
-		stopDrop?.(); // @ts-ignore potentially undefined/uninitialized functions. It's fine.
+		// @ts-ignore potentially undefined/uninitialized functions. It's fine.
+		stopDragOver?.();
+		// @ts-ignore potentially undefined/uninitialized functions. It's fine.
+		stopDragLeave?.();
+		// @ts-ignore potentially undefined/uninitialized functions. It's fine.
+		stopDrop?.();
 	};
 
 	const update = (options: UseDropZoneOptions | UseDropZoneOptions["onDrop"] = {}) => {

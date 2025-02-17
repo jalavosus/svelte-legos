@@ -2,6 +2,7 @@ export function focusAction<T extends HTMLElement>(node: T, value = true) {
 	let stop: () => void;
 
 	const destroy = () => {
+		// @ts-ignore this is fine
 		stop?.();
 	};
 
