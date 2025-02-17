@@ -4,11 +4,8 @@
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
 	let ref: HTMLElement | null = $state(null);
-
-	let rect: Readable<DOMRect> | null = $state(null);
-
-	$effect(() => { if (ref !== null) rect = elementBoundingStore(ref) });
-	$effect(() => { stringify = JSON.stringify($rect, null, 4) });
+	let rect: Readable<DOMRect> | null = $derived(ref ? elementBoundingStore(ref) : null);
+	let stringify = $derived(rect ? JSON.stringify($rect, null, 4) : "")
 </script>
 
 <DemoContainer>
