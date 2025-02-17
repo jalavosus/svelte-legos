@@ -19,13 +19,13 @@ importers:
         specifier: 2.4.2
         version: 2.4.2
       '@stylistic/eslint-plugin-ts':
-        specifier: ^3.1.0
+        specifier: 3.1.0
         version: 3.1.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       '@sveltejs/adapter-static':
         specifier: 3.0.8
         version: 3.0.8(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)))(svelte@5.20.1)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)))
       '@sveltejs/adapter-vercel':
-        specifier: ^5.6.2
+        specifier: 5.6.2
         version: 5.6.2(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)))(svelte@5.20.1)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)))(rollup@4.34.8)
       '@sveltejs/kit':
         specifier: 2.17.2
@@ -43,7 +43,7 @@ importers:
         specifier: 1.9.0
         version: 1.9.0
       '@types/eslint':
-        specifier: ^9.6.1
+        specifier: 9.6.1
         version: 9.6.1
       '@types/node':
         specifier: 22.13.4
@@ -70,7 +70,7 @@ importers:
         specifier: 2.46.1
         version: 2.46.1(eslint@9.20.1(jiti@2.4.2))(svelte@5.20.1)
       globals:
-        specifier: ^15.15.0
+        specifier: 15.15.0
         version: 15.15.0
       postcss:
         specifier: 8.5.2
@@ -82,7 +82,7 @@ importers:
         specifier: 3.3.3
         version: 3.3.3(prettier@3.5.1)(svelte@5.20.1)
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.11
+        specifier: 0.6.11
         version: 0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.1)(svelte@5.20.1))(prettier@3.5.1)
       shiki:
         specifier: 2.4.2
@@ -103,7 +103,7 @@ importers:
         specifier: 5.7.3
         version: 5.7.3
       typescript-eslint:
-        specifier: ^8.24.0
+        specifier: 8.24.0
         version: 8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       vite:
         specifier: 6.1.0
