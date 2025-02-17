@@ -1,13 +1,13 @@
-<script>
-import { alertAction } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { alertAction } from "@sveltelegos-blue/svelte-legos";
 
-function onClose() {
-  // handle on alert close
-}
+    function onClose() {
+      // handle on alert close
+    }
 
-function onOk() {
-  // handle on ok click
-}
+    function onOk() {
+      // handle on ok click
+    }
 
 </script>
 
@@ -19,5 +19,5 @@ function onOk() {
     onOk
   }}
 >
-  Show Alert
+      Show Alert
 </button>

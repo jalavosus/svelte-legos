@@ -10,10 +10,10 @@ Contributions are welcome! Please follow the steps below to contribute.
 
 ```svelte
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { yourLegoBrick } from "$lib";
-
-$: result = yourLegoBrick();
+    import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+    import { yourLegoBrick } from "$lib";
+    
+    let result = yourLegoBrick();
 </script>
 
 <DemoContainer>
@@ -47,13 +47,13 @@ export function yourLegoBrick() {
 
 ```svelte
 <script lang="ts">
-import { yourLegoBrick } from "@sveltelegos-blue/svelte-legos";
-
-const beingUsed = yourLegoBrick();
+    import { yourLegoBrick } from "@sveltelegos-blue/svelte-legos";
+    
+    const beingUsed = yourLegoBrick();
 </script>
 ```
 
-- Export your "lego brick" in the `src/lib/index.js` file
+- Export your "lego brick" in the `src/lib/index.ts` file
 - Once completed and tested
 - Commit and push
 - Create a pull request

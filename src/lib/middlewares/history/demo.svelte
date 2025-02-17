@@ -1,11 +1,11 @@
 <script lang="ts">
-import { history } from "$lib/middlewares";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import { writable } from "svelte/store";
+	import { history } from "$lib/middlewares";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { writable } from "svelte/store";
 
-const counter = history(writable(0));
-const { undo, redo, canRedo, canUndo } = counter.history;
+	const counter = history(writable(0));
+	const { undo, redo, canRedo, canUndo } = counter.history;
 </script>
 
 <DemoContainer>

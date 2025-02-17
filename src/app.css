@@ -3,23 +3,25 @@
 @source './**/*.{html,js,svelte,ts}';
 
 @theme {
-  --color-back: #ffffff;
-  --color-back-light: #f6fafd;
-  --color-back-api: #e5eef5;
-  --color-prime: #0e79b2;
-  --color-oldprime: #ff3e00;
-  --color-second: #bf1363;
-  --color-flash: #40b3ff;
-  --color-highlight: #f3f9d2;
-  --color-heading: #222;
-  --color-text: #444;
-  --color-second-text: #7b7766;
-  --color-sidebar-text: rgba(255, 255, 255, 0.9);
+	--color-back: #ffffff;
+	--color-back-light: #f6fafd;
+	--color-back-api: #e5eef5;
+	--color-prime: #0e79b2;
+	--color-oldprime: #ff3e00;
+	--color-second: #bf1363;
+	--color-flash: #40b3ff;
+	--color-highlight: #f3f9d2;
+	--color-heading: #222;
+	--color-text: #444;
+	--color-second-text: #7b7766;
+	--color-sidebar-text: rgba(255, 255, 255, 0.9);
 
-  --font-weight-300: 300;
-  --font-weight-600: 600;
+	--font-weight-300: 300;
+	--font-weight-600: 600;
 
-  --font-fira: Fira;
+	--font-fira: Fira;
+
+	--color-demo: #24292e;
 }
 
 /*
@@ -83,4 +85,8 @@ code {
 	font-family: var(--font-body);
 	color: var(--color-text);
 	font-weight: 300;
+}
+
+html {
+	@apply bg-gray-50 dark:bg-slate-800;
 }

@@ -1,13 +1,13 @@
 <script lang="ts">
-import { debounceClickAction, messagesStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+	import { debounceClickAction, messagesStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-function onClick() {
-	messagesStore("Clicked!");
-}
+	function onClick() {
+		messagesStore("Clicked!");
+	}
 
-let duration = 1000;
+	let duration = 1000;
 </script>
 
 <DemoContainer>

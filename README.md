@@ -53,6 +53,16 @@ Refer to [functions list](https://svelte-legos.surge.sh/guides) or [documentatio
 npm i @sveltelegos-blue/svelte-legos
 ```
 
+## A note about version numbers
+
+Semantic Versioning is a bit silly. 
+
+I very likely will not be bumping this to a major version for _**quite**_ a while. 
+Given that, assume that minor versions (0.**x**.y) **can** include entirely breaking changes.
+They very likely won't, but, don't get comfortable. 
+
+Patch versions (0.x.**y**) will never break things. In fact, they'll usually fix things. 
+
 ## Local setup
 
 ```bash
@@ -63,9 +73,8 @@ npm run dev
 
 - [ ] Actual dark mode design, not just haphazard application of colours where they look good.
 - [ ] Styles consolidation (ie. actual themes)
-- [ ] Dark mode on demo components in /guides.
 
-Contributions to these lofty goals are welcome. 
+Contributions to these lofty goals are welcome.
 
 ## 🌸 Thanks
 

@@ -1,10 +1,10 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { parseSearchParams } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { parseSearchParams } from "$lib";
 
-const { params, updateParams } = parseSearchParams("history");
-updateParams("foo", "bar");
-updateParams("vueuse", "awesome");
+	const { params, updateParams } = parseSearchParams("history");
+	updateParams("foo", "bar");
+	updateParams("vueuse", "awesome");
 </script>
 
 <DemoContainer>

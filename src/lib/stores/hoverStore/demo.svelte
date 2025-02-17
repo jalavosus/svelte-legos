@@ -1,11 +1,11 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { hoverStore } from "$lib";
-import Text from "$lib/shared/components/Text.svelte";
+	import type {Readable} from "svelte/store";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { hoverStore } from "$lib";
+	import Text from "$lib/shared/components/Text.svelte";
 
-let ref: HTMLDivElement | null = null;
-
-$: isHover = hoverStore(ref);
+	let ref: HTMLDivElement | null = $state(null);
+	let isHover: Readable<boolean> = $derived(hoverStore(ref));
 </script>
 
 <DemoContainer>

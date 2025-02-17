@@ -1,11 +1,11 @@
 <script lang="ts">
-import { networkStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import Text from "$lib/shared/components/Text.svelte";
+	import { networkStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import Text from "$lib/shared/components/Text.svelte";
 
-const networkState = networkStore();
+	const networkState = networkStore();
 
-$: networkStateText = JSON.stringify($networkState, null, 2);
+	let networkStateText = $derived(JSON.stringify($networkState, null, 2));
 </script>
 
 <DemoContainer>

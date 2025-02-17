@@ -1,18 +1,18 @@
 <script lang="ts">
-import { reduceable } from "@sveltelegos-blue/svelte-legos";
+    import { reduceable } from "@sveltelegos-blue/svelte-legos";
 
-function reducer(state: number, action: string) {
-	switch (action) {
-		case "inc":
-			return state + 1;
-		case "dec":
-			return state - 1;
-		default:
-			return state;
-	}
-}
+    function reducer(state: number, action: string) {
+        switch (action) {
+            case "inc":
+                return state + 1;
+            case "dec":
+                return state - 1;
+            default:
+                return state;
+        }
+    }
 
-const counter = reduceable(reducer, 0);
+    const counter = reduceable(reducer, 0);
 </script>
 
 <p>{$counter}</p>

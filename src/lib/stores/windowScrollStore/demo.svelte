@@ -1,8 +1,8 @@
 <script lang="ts">
-import { windowScrollStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { windowScrollStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const position = windowScrollStore();
+	const position = windowScrollStore();
 </script>
 
 <div class="scroll-container">

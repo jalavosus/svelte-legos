@@ -1,8 +1,8 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { preferredContrast } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { preferredContrast } from "$lib";
 
-const contrast = preferredContrast();
+	const contrast = preferredContrast();
 </script>
 
 <DemoContainer>

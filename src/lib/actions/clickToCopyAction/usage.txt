@@ -1,13 +1,13 @@
-<script>
-import { clickToCopyAction } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { clickToCopyAction } from "@sveltelegos-blue/svelte-legos";
 
-function handleCopyDone() {
-  // handle copy done here
-}
+    function handleCopyDone() {
+      // handle copy done here
+    }
 
-function handleCopyError() {
-  // handle copy error here
-}
+    function handleCopyError() {
+      // handle copy error here
+    }
 </script>
 
 <button

@@ -1,7 +1,7 @@
 <script lang="ts">
-import { eyeDropperStore } from 'svelte-legos';
+    import { eyeDropperStore } from 'svelte-legos';
 
-const { open, color } = eyeDropperStore('black');
+    const { open, color } = eyeDropperStore('black');
 </script>
 
 <button on:click={open}>

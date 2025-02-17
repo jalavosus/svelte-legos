@@ -1,10 +1,10 @@
 <script lang="ts">
-import { sort } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { writable } from "svelte/store";
+	import { sort } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { writable } from "svelte/store";
 
-const data = writable([1, 5, 6, 2, 9, 6, 7, 8]);
-const sorted = sort(data);
+	const data = writable([1, 5, 6, 2, 9, 6, 7, 8]);
+	const sorted = sort(data);
 </script>
 
 <DemoContainer>

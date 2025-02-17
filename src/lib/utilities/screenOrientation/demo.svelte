@@ -1,9 +1,10 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { screenOrientation } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { screenOrientation } from "$lib";
 
-const data = screenOrientation();
-$: ({ isSupported, orientation, angle } = $data);
+	const data = screenOrientation();
+
+	let {isSupported, orientation, angle} = $derived($data);
 </script>
 
 <DemoContainer>

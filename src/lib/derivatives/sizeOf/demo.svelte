@@ -1,20 +1,20 @@
 <script lang="ts">
-import { sizeOf } from "$lib/derivatives";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { writable } from "svelte/store";
+	import { sizeOf } from "$lib/derivatives";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { writable } from "svelte/store";
 
-const list = writable([1, 2, 3, 4, 5, 6]);
-const set = writable(new Set([1, 2, 3, 4]));
-const map = writable(
-	new Map([
-		[1, 3],
-		[2, 4],
-	])
-);
+	const list = writable([1, 2, 3, 4, 5, 6]);
+	const set = writable(new Set([1, 2, 3, 4]));
+	const map = writable(
+		new Map([
+			[1, 3],
+			[2, 4],
+		])
+	);
 
-const listSize = sizeOf(list);
-const setSize = sizeOf(set);
-const mapSize = sizeOf(map);
+	const listSize = sizeOf(list);
+	const setSize = sizeOf(set);
+	const mapSize = sizeOf(map);
 </script>
 
 <DemoContainer>

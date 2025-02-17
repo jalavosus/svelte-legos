@@ -1,15 +1,15 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { watchWithFilter } from "$lib";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import { writable } from "svelte/store";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { watchWithFilter } from "$lib";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { writable } from "svelte/store";
 
-const counter = writable(0);
-watchWithFilter(
-	counter,
-	(counter) => counter % 2 === 0,
-	(counter) => console.log(counter)
-);
+	const counter = writable(0);
+	watchWithFilter(
+		counter,
+		(counter) => counter % 2 === 0,
+		(counter) => console.log(counter)
+	);
 </script>
 
 <DemoContainer>

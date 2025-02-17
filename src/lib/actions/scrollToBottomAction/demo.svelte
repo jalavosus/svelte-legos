@@ -1,18 +1,20 @@
 <script lang="ts">
-import { scrollToBottomAction, hotKeyAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { scrollToBottomAction, hotKeyAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let messages: string[] = Array(10)
-	.fill(0)
-	.map((_, i) => new Date().toDateString());
-let currentMessage = "";
+	let messages: string[] = $state(Array(10)
+		.fill(0)
+		.map((_, i) => new Date().toDateString())
+	);
 
-function addMessage() {
-	if (currentMessage.trim().length > 0) {
-		messages = messages.concat([currentMessage]);
-		currentMessage = "";
+	let currentMessage = $state("");
+
+	function addMessage() {
+		if (currentMessage.trim().length > 0) {
+			messages = messages.concat([currentMessage]);
+			currentMessage = "";
+		}
 	}
-}
 </script>
 
 <DemoContainer>

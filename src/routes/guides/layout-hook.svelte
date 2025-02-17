@@ -16,20 +16,20 @@
 			{data.meta.description}
 		</p>
 	</div>
-	<div class="my-20">
+	<div class="my-20" id="demoContainer">
 		<h1 class="text-xl lg:text-2xl dark:text-gray-50">Demo</h1>
-		<div>
+		<div class="dark:bg-demo dark:text-gray-50">
 			{@render children?.()}
 		</div>
 	</div>
-	<div class="my-20">
-		<h1 class="text-xl lg:text-2xl dark:text-gray-50">Usage</h1>
-		{#if data.code}
-			<div class="mt-4 p-4 text-sm overflow-auto border border-slate-600 rounded-md bg-slate-100 dark:bg-slate-800 dark:text-gray-50">
-				<pre><code>{@html data.code}</code></pre>
-			</div>
-		{/if}
-	</div>
+	{#if data.code}
+		<div class="my-20" id="usageContainer">
+			<h1 class="text-xl lg:text-2xl dark:text-gray-50">Usage</h1>
+				<div class="mt-4 p-4 text-sm overflow-auto border border-slate-600 rounded-md bg-slate-100 dark:bg-slate-800 dark:text-gray-50">
+					<pre><code>{@html data.code}</code></pre>
+				</div>
+		</div>
+	{/if}
 	<div>
 		<h1 class="text-xl lg:text-2xl mb-4 dark:text-gray-50">Code</h1>
 		<ul class="flex space-x-4">

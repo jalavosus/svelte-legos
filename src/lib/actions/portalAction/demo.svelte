@@ -1,10 +1,10 @@
-<script>
-import { portalAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+<script lang="ts">
+	import { portalAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let target = "body";
-let showPortal = false;
+	let target = $state("body");
+	let showPortal = $state(false);
 </script>
 
 <div id="container" class="relative">

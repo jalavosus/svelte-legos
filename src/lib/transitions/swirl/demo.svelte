@@ -1,11 +1,11 @@
-<script>
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { swirl } from "$lib";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+<script lang="ts">
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { swirl } from "$lib";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let isVisible = true;
-let delay = 0;
-let duration = 300;
+	let isVisible = $state(true);
+	let delay = $state(0);
+	let duration = $state(300);
 </script>
 
 <DemoContainer>

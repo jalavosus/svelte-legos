@@ -1,7 +1,7 @@
 <script>
-import { windowScrollStore } from 'svelte-legos';
+    import { windowScrollStore } from 'svelte-legos';
 
-const position = windowScrollStore()
+    const position = windowScrollStore()
 </script>
 
 <div>X: {$position.x}</div>

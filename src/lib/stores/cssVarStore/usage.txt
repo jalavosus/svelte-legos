@@ -1,9 +1,9 @@
-<script>
-import { cssVarStore } from 'svelte-legos'
+<script lang="ts">
+    import { cssVarStore } from 'svelte-legos'
 
-const bg = cssVarStore('--bg', { initialValue: 'gray' })
-const primary = cssVarStore('--primary', { initialValue: 'red' })
-const secondary = cssVarStore('--secondary', { initialValue: 'black' })
+    const bg = cssVarStore('--bg', { initialValue: 'gray' })
+    const primary = cssVarStore('--primary', { initialValue: 'red' })
+    const secondary = cssVarStore('--secondary', { initialValue: 'black' })
 </script>
 
 <input bind:value={$bg} />
