@@ -1,11 +1,11 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { takeWhile } from "$lib";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import { writable } from "svelte/store";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { takeWhile } from "$lib";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { writable } from "svelte/store";
 
-const counter = writable(0);
-const lessThan10 = takeWhile(counter, (counter) => counter < 10);
+	const counter = writable(0);
+	const lessThan10 = takeWhile(counter, (counter) => counter < 10);
 </script>
 
 <DemoContainer>

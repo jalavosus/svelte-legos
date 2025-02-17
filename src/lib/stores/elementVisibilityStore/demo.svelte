@@ -1,10 +1,15 @@
 <script lang="ts">
-import { elementVisibilityStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import type {Readable} from "svelte/store";
+	import { elementVisibilityStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let ref: HTMLElement | null = null;
+	let ref: HTMLElement | null = $state(null);
+	let isVisible: Readable<boolean> = $state(elementVisibilityStore(ref).isVisible);
 
-$: ({ isVisible } = elementVisibilityStore(ref));
+	$effect(() => {
+		let { isVisible: newIsVisible } = elementVisibilityStore(ref);
+		isVisible = newIsVisible;
+	})
 </script>
 
 <div class="relative">

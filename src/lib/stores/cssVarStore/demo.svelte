@@ -1,8 +1,8 @@
 <script lang="ts">
-import { cssVarStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { cssVarStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const bgColor = cssVarStore("--bg", { initialValue: "white" });
+	const bgColor = cssVarStore("--bg", { initialValue: "white" });
 </script>
 
 <DemoContainer>

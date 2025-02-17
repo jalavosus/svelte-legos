@@ -1,8 +1,8 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { preferredColorScheme } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { preferredColorScheme } from "$lib";
 
-const colorScheme = preferredColorScheme();
+	const colorScheme = preferredColorScheme();
 </script>
 
 <DemoContainer>

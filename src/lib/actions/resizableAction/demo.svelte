@@ -1,5 +1,5 @@
-<script>
-import { resizableAction } from "$lib";
+<script lang="ts">
+	import { resizableAction } from "$lib";
 </script>
 
 <div class="py-10">

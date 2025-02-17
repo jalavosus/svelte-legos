@@ -1,13 +1,13 @@
 <script lang="ts">
-import { notifyAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
-import type { NotificationType } from "./Notification";
+	import { notifyAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+	import type { NotificationType } from "./Notification";
 
-let title = "Title";
-let description = "You can put your little description here.";
-let type: NotificationType | undefined;
-let duration = 5000;
+	let title = $state("Title");
+	let description = $state("You can put your little description here.");
+	let type: NotificationType | undefined = $state(undefined);
+	let duration = $state(5000);
 </script>
 
 <DemoContainer>

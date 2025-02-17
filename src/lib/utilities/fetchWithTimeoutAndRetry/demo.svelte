@@ -1,30 +1,30 @@
 <script lang="ts">
-import { fetchWithTimeoutAndRetry } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import Text from "$lib/shared/components/Text.svelte";
+	import { fetchWithTimeoutAndRetry } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import Text from "$lib/shared/components/Text.svelte";
 
-let messages: string[] = [];
-let timeout = 100;
-let retryCount = 3;
+	let messages: string[] = $state([]);
+	let timeout = $state(100);
+	let retryCount = $state(3);
 
-function handleRetry() {
-	messages = messages.concat(["Retrying..."]);
-}
+	function handleRetry() {
+		messages = messages.concat(["Retrying..."]);
+	}
 
-function handleSendRequest() {
-	fetchWithTimeoutAndRetry("https://dog.ceo/api/breeds/image/random", {
-		retryCount,
-		timeout,
-		onRetry: handleRetry,
-	})
-		.then(() => {
-			messages = messages.concat("Request Successfull");
+	function handleSendRequest() {
+		fetchWithTimeoutAndRetry("https://dog.ceo/api/breeds/image/random", {
+			retryCount,
+			timeout,
+			onRetry: handleRetry,
 		})
-		.catch((e) => {
-			messages = messages.concat([e.message]);
-		});
-}
+			.then(() => {
+				messages = messages.concat("Request Successfull");
+			})
+			.catch((e) => {
+				messages = messages.concat([e.message]);
+			});
+	}
 </script>
 
 <DemoContainer>

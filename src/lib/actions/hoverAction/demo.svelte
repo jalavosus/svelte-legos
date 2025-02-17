@@ -1,12 +1,12 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { hoverAction } from "$lib";
-import Text from "$lib/shared/components/Text.svelte";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { hoverAction } from "$lib";
+	import Text from "$lib/shared/components/Text.svelte";
 
-let text = "No!";
-function handleHover(e: CustomEvent<{ hover: boolean }>) {
-	text = e.detail.hover ? "Yes!" : "No!";
-}
+	let text = "No!";
+	function handleHover(e: CustomEvent<{ hover: boolean }>) {
+		text = e.detail.hover ? "Yes!" : "No!";
+	}
 </script>
 
 <DemoContainer>

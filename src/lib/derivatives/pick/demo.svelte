@@ -1,17 +1,17 @@
 <script lang="ts">
-import { pick } from "$lib/derivatives";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { writable } from "svelte/store";
+	import { pick } from "$lib/derivatives";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { writable } from "svelte/store";
 
-const data = writable({
-	name: "Svelte",
-	author: "Rich",
-	createdAt: Date.now(),
-});
+	const data = writable({
+		name: "Svelte",
+		author: "Rich",
+		createdAt: Date.now(),
+	});
 
-const pickData = pick(data, "name");
+	const pickData = pick(data, "name");
 
-const nameAndAuthor = pick(data, "name", "createdAt");
+	const nameAndAuthor = pick(data, "name", "createdAt");
 </script>
 
 <DemoContainer>

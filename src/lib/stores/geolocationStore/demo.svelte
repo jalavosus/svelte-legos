@@ -1,9 +1,12 @@
 <script lang="ts">
-import { geolocationStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { geolocationStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const geolocation = geolocationStore({ watch: true });
-$: ({ status, position, error } = $geolocation);
+	const geolocation = geolocationStore({ watch: true });
+
+	let status: string = $derived($geolocation.status),
+		position = $derived($geolocation.position),
+		error = $derived($geolocation.error);
 </script>
 
 <DemoContainer>

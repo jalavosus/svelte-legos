@@ -1,8 +1,8 @@
 <script lang="ts">
-import { windowSizeStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { windowSizeStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const size = windowSizeStore();
+	const size = windowSizeStore();
 </script>
 
 <DemoContainer>

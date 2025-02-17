@@ -1,12 +1,14 @@
 <script lang="ts">
-import { elementBoundingStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import type {Readable} from "svelte/store";
+	import { elementBoundingStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let ref: HTMLElement | null = null;
+	let ref: HTMLElement | null = $state(null);
 
-let rect = null;
-$: ref !== null && (rect = elementBoundingStore(ref));
-$: stringify = JSON.stringify($rect, null, 4);
+	let rect: Readable<DOMRect> | null = $state(null);
+
+	$effect(() => { if (ref !== null) rect = elementBoundingStore(ref) });
+	$effect(() => { stringify = JSON.stringify($rect, null, 4) });
 </script>
 
 <DemoContainer>

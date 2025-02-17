@@ -1,12 +1,12 @@
 <script lang="ts">
-import { textSelectionStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { textSelectionStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const selectionStore = textSelectionStore();
+	const selectionStore = textSelectionStore();
 
-$: text = $selectionStore.text;
-$: rects = $selectionStore.rects;
-$: selectedStyle = $selectionStore.text ? "text-primary" : "text-gray-400";
+	let text = $derived($selectionStore.text),
+		rects = $derived($selectionStore.rects),
+		selectedStyle = $derived($selectionStore.text ? "text-primary" : "text-gray-400");
 </script>
 
 <DemoContainer>

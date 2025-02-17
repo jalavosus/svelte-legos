@@ -1,13 +1,13 @@
 <script lang="ts">
-import { memoryStore } from "$lib";
+	import { memoryStore } from "$lib";
 import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-const memoryState = memoryStore();
+	const memoryState = memoryStore();
 
-const size = (v: number) => {
-	const kb = v / 1024 / 1024;
-	return `${kb.toFixed(2)} MB`;
-};
+	const size = (v: number) => {
+		const kb = v / 1024 / 1024;
+		return `${kb.toFixed(2)} MB`;
+	};
 </script>
 
 <DemoContainer>

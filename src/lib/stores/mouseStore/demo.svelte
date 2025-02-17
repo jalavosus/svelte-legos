@@ -1,7 +1,8 @@
 <script lang="ts">
-import { mouseStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-const position = mouseStore();
+	import { mouseStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+
+	const position = mouseStore();
 </script>
 
 <DemoContainer>

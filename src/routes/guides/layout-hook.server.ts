@@ -1,10 +1,30 @@
-import Prism from "prismjs";
-import "../../prism-svelte";
+// noinspection DuplicatedCode
+
 import fs from "fs";
 export const prerender = true;
 
+import { createHighlighterCore } from "shiki/core";
+import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
+
 const REPO_BASE_URL = "https://github.com/jalavosus/svelte-legos/tree/master/src";
 const REPO_HOOKS_URL = (itemType: string) => REPO_BASE_URL + "/lib/" + itemType;
+
+const
+	SHIKI_DARK_THEME: string = "github-dark",
+	SHIKI_LIGHT_THEME: string = "github-light";
+
+const highlighter = await createHighlighterCore({
+	themes: [
+		import("@shikijs/themes/github-dark"),
+		import("@shikijs/themes/github-light"),
+	],
+	langs: [
+		import("@shikijs/langs/svelte"),
+		import("@shikijs/langs/typescript"),
+		import("@shikijs/langs/javascript"),
+	],
+	engine: createJavaScriptRegexEngine(),
+});
 
 function last<T>(arr: T[]) {
 	return arr[arr.length - 1];
@@ -65,7 +85,13 @@ export async function load({ route }: any) {
 
 	const usage = loadFile({ itemType, hookName, fileName: "usage.txt" });
 	if (usage)
-		res.code = Prism.highlight(usage.toString(), Prism.languages.svelte, "svelte").trim();
+		res.code = highlighter.codeToHtml(usage.toString(), {
+			lang: "svelte",
+			themes: {
+				light: SHIKI_LIGHT_THEME,
+				dark: SHIKI_DARK_THEME,
+			}
+		});
 
 	return res;
 }
