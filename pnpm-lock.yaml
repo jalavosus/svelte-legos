@@ -13,10 +13,10 @@ importers:
         version: 1.9.3
     devDependencies:
       '@shikijs/langs':
-        specifier: ^2.4.2
+        specifier: 2.4.2
         version: 2.4.2
       '@shikijs/themes':
-        specifier: ^2.4.2
+        specifier: 2.4.2
         version: 2.4.2
       '@sveltejs/adapter-static':
         specifier: 3.0.8
@@ -37,7 +37,7 @@ importers:
         specifier: 1.9.0
         version: 1.9.0
       '@types/node':
-        specifier: ^22.13.4
+        specifier: 22.13.4
         version: 22.13.4
       '@typescript-eslint/eslint-plugin':
         specifier: 8.24.0
@@ -70,7 +70,7 @@ importers:
         specifier: 3.3.3
         version: 3.3.3(prettier@3.5.1)(svelte@5.20.1)
       shiki:
-        specifier: ^2.4.2
+        specifier: 2.4.2
         version: 2.4.2
       svelte:
         specifier: 5.20.1
