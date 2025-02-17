@@ -1,0 +1,8 @@
+build/
+node_modules/
+dist/
+.vercel/
+.svelte-kit/
+.idea/
+
+src/routes/guides/

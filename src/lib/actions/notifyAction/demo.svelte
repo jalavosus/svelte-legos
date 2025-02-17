@@ -12,10 +12,11 @@
 
 <DemoContainer>
 	<div class="mb-4">
-		<input class="px-3 py-2 border border-black rounded-md text-md" bind:value={title} />
+		<input class="text-md rounded-md border border-black px-3 py-2" bind:value={title} />
 	</div>
 	<div class="mb-4">
-		<textarea class="px-3 py-2 border border-black rounded-md text-md" bind:value={description} />
+		<textarea class="text-md rounded-md border border-black px-3 py-2" bind:value={description}
+		></textarea>
 	</div>
 	<div class="mb-4">
 		<label class="mr-2">
@@ -42,7 +43,7 @@
 	<div class="mb-4">
 		<label class="mr-2">
 			Duration (in ms)
-			<input class="px-3 py-2 border border-black rounded-md text-md" bind:value={duration} />
+			<input class="text-md rounded-md border border-black px-3 py-2" bind:value={duration} />
 		</label>
 	</div>
 	<button
@@ -51,9 +52,8 @@
 			title,
 			description,
 			type,
-			duration,
-		}}
-	>
+			duration
+		}}>
 		Notify
 	</button>
 </DemoContainer>

@@ -25,7 +25,7 @@ export function eyeDropperStore(initialColor?: string) {
 			return;
 		}
 
-		const eyeDropper: EyeDropper = new (window as any).EyeDropper();
+		const eyeDropper: EyeDropper = new (window as any).EyeDropper(); // eslint-disable-line @typescript-eslint/no-explicit-any
 		eyeDropper
 			.open()
 			.then((result) => {
@@ -38,6 +38,6 @@ export function eyeDropperStore(initialColor?: string) {
 
 	return {
 		open,
-		color: writableToReadable(store),
+		color: writableToReadable(store)
 	};
 }

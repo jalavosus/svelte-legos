@@ -13,14 +13,14 @@ import { onNavigate } from "$app/navigation";
  * ```
  */
 export function startViewTransition() {
-  onNavigate(({ complete }) => {
-    if (!document.startViewTransition) return;
+	onNavigate(({ complete }) => {
+		if (!document.startViewTransition) return;
 
-    return new Promise((resolve) => {
-      document.startViewTransition(async () => {
-        resolve();
-        await complete;
-      });
-    });
-  });
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await complete;
+			});
+		});
+	});
 }

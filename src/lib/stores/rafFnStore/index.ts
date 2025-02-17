@@ -1,5 +1,5 @@
 import { defaultWindow, tryOnDestroy } from "$lib/shared";
-import type { ConfigurableWindow, Fn, Pausable } from "$lib/shared/utils/types";
+import type { ConfigurableWindow, Fn } from "$lib/shared/utils/types";
 
 /**
  * Wrapper for `requestAnimationFrame` with controls.
@@ -39,6 +39,6 @@ export function rafFnStore(fn: Fn, { window = defaultWindow }: ConfigurableWindo
 
 	return {
 		resume,
-		pause,
+		pause
 	};
 }

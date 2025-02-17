@@ -4,7 +4,7 @@ export function documentTitleAction(node: HTMLInputElement | HTMLTextAreaElement
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = () => {
@@ -21,6 +21,6 @@ export function documentTitleAction(node: HTMLInputElement | HTMLTextAreaElement
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

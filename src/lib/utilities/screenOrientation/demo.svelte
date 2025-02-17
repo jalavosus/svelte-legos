@@ -4,7 +4,7 @@
 
 	const data = screenOrientation();
 
-	let {isSupported, orientation, angle} = $derived($data);
+	let { isSupported, orientation, angle } = $derived($data);
 </script>
 
 <DemoContainer>

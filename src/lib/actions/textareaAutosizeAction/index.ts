@@ -31,7 +31,7 @@ export function textareaAutosizeAction(node: HTMLTextAreaElement) {
 
 	return {
 		destroy() {
-			stop && stop();
-		},
+			stop?.();
+		}
 	};
 }

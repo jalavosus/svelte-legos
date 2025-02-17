@@ -4,7 +4,7 @@
 	type Props = {
 		question: string | Snippet;
 		answer: string | Snippet;
-	}
+	};
 
 	let { question, answer }: Props = $props();
 </script>
@@ -25,6 +25,5 @@
 				{@render answer()}
 			{/if}
 		</div>
-
 	</div>
 </li>

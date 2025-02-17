@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {Readable} from "svelte/store";
+	import type { Readable } from "svelte/store";
 	import { elementVisibilityStore } from "$lib";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
@@ -11,8 +11,7 @@
 	<DemoContainer>
 		<div
 			bind:this={ref}
-			class="max-w-100 p-4 z-20 relative area bg-white dark:bg-gray-800 shadow-lg z-60 rounded-md"
-		>
+			class="area relative z-20 z-60 max-w-100 rounded-md bg-white p-4 shadow-lg dark:bg-gray-800">
 			Target Element (scroll down)
 		</div>
 		<div class="mt-4 h-[1000px]">
@@ -20,7 +19,7 @@
 			<p>Info on the right bottom corner</p>
 		</div>
 	</DemoContainer>
-	<div class="fixed bottom-3 right-3 shadow-lg">
+	<div class="fixed right-3 bottom-3 shadow-lg">
 		<DemoContainer>
 			Element is
 			<span class="text-prime">{$isVisible ? "inside" : "outside"}</span>

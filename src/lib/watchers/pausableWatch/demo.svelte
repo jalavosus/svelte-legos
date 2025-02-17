@@ -9,10 +9,7 @@
 	let log = $state("");
 	const source = writable("");
 
-	const { isActive, pause, resume, stop } = pausableWatch(
-		source,
-		(v) => (log += `Changed to "${v}"\n`)
-	);
+	const { isActive, pause, resume } = pausableWatch(source, (v) => (log += `Changed to "${v}"\n`));
 
 	function clear() {
 		log = "";

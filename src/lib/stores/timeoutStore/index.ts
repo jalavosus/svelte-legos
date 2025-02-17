@@ -41,7 +41,7 @@ export function timeoutStore(internal = 1000, options: UseTimeoutOptions<boolean
 	if (exposeControls) {
 		return {
 			ready,
-			...controls,
+			...controls
 		};
 	} else {
 		return ready;

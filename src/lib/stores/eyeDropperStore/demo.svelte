@@ -10,9 +10,8 @@
 	<PrimaryButton on:click={open}>Open EyeDropper</PrimaryButton>
 
 	<div
-		class="mt-4 w-60 h-20 rounded-md flex items-center justify-center p-4 text-sm"
-		style:background={$color}
-	>
+		class="mt-4 flex h-20 w-60 items-center justify-center rounded-md p-4 text-sm"
+		style:background={$color}>
 		Color will appear here.
 	</div>
 </DemoContainer>

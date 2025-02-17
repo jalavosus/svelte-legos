@@ -126,6 +126,6 @@ export function resizableAction<T extends HTMLElement>(node: T) {
 	}
 
 	return {
-		destroy() {},
+		destroy() {}
 	};
 }

@@ -3,10 +3,12 @@
 	import SearchIcon from "./SearchIcon.svelte";
 </script>
 
-<section class="border-b border-black fixed top-0 h-16 w-screen z-10 bg-white dark:bg-gray-900 px-8">
-	<nav class="container flex items-center justify-between h-full m-auto">
+<section
+	class="fixed top-0 z-10 h-16 w-screen border-b border-black bg-white px-8 dark:bg-gray-900">
+	<nav class="container m-auto flex h-full items-center justify-between">
 		<a href="/" class="flex items-center space-x-2">
-			<span class="text-xl font-bold dark:text-gray-50">svelte-<span class="text-prime">legos (blue)</span></span>
+			<span class="text-xl font-bold dark:text-gray-50"
+				>svelte-<span class="text-prime">legos (blue)</span></span>
 		</a>
 		<ul class="flex space-x-8 lg:space-x-10 dark:text-white">
 			<li>
@@ -17,18 +19,17 @@
 			</li>
 			<li>
 				<a
-					class="font-extralight w-6 h-6 block"
+					class="block h-6 w-6 font-extralight"
 					href="https://github.com/jalavosus/svelte-legos"
 					target="_blank"
 					aria-label="Github"
-					rel="noreferrer"
-				>
+					rel="noreferrer">
 					<GithubIcon className="fill-[currentColor]" />
 				</a>
 			</li>
 			<li>
 				<a href="/search" aria-label="Search">
-					<SearchIcon class="w-6 h-6" />
+					<SearchIcon class="h-6 w-6" />
 				</a>
 			</li>
 		</ul>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { lazyLoadImageAction } from "$lib";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 </script>
 
 <DemoContainer>

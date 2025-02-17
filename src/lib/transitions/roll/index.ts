@@ -31,6 +31,6 @@ export function roll(node: HTMLElement, params: SlideParams = {}): TransitionCon
 		duration,
 		easing,
 		css: (t, u) =>
-			`transform: ${getTransform(direction, u * 100)} rotate(${t * 360}deg); opacity: ${t}`,
+			`transform: ${getTransform(direction, u * 100)} rotate(${t * 360}deg); opacity: ${t}`
 	};
 }

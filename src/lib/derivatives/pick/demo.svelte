@@ -6,7 +6,7 @@
 	const data = writable({
 		name: "Svelte",
 		author: "Rich",
-		createdAt: Date.now(),
+		createdAt: Date.now()
 	});
 
 	const pickData = pick(data, "name");
@@ -18,21 +18,21 @@
 	<div>
 		<div>
 			Store data:
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 {JSON.stringify($data, null, 2)}
 			</pre>
 		</div>
 
 		<div>
 			Picked Data 'name':
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 {JSON.stringify($pickData, null, 2)}
 			</pre>
 		</div>
 
 		<div>
 			Picked Data 'name' and 'createdAt':
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 {JSON.stringify($nameAndAuthor, null, 2)}
 			</pre>
 		</div>

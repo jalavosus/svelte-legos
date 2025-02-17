@@ -1,4 +1,4 @@
-import { cross, error, info, success, warn } from "../../shared/icons";
+import { error, info, success, warn } from "../../shared/icons";
 
 export type MessageType = "success" | "error" | "info" | "warning";
 export default class Message {

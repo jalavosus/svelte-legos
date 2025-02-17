@@ -11,18 +11,25 @@
 
 <DemoContainer>
 	<div class="mb-4">
-		<input class="px-3 py-2 border border-black rounded-md text-md" bind:value={title} />
+		<input class="text-md rounded-md border border-black px-3 py-2" bind:value={title} />
 	</div>
 	<div class="mb-4">
-		<textarea class="px-3 py-2 border border-black rounded-md text-md" bind:value={description}></textarea>
+		<textarea class="text-md rounded-md border border-black px-3 py-2" bind:value={description}
+		></textarea>
 	</div>
-	<div class="mb-4 flex flex-col w-1/6">
+	<div class="mb-4 flex w-1/6 flex-col">
 		<label for="confirmTextInput">Confirm Button Text</label>
-		<input id="confirmTextInput" class="px-3 py-2 border border-black rounded-md text-md" bind:value={confirmText} />
+		<input
+			id="confirmTextInput"
+			class="text-md rounded-md border border-black px-3 py-2"
+			bind:value={confirmText} />
 	</div>
-	<div class="mb-4 flex flex-col w-1/6">
+	<div class="mb-4 flex w-1/6 flex-col">
 		<label for="cancelTextInput">Cancel Button Text</label>
-		<input id="cancelTextInput" class="px-3 py-2 border border-black rounded-md text-md" bind:value={cancelText} />
+		<input
+			id="cancelTextInput"
+			class="text-md rounded-md border border-black px-3 py-2"
+			bind:value={cancelText} />
 	</div>
 	<button
 		class={PrimaryButtonClassName}
@@ -30,9 +37,8 @@
 			title,
 			description,
 			confirmText,
-			cancelText,
-		}}
-	>
+			cancelText
+		}}>
 		Show Confirm Alert
 	</button>
 </DemoContainer>

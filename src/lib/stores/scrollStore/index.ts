@@ -69,16 +69,17 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 			left: 0,
 			right: 0,
 			top: 0,
-			bottom: 0,
+			bottom: 0
 		},
 		eventListenerOptions = {
 			capture: false,
-			passive: true,
+			passive: true
 		},
 		behavior = "auto",
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		onError = (e) => {
 			console.error(e);
-		},
+		}
 	} = options;
 
 	const x = writable(0);
@@ -94,14 +95,14 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 				left: true,
 				right: false,
 				top: true,
-				bottom: false,
+				bottom: false
 			},
 			directions: {
 				left: false,
 				right: false,
 				top: false,
-				bottom: false,
-			},
+				bottom: false
+			}
 		},
 		(_, update) => {
 			const __xStop = x.subscribe((_x) => {
@@ -119,7 +120,7 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 				(element instanceof Document ? window.document.body : element)?.scrollTo({
 					top: _y ?? get(y),
 					left: _x ?? get(x),
-					behavior,
+					behavior
 				});
 				const scrollContainer =
 					(element as Window)?.document?.documentElement ||
@@ -139,8 +140,8 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 						left: false,
 						right: false,
 						top: false,
-						bottom: false,
-					},
+						bottom: false
+					}
 				}));
 				onStop(e);
 			};
@@ -160,10 +161,10 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 				update((store) => {
 					const { arrivedState, directions } = store;
 					const newDirections = {
-						...directions,
+						...directions
 					};
 					const newArrivedState = {
-						...arrivedState,
+						...arrivedState
 					};
 
 					const internalY = get(y);
@@ -216,7 +217,7 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 					return {
 						...store,
 						directions: newDirections,
-						arrivedState: newArrivedState,
+						arrivedState: newArrivedState
 					};
 				});
 			};
@@ -243,10 +244,10 @@ export function scrollStore<T extends HTMLElement, P extends Window, S extends D
 
 			function cleanup() {
 				console.log("cleaning", element);
-				_stop && _stop();
-				__stop && __stop();
-				__xStop && __xStop();
-				__yStop && __yStop();
+				_stop?.();
+				__stop?.();
+				__xStop?.();
+				__yStop?.();
 			}
 
 			return cleanup;

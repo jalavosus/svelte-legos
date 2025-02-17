@@ -19,14 +19,14 @@ const KeysToEventMap: Record<ShortActionParamsWithoutCB, keyof KeyboardEvent> = 
 	meta: "metaKey",
 	ctrl: "ctrlKey",
 	shift: "shiftKey",
-	code: "code",
+	code: "code"
 };
 
 export function hotKeyAction<T extends HTMLElement>(node: T, params: Partial<ShortActionParams>) {
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (params: Partial<ShortActionParams>) => {
@@ -51,7 +51,11 @@ export function hotKeyAction<T extends HTMLElement>(node: T, params: Partial<Sho
 				!undefinedKeys.some((key) => !!event[KeysToEventMap[key as ShortActionParamsWithoutCB]])
 			) {
 				event.preventDefault();
-				params.cb ? params.cb() : node.click();
+				if (params) {
+					params.cb?.();
+				} else {
+					node.click();
+				}
 			}
 		}
 		({ stop } = eventListenerStore("keydown", handler));
@@ -61,6 +65,6 @@ export function hotKeyAction<T extends HTMLElement>(node: T, params: Partial<Sho
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { memoryStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
 	const memoryState = memoryStore();
 

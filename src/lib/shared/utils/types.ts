@@ -1,6 +1,6 @@
 import type { Readable } from "svelte/store";
 
-export type Fn = (...args: any) => void;
+export type Fn = (...args: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export interface ConfigurableWindow {
 	/*

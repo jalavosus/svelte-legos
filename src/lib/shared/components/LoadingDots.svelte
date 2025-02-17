@@ -3,7 +3,7 @@
 
 	let dots = ["."];
 
-	let interval: any;
+	let interval: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 	onMount(() => {
 		clearInterval(interval);
 		interval = setInterval(() => {
@@ -20,7 +20,7 @@
 	});
 </script>
 
-<span class="w-5 inline-block">
+<span class="inline-block w-5">
 	{#each dots as dot}
 		<span>{dot}</span>
 	{/each}

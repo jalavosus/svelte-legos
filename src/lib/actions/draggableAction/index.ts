@@ -36,6 +36,6 @@ export function draggableAction<T extends HTMLElement>(node: T) {
 			stopPointerDown();
 			stopPointerMove();
 			stopPointerUp();
-		},
+		}
 	};
 }

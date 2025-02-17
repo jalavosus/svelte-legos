@@ -2,10 +2,11 @@ import { onDestroy } from "svelte";
 import { get, type Readable, type Writable } from "svelte/store";
 
 // Import get_current_component, but make it optional
-let get_current_component: (() => any) | undefined;
+let get_current_component: (() => any) | undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
 try {
 	// This will work in Svelte 4 but fail in Svelte 5
-	get_current_component = require('svelte/internal').get_current_component;
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
+	get_current_component = require("svelte/internal").get_current_component;
 } catch {
 	// In Svelte 5, this import will fail, so we set it to undefined
 }
@@ -55,6 +56,6 @@ export function isSafeIntegerThrowable(int: unknown) {
 }
 
 // Define isClient without relying on svelte/internal
-export const isClient = typeof window !== 'undefined';
+export const isClient = typeof window !== "undefined";
 export const defaultWindow = isClient ? window : undefined;
 export const defaultDocument = isClient ? window.document : undefined;

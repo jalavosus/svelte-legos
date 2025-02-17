@@ -11,10 +11,9 @@
 
 <DemoContainer>
 	<div
-		class="w-20 h-20 mb-4 rounded-lg bg-prime text-sm flex items-center justify-center text-white"
+		class="bg-prime mb-4 flex h-20 w-20 items-center justify-center rounded-lg text-sm text-white"
 		use:hoverAction
-		on:hover={handleHover}
-	>
+		on:hover={handleHover}>
 		Hover me
 	</div>
 	<Text>Mouse in the element: <span class="text-prime">{text}</span></Text>

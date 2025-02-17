@@ -1,6 +1,6 @@
 import { readable, type Readable } from "svelte/store";
 import type { ConfigurableWindow, Position } from "$lib/shared/utils/types";
-import {isClient} from "$lib/shared";
+import { isClient } from "$lib/shared";
 
 const defaultWindow = isClient ? window : undefined;
 
@@ -13,7 +13,7 @@ export interface UseMouseOptions extends ConfigurableWindow {
 
 const initialValue = {
 	x: 0,
-	y: 0,
+	y: 0
 };
 
 function getCurrentPointerPosition(e?: MouseEvent): Position {
@@ -21,7 +21,7 @@ function getCurrentPointerPosition(e?: MouseEvent): Position {
 
 	return {
 		x: e.pageX,
-		y: e.pageY,
+		y: e.pageY
 	};
 }
 

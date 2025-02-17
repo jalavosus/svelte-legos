@@ -12,7 +12,7 @@ export function alertAction<T extends HTMLElement>(node: T, params: AlertActionP
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	let alert: Alert | undefined;
@@ -21,17 +21,17 @@ export function alertAction<T extends HTMLElement>(node: T, params: AlertActionP
 		destroy();
 
 		const makeCleanup =
-			(fn?: () => void): () => void =>
-				() => {
-					fn?.();
-					alert?.unmount();
-				}
+			(fn?: () => void): (() => void) =>
+			() => {
+				fn?.();
+				alert?.unmount();
+			};
 
 		function handleClick() {
 			alert = new Alert({
 				...params,
 				onCancel: makeCleanup(params.onClose),
-				onConfirm: makeCleanup(params.onOk),
+				onConfirm: makeCleanup(params.onOk)
 			});
 
 			alert.mount();
@@ -44,6 +44,6 @@ export function alertAction<T extends HTMLElement>(node: T, params: AlertActionP
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

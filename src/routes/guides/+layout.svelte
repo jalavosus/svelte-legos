@@ -12,7 +12,7 @@
 
 	type Props = {
 		data: LayoutData;
-	}
+	};
 
 	let { data, children }: Props & HTMLButtonAttributes = $props();
 
@@ -28,7 +28,7 @@
 
 	let menuOpen = $state(false);
 
-	const handleCloseMenu = () => menuOpen = false;
+	const handleCloseMenu = () => (menuOpen = false);
 
 	let currentPath = $derived(page.data.hookName);
 
@@ -64,96 +64,93 @@
 
 <svelte:head>
 	<style>
-	/*:root {*/
-	/*	--code-bg: var(--back-light);*/
-	/*	--code-base: hsl(45, 7%, 35%);*/
-	/*	--code-comment: hsl(0, 0%, 41%);*/
-	/*	--code-keyword: hsl(204, 88%, 35%);*/
-	/*	--code-function: hsl(19, 67%, 44%);*/
-	/*	--code-string: hsl(41, 37%, 38%);*/
-	/*	--code-number: hsl(120, 100%, 25%);*/
-	/*	--code-template-string: hsl(2, 80%, 47%);*/
-	/*	--code-tags: var(--code-function);*/
-	/*	--code-important: var(--code-string);*/
-	/*}*/
+		/*:root {*/
+		/*	--code-bg: var(--back-light);*/
+		/*	--code-base: hsl(45, 7%, 35%);*/
+		/*	--code-comment: hsl(0, 0%, 41%);*/
+		/*	--code-keyword: hsl(204, 88%, 35%);*/
+		/*	--code-function: hsl(19, 67%, 44%);*/
+		/*	--code-string: hsl(41, 37%, 38%);*/
+		/*	--code-number: hsl(120, 100%, 25%);*/
+		/*	--code-template-string: hsl(2, 80%, 47%);*/
+		/*	--code-tags: var(--code-function);*/
+		/*	--code-important: var(--code-string);*/
+		/*}*/
 
-	pre {
-		tab-size: 2;
-		-moz-tab-size: 2;
-	}
+		pre {
+			tab-size: 2;
+			-moz-tab-size: 2;
+		}
 
-	.code-block pre {
-		/*background-color: var(--code-bg);*/
-		/*color: var(--code-base);*/
-		border-radius: 0.5rem;
-		padding: 1rem;
-		margin: 0 0 1rem;
-		font-size: 14px;
-	}
+		.code-block pre {
+			/*background-color: var(--code-bg);*/
+			/*color: var(--code-base);*/
+			border-radius: 0.5rem;
+			padding: 1rem;
+			margin: 0 0 1rem;
+			font-size: 14px;
+		}
 
-  @media (prefers-color-scheme: dark) {
-      .shiki,
-      .shiki span {
-          color: var(--shiki-dark) !important;
-          background-color: var(--shiki-dark-bg) !important;
-          /* Optional, if you also want font styles */
-          font-style: var(--shiki-dark-font-style) !important;
-          font-weight: var(--shiki-dark-font-weight) !important;
-          text-decoration: var(--shiki-dark-text-decoration) !important;
-      }
-  }
+		@media (prefers-color-scheme: dark) {
+			.shiki,
+			.shiki span {
+				color: var(--shiki-dark) !important;
+				background-color: var(--shiki-dark-bg) !important;
+				/* Optional, if you also want font styles */
+				font-style: var(--shiki-dark-font-style) !important;
+				font-weight: var(--shiki-dark-font-weight) !important;
+				text-decoration: var(--shiki-dark-text-decoration) !important;
+			}
+		}
 
-	/*.code-block pre code,*/
-	/*.token {*/
-	/*	color: var(--code-base);*/
-	/*}*/
+		/*.code-block pre code,*/
+		/*.token {*/
+		/*	color: var(--code-base);*/
+		/*}*/
 
-	/*.token.tag,*/
-	/*.token.attr-value .attr-equals {*/
-	/*	color: var(--code-function);*/
-	/*}*/
+		/*.token.tag,*/
+		/*.token.attr-value .attr-equals {*/
+		/*	color: var(--code-function);*/
+		/*}*/
 
-	/*.token.string,*/
-	/*.token.interpolation-punctuation,*/
-	/*.token.attr-value,*/
-	/*.token.inserted {*/
-	/*	color: var(--code-string);*/
-	/*}*/
+		/*.token.string,*/
+		/*.token.interpolation-punctuation,*/
+		/*.token.attr-value,*/
+		/*.token.inserted {*/
+		/*	color: var(--code-string);*/
+		/*}*/
 
-	/*.token.builtin,*/
-	/*.token.function {*/
-	/*	color: var(--code-function);*/
-	/*}*/
+		/*.token.builtin,*/
+		/*.token.function {*/
+		/*	color: var(--code-function);*/
+		/*}*/
 
-	/*.token.keyword,*/
-	/*.token.boolean,*/
-	/*.token.attr-name,*/
-	/*.token.namespace {*/
-	/*	color: var(--code-keyword);*/
-	/*}*/
+		/*.token.keyword,*/
+		/*.token.boolean,*/
+		/*.token.attr-name,*/
+		/*.token.namespace {*/
+		/*	color: var(--code-keyword);*/
+		/*}*/
 
-	/*.token.comment {*/
-	/*	color: var(--code-comment);*/
-	/*}*/
+		/*.token.comment {*/
+		/*	color: var(--code-comment);*/
+		/*}*/
 
-	/*.token.deleted {*/
-	/*	color: #fc9b9b;*/
-	/*}*/
+		/*.token.deleted {*/
+		/*	color: #fc9b9b;*/
+		/*}*/
 
-	/*.token.template-string .interpolation-punctuation,*/
-	/*.token.template-string .string {*/
-	/*	color: var(--code-template-string);*/
-	/*}*/
+		/*.token.template-string .interpolation-punctuation,*/
+		/*.token.template-string .string {*/
+		/*	color: var(--code-template-string);*/
+		/*}*/
 	</style>
 </svelte:head>
 
 <div>
-	<div class="p-4 border-b border-black lg:hidden dark:text-gray-50">
-		<button
-			class="relative flex items-center cursor-pointer"
-			onclick={handleClick}
-		>
-			<span class="w-6 h-6 dark:text-gray-50">
+	<div class="border-b border-black p-4 lg:hidden dark:text-gray-50">
+		<button class="relative flex cursor-pointer items-center" onclick={handleClick}>
+			<span class="h-6 w-6 dark:text-gray-50">
 				<MenuIcon />
 			</span>
 			<span class="ml-4">Menu</span>
@@ -171,23 +168,20 @@
 			.filter(Boolean)
 			.join(" ")}
 		use:clickOutsideAction={handleCloseMenu}
-		transition:slide
-	>
+		transition:slide>
 		<button
 			onclick={handleClick}
-			class="monospace text-sm absolute right-4 top-4 w-8 h-8 rounded-full bg-slate-300 flex items-center justify-center cursor-pointer lg:hidden"
-		>
+			class="monospace absolute top-4 right-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-slate-300 text-sm lg:hidden">
 			╳
 		</button>
-		<div class="fixed top-0 bottom-0 bg-black right-0"></div>
-		<ul class="space-y-3 lg:mt-8 lg:p-4 p-2 dark:text-slate-200">
+		<div class="fixed top-0 right-0 bottom-0 bg-black"></div>
+		<ul class="space-y-3 p-2 lg:mt-8 lg:p-4 dark:text-slate-200">
 			<li>
 				<a
 					href="/guides/"
 					class="hover:underline {!currentPath && page.route.id === '/guides'
-					? 'font-bold underline'
-					: ''}"
-				>
+						? 'font-bold underline'
+						: ''}">
 					Getting Started
 				</a>
 			</li>
@@ -196,8 +190,7 @@
 					label={category.label}
 					path={category.path}
 					guides={category.guides}
-					{handleCloseMenu}
-				/>
+					{handleCloseMenu} />
 			{/each}
 		</ul>
 	</section>

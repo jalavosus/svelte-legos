@@ -5,19 +5,18 @@
 	let errorMessage = $derived(page.error?.message ?? "something went wrong");
 </script>
 
-<section class="py:20 lg:py-36 container mx-auto p-8">
+<section class="py:20 container mx-auto p-8 lg:py-36">
 	<div>
 		<div class="max-w-xl space-y-4">
-			<h1 class="text-4xl lg:text-7xl tracking-wider font-bold uppercase text-second">
+			<h1 class="text-second text-4xl font-bold tracking-wider uppercase lg:text-7xl">
 				Svelte <b class="text-prime">Legos</b>
 			</h1>
-			<h3 class="text-xl lg:text-3xl font-light text-text">{errorCode} - {errorMessage}</h3>
+			<h3 class="text-text text-xl font-light lg:text-3xl">{errorCode} - {errorMessage}</h3>
 		</div>
 		<div class="mt-6 lg:mt-12">
 			<a
 				href="/"
-				class="inline-block rounded-lg py-2 px-4 text-sm lg:text-base lg:py-3 lg:px-6 bg-prime text-white hover:underline"
-			>
+				class="bg-prime inline-block rounded-lg px-4 py-2 text-sm text-white hover:underline lg:px-6 lg:py-3 lg:text-base">
 				Go Home
 			</a>
 		</div>

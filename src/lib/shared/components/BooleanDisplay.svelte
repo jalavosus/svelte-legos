@@ -1,7 +1,7 @@
 <script lang="ts">
 	type Props = {
 		value: boolean;
-	}
+	};
 
 	let { value }: Props = $props();
 </script>

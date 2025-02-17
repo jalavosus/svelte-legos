@@ -11,14 +11,14 @@
 	<div>
 		<div>
 			Array data:
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 {JSON.stringify($data)}
 				</pre>
 		</div>
 
 		<div>
 			Sorted data:
-			<pre class="text-sm mt-2">
+			<pre class="mt-2 text-sm">
 {JSON.stringify($sorted)}
 				</pre>
 		</div>

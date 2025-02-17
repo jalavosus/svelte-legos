@@ -9,21 +9,17 @@ import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
 const REPO_BASE_URL = "https://github.com/jalavosus/svelte-legos/tree/master/src";
 const REPO_HOOKS_URL = (itemType: string) => REPO_BASE_URL + "/lib/" + itemType;
 
-const
-	SHIKI_DARK_THEME: string = "github-dark",
+const SHIKI_DARK_THEME: string = "github-dark",
 	SHIKI_LIGHT_THEME: string = "github-light";
 
 const highlighter = await createHighlighterCore({
-	themes: [
-		import("@shikijs/themes/github-dark"),
-		import("@shikijs/themes/github-light"),
-	],
+	themes: [import("@shikijs/themes/github-dark"), import("@shikijs/themes/github-light")],
 	langs: [
 		import("@shikijs/langs/svelte"),
 		import("@shikijs/langs/typescript"),
-		import("@shikijs/langs/javascript"),
+		import("@shikijs/langs/javascript")
 	],
-	engine: createJavaScriptRegexEngine(),
+	engine: createJavaScriptRegexEngine()
 });
 
 function last<T>(arr: T[]) {
@@ -36,7 +32,7 @@ function typeOfObject(path: string) {
 
 type HookMeta = {
 	description: string;
-}
+};
 
 type HookData = {
 	hookName: string;
@@ -44,7 +40,7 @@ type HookData = {
 	code?: string;
 	sourceCodeURL: string;
 	demoCodeURL: string;
-}
+};
 
 interface LoadFileParams {
 	itemType: string;
@@ -76,12 +72,11 @@ export async function load({ route }: any) {
 	const res: HookData = {
 		hookName,
 		sourceCodeURL: REPO_HOOKS_URL(itemType.toLowerCase()) + `/${hookName}/index.ts`,
-		demoCodeURL:  REPO_HOOKS_URL(itemType.toLowerCase()) + `/${hookName}/demo.svelte`,
+		demoCodeURL: REPO_HOOKS_URL(itemType.toLowerCase()) + `/${hookName}/demo.svelte`
 	} as HookData;
 
 	const meta = loadFile({ itemType, hookName, fileName: "meta.json" });
-	if (meta)
-		res.meta = JSON.parse(meta.toString());
+	if (meta) res.meta = JSON.parse(meta.toString());
 
 	const usage = loadFile({ itemType, hookName, fileName: "usage.txt" });
 	if (usage)
@@ -89,7 +84,7 @@ export async function load({ route }: any) {
 			lang: "svelte",
 			themes: {
 				light: SHIKI_LIGHT_THEME,
-				dark: SHIKI_DARK_THEME,
+				dark: SHIKI_DARK_THEME
 			}
 		});
 

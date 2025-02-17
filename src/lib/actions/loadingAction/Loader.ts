@@ -16,7 +16,7 @@ export default class Loader<T extends HTMLElement = HTMLElement> {
         align-items: center;
         justify-content: center;
       `;
-    loader.setAttribute("style", loaderStyles);
+		loader.setAttribute("style", loaderStyles);
 
 		this.__loader = loader;
 
@@ -70,16 +70,16 @@ export default class Loader<T extends HTMLElement = HTMLElement> {
 
 		const style = document.createElement("style");
 		style.innerHTML = styles;
-    this.__loader.appendChild(style);
+		this.__loader.appendChild(style);
 
 		const icon = document.createElement("div");
 		icon.className = "loader";
 
-    this.__loader.appendChild(icon);
+		this.__loader.appendChild(icon);
 	}
 
 	mount(container: T) {
-    container.appendChild(this.__loader);
+		container.appendChild(this.__loader);
 	}
 
 	unmount() {

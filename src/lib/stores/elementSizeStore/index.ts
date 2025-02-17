@@ -16,7 +16,7 @@ export function elementSizeStore<T extends Element | null>(target: T) {
 		resizeObserverStore(target, ([entry]) => {
 			size.set({
 				width: entry.contentRect.width,
-				height: entry.contentRect.height,
+				height: entry.contentRect.height
 			});
 		});
 	}

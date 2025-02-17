@@ -28,6 +28,6 @@ export function resizeObserverStore(
 	connect();
 
 	return {
-		stop,
+		stop
 	};
 }

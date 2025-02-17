@@ -10,7 +10,7 @@
 	<div>
 		<div>
 			<label for="name" class="mr-4">Name:</label>
-			<input bind:value={$name} class="px-3 py-2 border border-black rounded-md text-md" />
+			<input bind:value={$name} class="text-md rounded-md border border-black px-3 py-2" />
 		</div>
 
 		<p class="mt-4 text-sm">

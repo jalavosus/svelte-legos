@@ -29,7 +29,7 @@ export const all = {
 	transitions: transitions,
 	middlewares: middlewares,
 	derivatives: derivatives,
-	watchers: watchers,
+	watchers: watchers
 };
 
 export const totalUtilsLength =

@@ -36,7 +36,7 @@ function getPosition(opts: PositionOptions) {
 const initialState = {
 	status: "unstarted",
 	position: null,
-	error: null,
+	error: null
 } satisfies GeolocationState;
 
 export function geolocationStore({ watch, ...options }: GeolocationOptions = { watch: false }) {

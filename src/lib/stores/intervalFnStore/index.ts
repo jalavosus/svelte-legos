@@ -1,10 +1,4 @@
-import {
-	isReadable,
-	isSafeIntegerThrowable,
-	tryOnDestroy,
-	unwrapReadable,
-	writableToReadable,
-} from "$lib/shared";
+import { isReadable, tryOnDestroy, unwrapReadable, writableToReadable } from "$lib/shared";
 import type { Fn, Pausable } from "$lib/shared/utils/types";
 import { writable, type Readable } from "svelte/store";
 import type { Writable } from "svelte/store";
@@ -67,6 +61,6 @@ export function intervalFnStore(fn: Fn, interval?: number | Readable<number>): P
 		isActive: writableToReadable(isActiveWritable),
 		resume,
 		pause,
-		changeIntervalTime,
+		changeIntervalTime
 	};
 }

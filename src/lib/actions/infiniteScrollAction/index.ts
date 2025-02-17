@@ -8,7 +8,7 @@ interface InfiniteScrollActionParams {
 	distance: number;
 	disabled: boolean;
 	immediate: boolean;
-	cb: Function;
+	cb: Function; // eslint-disable-line @typescript-eslint/no-unsafe-function-type
 }
 
 const defaultParams = {
@@ -16,9 +16,10 @@ const defaultParams = {
 	distance: DEFAULT_DISTANCE,
 	disabled: false,
 	immediate: true,
-	cb: () => {},
+	cb: () => {}
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 function throttle(fn: Function, delay: number) {
 	let now: number;
 	let lastExec: number;
@@ -99,19 +100,22 @@ function check(
 		scrollEventTarget,
 		element,
 		distance,
-		cb,
-	}: InfiniteScrollActionParams & { element: HTMLElement; scrollEventTarget: HTMLElement | Window },
+		cb
+	}: InfiniteScrollActionParams & {
+		element: HTMLElement;
+		scrollEventTarget: HTMLElement | Window;
+	},
 	force?: boolean
 ) {
 	if (force !== true && disabled) return;
-	let viewportScrollTop = getScrollTop(scrollEventTarget);
-	let viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);
+	const viewportScrollTop = getScrollTop(scrollEventTarget);
+	const viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);
 
 	let shouldTrigger = false;
 	if (scrollEventTarget === element) {
 		shouldTrigger = scrollEventTarget.scrollHeight - viewportBottom <= distance;
 	} else {
-		let elementBottom =
+		const elementBottom =
 			getElementTop(element) -
 			getElementTop(scrollEventTarget) +
 			element.offsetHeight +
@@ -131,7 +135,7 @@ export function infiniteScrollAction<T extends HTMLElement>(
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (params: InfiniteScrollActionParams) => {
@@ -147,7 +151,7 @@ export function infiniteScrollAction<T extends HTMLElement>(
 		}
 
 		stop = () => {
-			document.removeEventListener(scrollEventTarget, "scroll", scrollEventListener)
+			document.removeEventListener(scrollEventTarget, "scroll", scrollEventListener);
 		};
 	};
 
@@ -155,6 +159,6 @@ export function infiniteScrollAction<T extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

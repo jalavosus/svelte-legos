@@ -1,10 +1,9 @@
 <script lang="ts">
-
 	type RotateDirection = "up" | "down" | "left" | "right";
 	type Props = {
 		rotate?: RotateDirection;
 		onClick?: () => void;
-	}
+	};
 
 	let { rotate, onClick }: Props = $props();
 
@@ -19,7 +18,7 @@
 			case "right":
 				return "";
 		}
-	}
+	};
 
 	let className = $derived(`mt-1 ${rotate ? getRotateDirection(rotate) : ""}`);
 
@@ -33,11 +32,9 @@
 		height="16"
 		fill="currentColor"
 		class="bi bi-chevron-right"
-		viewBox="0 0 16 16"
-	>
+		viewBox="0 0 16 16">
 		<path
 			fill-rule="evenodd"
-			d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-		/>
+			d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
 	</svg>
 </div>

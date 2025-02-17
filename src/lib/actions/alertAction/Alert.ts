@@ -7,6 +7,7 @@ export interface AlertParams {
 	cancelText?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default class Alert<T extends HTMLElement = HTMLElement> {
 	protected __container: HTMLDivElement;
 
@@ -28,7 +29,7 @@ export default class Alert<T extends HTMLElement = HTMLElement> {
 		onCancel,
 		onConfirm,
 		confirmText = "OK",
-		cancelText = "Cancel",
+		cancelText = "Cancel"
 	}: AlertParams) {
 		this.__container = this.makeContainer();
 
@@ -114,7 +115,7 @@ export default class Alert<T extends HTMLElement = HTMLElement> {
 			this.onCancel?.();
 		});
 
-		header.append(closeBtn)
+		header.append(closeBtn);
 
 		const description = document.createElement("p");
 		const descriptionStyles = `

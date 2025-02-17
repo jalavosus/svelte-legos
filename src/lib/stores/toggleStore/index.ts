@@ -21,6 +21,6 @@ export function toggleStore(initialValue = false) {
 		value: writableToReadable(store),
 		toggle,
 		on,
-		off,
+		off
 	};
 }

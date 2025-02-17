@@ -14,6 +14,6 @@ export function swirl(node: HTMLElement, params: SwirlParams = {}): TransitionCo
 		delay,
 		duration,
 		easing,
-		css: (t, u) => `transform: rotate(${t * -540}deg) scale(${t}); opacity: ${t}`,
+		css: (t) => `transform: rotate(${t * -540}deg) scale(${t}); opacity: ${t}`
 	};
 }

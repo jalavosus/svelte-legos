@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { eventListenerStore } from "$lib";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-	import Text from "$lib/shared/components/Text.svelte";
 	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 	import { onMount } from "svelte";
 
@@ -19,7 +18,7 @@
 	const onVisibilityChange = (event: Event) => {
 		console.log("doc visibility changed!", {
 			isVisible: !document.hidden,
-			event,
+			event
 		});
 	};
 

@@ -10,7 +10,7 @@ export function clickToCopyAction<T extends HTMLElement>(
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (text: string | ClickToCopyActionGetterCallback) => {
@@ -34,6 +34,6 @@ export function clickToCopyAction<T extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

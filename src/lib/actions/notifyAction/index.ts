@@ -13,7 +13,7 @@ export function notifyAction<T extends HTMLElement>(node: T, params: NotifyActio
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (params: NotifyActionParams) => {
@@ -34,6 +34,6 @@ export function notifyAction<T extends HTMLElement>(node: T, params: NotifyActio
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

@@ -21,7 +21,7 @@ export default class NotificationManager {
       `;
 		container.setAttribute("style", containerStyles);
 		this.__container = container;
-		document.body.appendChild(this.__container)
+		document.body.appendChild(this.__container);
 	}
 
 	createNotification(

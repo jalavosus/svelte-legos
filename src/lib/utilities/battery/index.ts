@@ -1,5 +1,4 @@
 import { defaultWindow } from "$lib/shared";
-import { eventListenerStore } from "$lib/stores/eventListenerStore";
 import { readable } from "svelte/store";
 
 export interface BatteryManager extends EventTarget {
@@ -23,7 +22,7 @@ export function battery() {
 	let level = 1;
 	let battery: BatteryManager | null;
 
-	let stop = [() => {}];
+	let stop = [() => {}]; // eslint-disable-line prefer-const
 
 	return readable({ isSupported, charging, chargingTime, dischargingTime, level }, (set) => {
 		isSupported = !!(

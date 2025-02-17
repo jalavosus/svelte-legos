@@ -11,7 +11,7 @@ export function messageAction<T extends HTMLElement>(node: T, params: MessageAct
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (params: MessageActionParams) => {
@@ -27,6 +27,6 @@ export function messageAction<T extends HTMLElement>(node: T, params: MessageAct
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

@@ -4,13 +4,17 @@ interface Attributes {
 	"on:clickoutside"?: (e: CustomEvent<void>) => void;
 }
 
-type Callback = () => unknown
+type Callback = () => unknown;
 
-export function clickOutsideAction(node: HTMLElement, callback?: Callback): ActionReturn<{}, Attributes> {
+export function clickOutsideAction(
+	node: HTMLElement,
+	callback?: Callback
+	// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+): ActionReturn<{}, Attributes> {
 	const handleClick = (event: Event) => {
 		if (event.target !== null && !node.contains(event.target as Node)) {
 			node.dispatchEvent(new CustomEvent("clickoutside"));
-                        callback?.();
+			callback?.();
 		}
 	};
 
@@ -19,6 +23,6 @@ export function clickOutsideAction(node: HTMLElement, callback?: Callback): Acti
 	return {
 		destroy() {
 			document.removeEventListener("click", handleClick, true);
-		},
+		}
 	};
 }

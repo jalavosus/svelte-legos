@@ -15,7 +15,7 @@ const defaultConfettiParams = {
 	type: "simple",
 	particleCount: 100,
 	spread: 70,
-	origin: { y: 0.5, x: 0.5 },
+	origin: { y: 0.5, x: 0.5 }
 } as ConfettiActionParams;
 
 export function confettiAction<T extends HTMLElement>(
@@ -25,7 +25,7 @@ export function confettiAction<T extends HTMLElement>(
 	let stop: () => void;
 
 	const destroy = () => {
-		stop && stop();
+		stop?.();
 	};
 
 	const update = (params: ConfettiActionParams) => {
@@ -44,14 +44,14 @@ export function confettiAction<T extends HTMLElement>(
 						angle: 60,
 						spread: 55,
 						origin: { x: 0 },
-						colors: colors,
+						colors: colors
 					});
 					confetti({
 						particleCount: 2,
 						angle: 120,
 						spread: 55,
 						origin: { x: 1 },
-						colors: colors,
+						colors: colors
 					});
 
 					if (Date.now() < end) {
@@ -68,6 +68,6 @@ export function confettiAction<T extends HTMLElement>(
 
 	return {
 		update,
-		destroy,
+		destroy
 	};
 }

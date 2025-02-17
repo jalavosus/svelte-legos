@@ -25,7 +25,7 @@ function getCurrentSelection(window?: Window): SelectionStoreProps {
 				selection,
 				text,
 				ranges,
-				rects,
+				rects
 			};
 		}
 	}
@@ -34,12 +34,12 @@ function getCurrentSelection(window?: Window): SelectionStoreProps {
 		selection: null,
 		text: "",
 		ranges: [],
-		rects: [],
+		rects: []
 	};
 }
 
 export function textSelectionStore({
-	window = defaultWindow,
+	window = defaultWindow
 }: ConfigurableWindow = {}): Readable<SelectionStoreProps> {
 	return readable(getCurrentSelection(window), (set) => {
 		function onSelectionChange() {

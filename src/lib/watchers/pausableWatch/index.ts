@@ -16,14 +16,14 @@ export function pausableWatch<T>(
 	let times = 0;
 	let oldVal: T;
 	let stopped = false;
-	let isActive = writable(true);
+	const isActive = writable(true);
 
 	function pause() {
-		!stopped && isActive.set(false);
+		if (!stopped) isActive.set(false);
 	}
 
 	function resume() {
-		!stopped && isActive.set(true);
+		if (!stopped) isActive.set(true);
 	}
 
 	const __stop = store.subscribe((value) => {
