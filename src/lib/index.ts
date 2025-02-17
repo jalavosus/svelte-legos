@@ -71,7 +71,6 @@ export { startViewTransition } from "./utilities/startViewTransition";
 export { clipboard } from "./utilities/clipboard";
 export { hasPermission } from "./utilities/hasPermission";
 export { parseSearchParams } from "./utilities/parseSearchParams";
-export { createStateVariable } from "./utilities/state";
 
 export { swirl } from "./transitions/swirl";
 export { slide } from "./transitions/slide";
