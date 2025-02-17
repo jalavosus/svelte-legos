@@ -15,7 +15,7 @@ export const PrimaryButtonClassNames = `
     py-2
     rounded-md
     cursor-pointer
-    disabled:bg-slate-300
+    disabled:opacity-50
     disabled:pointer-events-none
   `;
 
