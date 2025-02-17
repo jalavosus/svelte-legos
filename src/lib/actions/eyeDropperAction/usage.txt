@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import { eyeDropperAction } from "@sveltelegos-blue/svelte-legos";
-  let color = '';
+  let color = $state("")";
 </script>
 
 <button

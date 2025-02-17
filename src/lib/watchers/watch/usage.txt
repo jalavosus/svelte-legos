@@ -1,9 +1,9 @@
 <script lang="ts">
-import { watch } from "@sveltelegos-blue/svelte-legos";
-import { writable } from "svelte/store";
+    import { watch } from "@sveltelegos-blue/svelte-legos";
+    import { writable } from "svelte/store";
 
-const counter = writable(0);
-watch(counter, (counter) => {
-	console.log(counter);
-});
+    const counter = writable(0);
+    watch(counter, (counter) => {
+        console.log(counter);
+    });
 </script>

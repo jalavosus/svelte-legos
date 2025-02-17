@@ -1,7 +1,7 @@
 <script lang="ts">
-import { intervalStore } from "@sveltelegos-blue/svelte-legos";
+    import { intervalStore } from "@sveltelegos-blue/svelte-legos";
 
-const counter = intervalStore(200);
+    const counter = intervalStore(200);
 
-// $counter will increase by 1 every 200 ms
+    // $counter will increase by 1 every 200 ms
 </script>

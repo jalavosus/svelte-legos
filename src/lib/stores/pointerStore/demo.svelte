@@ -1,7 +1,8 @@
 <script lang="ts">
-import { pointerStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-const position = pointerStore();
+	import { pointerStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+
+	const position = pointerStore();
 </script>
 
 <DemoContainer>

@@ -1,28 +1,28 @@
 <script lang="ts">
-import { writable } from "svelte/store";
-import { intervalFnStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-const greetings = [
-	"Hello",
-	"Hi",
-	"Yo!",
-	"Hey",
-	"Hola",
-	"こんにちは",
-	"Bonjour",
-	"Salut!",
-	"你好",
-	"Привет",
-];
-let word = "Hello";
-let interval = writable(500);
+	import { writable } from "svelte/store";
+	import { intervalFnStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	const greetings = [
+		"Hello",
+		"Hi",
+		"Yo!",
+		"Hey",
+		"Hola",
+		"こんにちは",
+		"Bonjour",
+		"Salut!",
+		"你好",
+		"Привет",
+	];
+	let word = "Hello";
+	let interval = writable(500);
 
-const { pause, resume, isActive, changeIntervalTime } = intervalFnStore(handler, interval);
+	const { pause, resume, isActive, changeIntervalTime } = intervalFnStore(handler, interval);
 
-function handler() {
-	word = greetings[Math.floor(Math.random() * greetings.length)];
-}
+	function handler() {
+		word = greetings[Math.floor(Math.random() * greetings.length)];
+	}
 </script>
 
 <DemoContainer>

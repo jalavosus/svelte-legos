@@ -1,18 +1,18 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { clipboard, hasPermission } from "$lib";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import { InputClass } from "$lib/shared/tailwind";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { clipboard, hasPermission } from "$lib";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { InputClass } from "$lib/shared/tailwind";
 
-let value = "";
-const board = clipboard({ read: true });
-const permissionRead = hasPermission("clipboard-read");
-const permissionWrite = hasPermission("clipboard-write");
+	let value = $state("");
+	const board = clipboard({ read: true });
+	const permissionRead = hasPermission("clipboard-read");
+	const permissionWrite = hasPermission("clipboard-write");
 
-$: isSupported = $board.isSupported;
-$: copy = $board.copy;
-$: copiedText = $board.text;
-$: copied = $board.copied;
+	let isSupported = $derived($board.isSupported);
+	let copy = $derived($board.copy);
+	let copiedText = $derived($board.text);
+	let copied = $derived($board.copied);
 </script>
 
 <DemoContainer>

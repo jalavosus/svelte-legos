@@ -1,8 +1,8 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { preferredLanguages } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { preferredLanguages } from "$lib";
 
-const languages = preferredLanguages();
+	const languages = preferredLanguages();
 </script>
 
 <DemoContainer>

@@ -1,22 +1,22 @@
 <script lang="ts">
-import { dropAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { dropAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let filesData: { name: string; size: number; type: string; lastModified: number }[] = [];
+	let filesData: { name: string; size: number; type: string; lastModified: number }[] = [];
 
-function onDrop(files: File[] | null) {
-	filesData = [];
-	if (files) {
-		filesData = files.map((file) => ({
-			name: file.name,
-			size: file.size,
-			type: file.type,
-			lastModified: file.lastModified,
-		}));
+	function onDrop(files: File[] | null) {
+		filesData = [];
+		if (files) {
+			filesData = files.map((file) => ({
+				name: file.name,
+				size: file.size,
+				type: file.type,
+				lastModified: file.lastModified,
+			}));
+		}
 	}
-}
 
-let isOverDropZone = false;
+	let isOverDropZone = false;
 </script>
 
 <DemoContainer>

@@ -1,25 +1,25 @@
-<script>
-import { dropAction } from "@sveltelegos-blue/svelte-legos";;
+<script lang="ts">
+    import { dropAction } from "@sveltelegos-blue/svelte-legos";;
 
-let filesData = [];
+    let filesData = $state([]);
 
-function onDrop(files: File[] | null) {
-	filesData = files;
-}
+    function onDrop(files: File[] | null) {
+        filesData = files;
+    }
 
-function onEnter(files: File[] | null) {
-	// handle dragenter
-}
+    function onEnter(files: File[] | null) {
+        // handle dragenter
+    }
 
-function onOver(files: File[] | null) {
-	// handle dragover
-}
+    function onOver(files: File[] | null) {
+        // handle dragover
+    }
 
-function onLeave(files: File[] | null) {
-	// handle dragleave
-}
+    function onLeave(files: File[] | null) {
+        // handle dragleave
+    }
 
-let isOverDropZone = false;
+    let isOverDropZone = $state(false);
 </script>
 
 <div

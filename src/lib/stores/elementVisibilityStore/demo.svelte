@@ -1,10 +1,10 @@
 <script lang="ts">
-import { elementVisibilityStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import type {Readable} from "svelte/store";
+	import { elementVisibilityStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let ref: HTMLElement | null = null;
-
-$: ({ isVisible } = elementVisibilityStore(ref));
+	let ref: HTMLElement | null = $state(null);
+	let isVisible: Readable<boolean> = $derived(elementVisibilityStore(ref).isVisible);
 </script>
 
 <div class="relative">

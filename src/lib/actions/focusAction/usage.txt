@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import { focusAction } from "@sveltelegos-blue/svelte-legos";
-  let isFocused = true;
+  let isFocused = $state(true);
 </script>
 
 <input use:focusAction={isFocused} />

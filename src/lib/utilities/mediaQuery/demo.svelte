@@ -1,9 +1,9 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { mediaQuery } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { mediaQuery } from "$lib";
 
-const isLargeScreen = mediaQuery("(min-width: 1024px)");
-const prefersDark = mediaQuery("(prefers-color-scheme: dark)");
+	const isLargeScreen = mediaQuery("(min-width: 1024px)");
+	const prefersDark = mediaQuery("(prefers-color-scheme: dark)");
 </script>
 
 <DemoContainer>

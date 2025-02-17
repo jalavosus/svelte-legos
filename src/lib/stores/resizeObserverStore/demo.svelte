@@ -1,19 +1,27 @@
 <script lang="ts">
-import { resizeObserverStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { resizeObserverStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-let ref: HTMLElement | null = null;
+	let ref: HTMLElement | null = $state(null);
 
-let width = 0;
-let height = 0;
+	let width = $state(0);
+	let height = $state(0);
 
-function handler([entry]: ResizeObserverEntry[]) {
-	width = entry.contentRect.width;
-	height = entry.contentRect.height;
-}
+	function handler([entry]: ResizeObserverEntry[]) {
+		width = entry.contentRect.width;
+		height = entry.contentRect.height;
+	}
 
-$: ref && resizeObserverStore(ref, handler);
-$: stringify = `width: ${width}\nheight: ${height}`;
+	$effect(() => {
+		if (ref) resizeObserverStore(ref, handler);
+	})
+
+	const newStringify = (): string => `width: ${width}\nheight: ${height}`
+
+	let stringify = $state(newStringify());
+	$effect(() => {
+		stringify = newStringify();
+	});
 </script>
 
 <DemoContainer>

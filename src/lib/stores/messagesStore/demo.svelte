@@ -1,13 +1,14 @@
-<script>
-import { messagesStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+<script lang="ts">
+	import { messagesStore } from "$lib";
+	import type {MessageType} from "$lib/types/messages";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let message = "Here is your message!";
-let type;
-function handleClick() {
-	messagesStore(message, type);
-}
+	let message = $state("Here is your message!");
+	let type: MessageType = $state("info" as MessageType);
+	function handleClick() {
+		messagesStore(message, type);
+	}
 </script>
 
 <DemoContainer>

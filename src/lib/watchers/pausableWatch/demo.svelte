@@ -1,30 +1,30 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { pausableWatch } from "$lib";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import { writable } from "svelte/store";
-import { InputClass } from "$lib/shared/tailwind";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { pausableWatch } from "$lib";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { writable } from "svelte/store";
+	import { InputClass } from "$lib/shared/tailwind";
 
-let input: HTMLInputElement | null = null;
-let log = "";
-const source = writable("");
+	let input: HTMLInputElement | null = $state(null);
+	let log = $state("");
+	const source = writable("");
 
-const { isActive, pause, resume, stop } = pausableWatch(
-	source,
-	(v) => (log += `Changed to "${v}"\n`)
-);
+	const { isActive, pause, resume, stop } = pausableWatch(
+		source,
+		(v) => (log += `Changed to "${v}"\n`)
+	);
 
-function clear() {
-	log = "";
-}
-function onPause() {
-	log += "Paused\n";
-	pause();
-}
-function onResume() {
-	log += "Resumed\n";
-	resume();
-}
+	function clear() {
+		log = "";
+	}
+	function onPause() {
+		log += "Paused\n";
+		pause();
+	}
+	function onResume() {
+		log += "Resumed\n";
+		resume();
+	}
 </script>
 
 <DemoContainer>

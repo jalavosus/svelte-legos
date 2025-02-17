@@ -1,9 +1,10 @@
 <script lang="ts">
-import { clickOutsideAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import Text from "$lib/shared/components/Text.svelte";
-let showModal = true;
+	import { clickOutsideAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import Text from "$lib/shared/components/Text.svelte";
+
+	let showModal = true;
 </script>
 
 <DemoContainer>

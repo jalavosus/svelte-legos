@@ -1,9 +1,9 @@
 <script lang="ts">
-import { counterStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { counterStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
 
-const { counter, inc, dec, set, reset } = counterStore();
+	const { counter, inc, dec, set, reset } = counterStore();
 </script>
 
 <DemoContainer>

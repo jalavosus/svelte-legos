@@ -1,13 +1,13 @@
 <script lang="ts">
-import { documentVisibilityStore } from "@sveltelegos-blue/svelte-legos";
+    import { documentVisibilityStore } from "@sveltelegos-blue/svelte-legos";
 
-const visibility = documentVisibilityStore();
+    const visibility = documentVisibilityStore();
 
-$: {
-  if ($visibility === 'hidden') {
-    // do something when window is not visible
-  } else {
-    // do something when window is visible again
-  }
-}
+    $effect(() => {
+      if ($visibility === 'hidden') {
+        // do something when window is not visible
+      } else {
+        // do something when window is visible again
+      }
+    });
 </script>

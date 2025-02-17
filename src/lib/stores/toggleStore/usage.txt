@@ -1,8 +1,8 @@
 <script lang="ts">
-import { toggleStore } from "@sveltelegos-blue/svelte-legos";
+    import { toggleStore } from "@sveltelegos-blue/svelte-legos";
 
-const { toggle, on, off, set, value } = toggleStore();
+    const { toggle, on, off, set, value } = toggleStore();
 
-// Use $value as true or false and
-// manipulate using toggle, on, off, set
+    // Use $value as true or false and
+    // manipulate using toggle, on, off, set
 </script>

@@ -1,11 +1,11 @@
 <script lang="ts">
-import { watchWithFilter } from "@sveltelegos-blue/svelte-legos";
-import { writable } from "svelte/store";
+    import { watchWithFilter } from "@sveltelegos-blue/svelte-legos";
+    import { writable } from "svelte/store";
 
-const counter = writable(0);
-watchWithFilter(
-	counter,
-	(counter) => counter % 2 === 0,
-	(counter) => console.log(counter)
-);
+    const counter = writable(0);
+    watchWithFilter(
+        counter,
+        (counter) => counter % 2 === 0,
+        (counter) => console.log(counter)
+    );
 </script>

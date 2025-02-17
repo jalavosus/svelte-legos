@@ -1,12 +1,12 @@
-<script>
-import { longPressAction, messagesStore, timeoutFnStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+<script lang="ts">
+	import { longPressAction, messagesStore, timeoutFnStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let duration = 2000;
-function handleLongPress() {
-	messagesStore("Pressed!");
-}
+	let duration = $state(2000);
+	function handleLongPress() {
+		messagesStore("Pressed!");
+	}
 </script>
 
 <DemoContainer>
