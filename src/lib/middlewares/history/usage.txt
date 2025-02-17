@@ -6,9 +6,9 @@
     const { undo, redo canRedo, canUndo } = counter.history;
 </script>
 
-<button disabled={!$canUndo} on:click={undo}>Undo</button>
-<button disabled={!$canRedo} on:click={redo}>Redo</button>
+<button disabled={!$canUndo} onclick={undo}>Undo</button>
+<button disabled={!$canRedo} onclick={redo}>Redo</button>
 
 {$counter}
 
-<button on:click={() => $counter++}>Increment</button>
+<button onclick={() => $counter++}>Increment</button>

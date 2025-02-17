@@ -27,7 +27,7 @@
 					Current copied: <code>{copiedText || "none"}</code>
 				</p>
 				<input class={InputClass} bind:value type="text" />
-				<PrimaryButton on:click={() => copy(value)}>
+				<PrimaryButton onclick={() => copy(value)}>
 					<!-- by default, `copied` will be reset in 1.5s -->
 					{#if !copied}
 						<span>Copy</span>

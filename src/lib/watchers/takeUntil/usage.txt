@@ -9,8 +9,8 @@
 <div>Store value:</div>
 <div>{$counter}</div>
 
-<button on:click={() => $counter++}>+</button>
-<button on:click={() => $counter--}>-</button>
+<button onclick={() => $counter++}>+</button>
+<button onclick={() => $counter--}>-</button>
 
 <div>Take until counter is less than 10:</div>
 <div>{$moreThan10}</div>

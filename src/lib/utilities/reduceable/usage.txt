@@ -16,5 +16,5 @@
 </script>
 
 <p>{$counter}</p>
-<button on:click={() => counter.dispatch("inc")}>+</button>
-<button on:click={() => counter.dispatch("dec")}>-</button>
+<button onclick={() => counter.dispatch("inc")}>+</button>
+<button onclick={() => counter.dispatch("dec")}>-</button>

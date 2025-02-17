@@ -18,8 +18,8 @@
 		</div>
 	</div>
 	<div class="my-4 space-x-4">
-		<PrimaryButton on:click={() => $counter++}>+</PrimaryButton>
-		<PrimaryButton on:click={() => $counter--}>-</PrimaryButton>
+		<PrimaryButton onclick={() => $counter++}>+</PrimaryButton>
+		<PrimaryButton onclick={() => $counter--}>-</PrimaryButton>
 	</div>
 	<div class="text-sm">(Check console)</div>
 </DemoContainer>

@@ -8,12 +8,12 @@
 </script>
 
 <DemoContainer>
-	<PrimaryButton on:click={() => (showModal = true)}>Show Modal</PrimaryButton>
+	<PrimaryButton onclick={() => (showModal = true)}>Show Modal</PrimaryButton>
 	{#if showModal}
 		<div
 			class="fixed top-1/2 left-1/2 h-40 w-80 -translate-x-1/2 -translate-y-1/2 transform rounded-lg border border-black bg-slate-300 p-4 shadow-2xl"
 			use:clickOutsideAction
-			on:clickoutside={() => (showModal = false)}>
+			onclickoutside={() => (showModal = false)}>
 			<Text>Click outside me!</Text>
 		</div>
 		<div

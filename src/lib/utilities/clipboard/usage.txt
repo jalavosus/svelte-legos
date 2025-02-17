@@ -17,7 +17,7 @@
                 Current copied: {copiedText}
             </p>
             <input bind:value type="text" />
-            <button on:click={() => copy(value)}>
+            <button onclick={() => copy(value)}>
                 <!-- by default, `copied` will be reset in 1.5s -->
                 {#if !copied}
                     <span>Copy</span>

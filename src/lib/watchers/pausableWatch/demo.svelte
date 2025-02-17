@@ -31,9 +31,9 @@
 		<input class={InputClass} bind:this={input} bind:value={$source} type="text" />
 		<br />
 		<br />
-		<PrimaryButton disabled={!$isActive} class="orange" on:click={onPause}>Pause</PrimaryButton>
-		<PrimaryButton disabled={$isActive} on:click={onResume}>Resume</PrimaryButton>
-		<PrimaryButton on:click={clear}>Clear Log</PrimaryButton>
+		<PrimaryButton disabled={!$isActive} class="orange" onclick={onPause}>Pause</PrimaryButton>
+		<PrimaryButton disabled={$isActive} onclick={onResume}>Resume</PrimaryButton>
+		<PrimaryButton onclick={clear}>Clear Log</PrimaryButton>
 
 		<br />
 		<br />

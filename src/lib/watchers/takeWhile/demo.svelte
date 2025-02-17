@@ -16,8 +16,8 @@
 		</div>
 	</div>
 	<div class="my-4 space-x-4">
-		<PrimaryButton on:click={() => $counter++}>+</PrimaryButton>
-		<PrimaryButton on:click={() => $counter--}>-</PrimaryButton>
+		<PrimaryButton onclick={() => $counter++}>+</PrimaryButton>
+		<PrimaryButton onclick={() => $counter--}>-</PrimaryButton>
 	</div>
 	<div>
 		<div class="text-sm">Take while counter is less than 10:</div>
