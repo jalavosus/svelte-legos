@@ -1,12 +1,11 @@
 <script lang="ts">
-import { rafFnStore } from "@sveltelegos-blue/svelte-legos";
+    import { rafFnStore } from "@sveltelegos-blue/svelte-legos";
 
-let counter = 0;
+    let counter = $state(0);
 
-function handler() {
-  counter += 1;
-}
+    function handler() {
+      counter += 1;
+    }
 
-const { pause, resume } = rafFnStore(handler);
-
+    const { pause, resume } = rafFnStore(handler);
 </script>

@@ -1,13 +1,13 @@
-<script>
-import { confirmAction } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { confirmAction } from "@sveltelegos-blue/svelte-legos";
 
-function onCancel() {
-  // handle on alert close or cancel
-}
+    function onCancel() {
+      // handle on alert close or cancel
+    }
 
-function onConfirm() {
-  // handle on Confirm click
-}
+    function onConfirm() {
+      // handle on Confirm click
+    }
 
 </script>
 

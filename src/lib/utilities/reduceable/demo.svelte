@@ -1,20 +1,20 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { reduceable } from "$lib";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { reduceable } from "$lib";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
 
-function reducer(state: number, action: string) {
-	switch (action) {
-		case "inc":
-			return state + 1;
-		case "dec":
-			return state - 1;
-		default:
-			return state;
+	function reducer(state: number, action: string) {
+		switch (action) {
+			case "inc":
+				return state + 1;
+			case "dec":
+				return state - 1;
+			default:
+				return state;
+		}
 	}
-}
 
-const counter = reduceable(reducer, 0);
+	const counter = reduceable(reducer, 0);
 </script>
 
 <DemoContainer>

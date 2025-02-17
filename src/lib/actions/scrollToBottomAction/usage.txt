@@ -1,8 +1,8 @@
-<script>
-import { scrollToBottomAction } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { scrollToBottomAction } from "@sveltelegos-blue/svelte-legos";
 
-// messages data
-let messages = [];
+    // messages data
+    let messages = $state([]);
 </script>
 
 <div use:scrollToBottomAction>

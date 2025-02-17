@@ -1,7 +1,7 @@
 <script lang="ts">
-import { intervalFnStore } from "@sveltelegos-blue/svelte-legos";
+    import { intervalFnStore } from "@sveltelegos-blue/svelte-legos";
 
-const { pause, resume, isActive, changeIntervalTime } = intervalFnStore(() => {
-  /* your function */
-}, 2000);
+    const { pause, resume, isActive, changeIntervalTime } = intervalFnStore(() => {
+      /* your function */
+    }, 2000);
 </script>

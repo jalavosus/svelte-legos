@@ -1,11 +1,11 @@
 <script lang="ts">
-import { elementSizeStore } from "@sveltelegos-blue/svelte-legos";
+    import { elementSizeStore } from "@sveltelegos-blue/svelte-legos";
 
-let ref: HTMLElement | null = null;
+    let ref: HTMLElement | null = $state(null);
 
-$: size = elementSizeStore(ref);
+    let size = $derived(elementSizeStore(ref));
 
-// use $size.width or $size.height like this
+    // use $size.width or $size.height like this
 
 </script>
 

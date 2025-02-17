@@ -1,9 +1,9 @@
 <script lang="ts">
-import { eyeDropperStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { eyeDropperStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
 
-const { open, color } = eyeDropperStore("white");
+	const { open, color } = eyeDropperStore("white");
 </script>
 
 <DemoContainer>

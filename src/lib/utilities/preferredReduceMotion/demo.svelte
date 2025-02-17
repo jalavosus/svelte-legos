@@ -1,8 +1,8 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { preferredReduceMotion } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { preferredReduceMotion } from "$lib";
 
-const motion = preferredReduceMotion();
+	const motion = preferredReduceMotion();
 </script>
 
 <DemoContainer>

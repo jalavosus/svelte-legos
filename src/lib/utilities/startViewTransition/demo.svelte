@@ -1,8 +1,8 @@
 <script lang="ts">
-import { startViewTransition } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { startViewTransition } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
-startViewTransition();
+	startViewTransition();
 </script>
 
 <DemoContainer>

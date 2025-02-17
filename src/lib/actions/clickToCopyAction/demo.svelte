@@ -1,13 +1,13 @@
 <script>
-import { clickToCopyAction, messagesStore } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+	import { clickToCopyAction, messagesStore } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-function handleCopyDone() {
-	messagesStore("Copied!");
-}
+	function handleCopyDone() {
+		messagesStore("Copied!");
+	}
 
-let text = "Text to copy";
+	let text = "Text to copy";
 </script>
 
 <DemoContainer>

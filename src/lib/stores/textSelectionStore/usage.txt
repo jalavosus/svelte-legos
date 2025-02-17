@@ -1,12 +1,12 @@
-<script>
-import { textSelectionStore } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { textSelectionStore } from "@sveltelegos-blue/svelte-legos";
 
-const selectionStore = textSelectionStore();
+    const selectionStore = textSelectionStore();
 
-// $selectionStore.text => current selected text
-// $selectionStore.selection => window.getSelection()
-// $selectionStore.ranges => all selection ranges
-// $selectionStore.rects => all selection ranges DOMRect
+    // $selectionStore.text => current selected text
+    // $selectionStore.selection => window.getSelection()
+    // $selectionStore.ranges => all selection ranges
+    // $selectionStore.rects => all selection ranges DOMRect
 </script>
 
 <div>

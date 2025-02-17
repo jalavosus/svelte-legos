@@ -1,17 +1,19 @@
 <script lang="ts">
-import { resizeObserverStore } from "@sveltelegos-blue/svelte-legos";
+    import { resizeObserverStore } from "@sveltelegos-blue/svelte-legos";
 
-let ref: HTMLElement | null = null;
+    let ref: HTMLElement | null = $state(null);
 
-let width = 0;
-let height = 0;
+    let width = $state(0);
+    let height = $state(0);
 
-function handler([entry]: ResizeObserverEntry[]) {
-  width = entry.contentRect.width;
-  height = entry.contentRect.height;
-}
+    function handler([entry]: ResizeObserverEntry[]) {
+      width = entry.contentRect.width;
+      height = entry.contentRect.height;
+    }
 
-$: ref && resizeObserverStore(ref, handler);
+    $effect(() => {
+        if (ref) resizeObserverStore(ref, handler);
+    });
 
-// use width and height
+    // use width and height
 </script>

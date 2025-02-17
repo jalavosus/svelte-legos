@@ -1,10 +1,13 @@
-<script>
-import { hotKeyAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+<script lang="ts">
+	import { hotKeyAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let timesClicked = 0;
-let timesClickedCallback = 0;
+	let timesClicked = $state(0);
+	let timesClickedCallback = $state(0);
+
+	const incrementClicked = () => timesClicked++,
+		incrementClickedCallback = () => timesClickedCallback++;
 </script>
 
 <DemoContainer>
@@ -12,7 +15,7 @@ let timesClickedCallback = 0;
 		<button
 			class={PrimaryButtonClassName}
 			use:hotKeyAction={{ shift: true, code: "Digit1" }}
-			on:click={() => timesClicked++}
+			on:click={incrementClicked}
 		>
 			Triggers a click on Shift + 1
 		</button>
@@ -23,7 +26,7 @@ let timesClickedCallback = 0;
 	<div class="flex items-center mt-4">
 		<div
 			class="inline-block text-sm px-4 py-2 rounded-md border border-black"
-			use:hotKeyAction={{ shift: true, meta: true, code: "KeyX", cb: () => timesClickedCallback++ }}
+			use:hotKeyAction={{ shift: true, meta: true, code: "KeyX", cb: incrementClickedCallback }}
 			aria-hidden="true"
 		>
 			Triggers a callback on Shift + Cmd + X

@@ -1,9 +1,9 @@
 <script lang="ts">
-import { takeWhile } from "@sveltelegos-blue/svelte-legos";
-import { writable } from "svelte/store";
+    import { takeWhile } from "@sveltelegos-blue/svelte-legos";
+    import { writable } from "svelte/store";
 
-const counter = writable(0);
-const lessThan10 = takeWhile(counter, (counter) => counter < 10);
+    const counter = writable(0);
+    const lessThan10 = takeWhile(counter, (counter) => counter < 10);
 </script>
 
 <div>Store value:</div>

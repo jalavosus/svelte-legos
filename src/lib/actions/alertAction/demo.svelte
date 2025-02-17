@@ -1,10 +1,10 @@
 <script>
-import { alertAction } from "$lib";
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { PrimaryButtonClassName } from "$lib/shared/tailwind";
+	import { alertAction } from "$lib";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
 
-let title = "Alert Title";
-let description = "You can put your little description here.";
+	let title = "Alert Title";
+	let description = "You can put your little description here.";
 </script>
 
 <DemoContainer>

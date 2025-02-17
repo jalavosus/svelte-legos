@@ -1,13 +1,13 @@
 <script lang="ts">
-import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
-import { watch } from "$lib";
-import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
-import { writable } from "svelte/store";
+	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
+	import { watch } from "$lib";
+	import PrimaryButton from "$lib/shared/components/PrimaryButton.svelte";
+	import { writable } from "svelte/store";
 
-const counter = writable(0);
-watch(counter, (counter) => {
-	console.log(counter);
-});
+	const counter = writable(0);
+	watch(counter, (counter) => {
+		console.log(counter);
+	});
 </script>
 
 <DemoContainer>
