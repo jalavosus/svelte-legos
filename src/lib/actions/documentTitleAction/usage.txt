@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { documentTitleAction } from "@sveltelegos-blue/svelte-legos";
 </script>
 

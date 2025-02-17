@@ -1,15 +1,14 @@
 <script lang="ts">
-import { battery } from "@sveltelegos-blue/svelte-legos";
+    import { battery } from "@sveltelegos-blue/svelte-legos";
 
-const info = battery();
+    const info = battery();
 
-$: (
-  {
-    isSupported,
-    charging,
-    chargingTime,
-    dischargingTime,
-    level 
-  } = $info
+    let {
+        isSupported,
+        charging,
+        chargingTime,
+        dischargingTime,
+        level
+    } = $derived($info);
 )
 </script>

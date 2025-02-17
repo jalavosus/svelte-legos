@@ -1,7 +1,7 @@
 <script lang="ts">
-import { preferredColorScheme } from "@sveltelegos-blue/svelte-legos";
+    import { preferredColorScheme } from "@sveltelegos-blue/svelte-legos";
 
-const colorScheme = preferredColorScheme();
+    const colorScheme = preferredColorScheme();
 
-// $colorScheme => 'light' | 'dark' | 'no-preference'
+    // $colorScheme => 'light' | 'dark' | 'no-preference'
 </script>

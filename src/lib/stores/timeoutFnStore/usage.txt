@@ -1,7 +1,7 @@
 <script lang="ts">
-import { timeoutFnStore } from 'svelte-legos';
+    import { timeoutFnStore } from 'svelte-legos';
 
-const { isPending, start, stop } = timeoutFnStore(() => {
-    /* ... */
-}, 3000);
+    const { isPending, start, stop } = timeoutFnStore(() => {
+        /* ... */
+    }, 3000);
 </script>

@@ -1,7 +1,7 @@
-<script>
-import { loadingAction } from "@sveltelegos-blue/svelte-legos";
+<script lang="ts">
+    import { loadingAction } from "@sveltelegos-blue/svelte-legos";
 
-let loading = false;
+    let loading = $state(false);
 </script>
 
 

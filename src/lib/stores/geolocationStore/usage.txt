@@ -1,6 +1,6 @@
 <script lang="ts">
-import { geolocationStore } from "@sveltelegos-blue/svelte-legos";
+    import { geolocationStore } from "@sveltelegos-blue/svelte-legos";
 
-const geolocation = geolocationStore({ watch: true });
-$: ({ status, position, error } = $geolocation)
+    const geolocation = geolocationStore({ watch: true });
+    let { status, position, error } = $derived($geolocation);
 </script>

@@ -4,9 +4,7 @@
 
 	const geolocation = geolocationStore({ watch: true });
 
-	let status: string = $derived($geolocation.status),
-		position = $derived($geolocation.position),
-		error = $derived($geolocation.error);
+	let { status, position, error } = $derived($geolocation);
 </script>
 
 <DemoContainer>

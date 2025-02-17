@@ -1,14 +1,14 @@
 <script lang="ts">
-import { infiniteScrollAction } from "@sveltelegos-blue/svelte-legos";
+    import { infiniteScrollAction } from "@sveltelegos-blue/svelte-legos";
 
-let isLoading = false;
+    let isLoading = $state(false);
 
-function loadItems() {
-	if (isLoading) return;
-	isLoading = true;
+    function loadItems() {
+        if (isLoading) return;
+        isLoading = true;
 
-  // load your data here
-}
+      // load your data here
+    }
 </script>
 
 <div

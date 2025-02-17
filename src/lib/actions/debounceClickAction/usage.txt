@@ -5,7 +5,7 @@
     // main click
   }
 
-  let duration = 300; // in milliseconds
+  let duration = $state(300); // in milliseconds
 </script>
 
 <button

@@ -1,13 +1,13 @@
 <script lang="ts">
-import { hoverStore } from "@sveltelegos-blue/svelte-legos";
+    import { hoverStore } from "@sveltelegos-blue/svelte-legos";
 
-let ref: HTMLDivElement | null = null;
+    let ref: HTMLDivElement | null = $state(null);
 
-$: isHover = hoverStore(ref);
+    let isHover = $derived(hoverStore(ref));
 
-// $isHover will be true/false
-// whenever mouse enters/leaves the
-// Box
+    // $isHover will be true/false
+    // whenever mouse enters/leaves the
+    // Box
 </script>
 
 <Box bind:this={ref}></Box>

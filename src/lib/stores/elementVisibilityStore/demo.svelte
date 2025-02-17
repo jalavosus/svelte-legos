@@ -4,12 +4,7 @@
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 
 	let ref: HTMLElement | null = $state(null);
-	let isVisible: Readable<boolean> = $state(elementVisibilityStore(ref).isVisible);
-
-	$effect(() => {
-		let { isVisible: newIsVisible } = elementVisibilityStore(ref);
-		isVisible = newIsVisible;
-	})
+	let isVisible: Readable<boolean> = $derived(elementVisibilityStore(ref).isVisible);
 </script>
 
 <div class="relative">

@@ -1,14 +1,10 @@
 <script lang="ts">
-import { elementBoundingStore } from 'svelte-legos';
+    import { elementBoundingStore } from 'svelte-legos';
 
-let el = null;
-let rect = null;
+    let el = $state(null);
+    let rect = $derived(elementBoundingStore(el));
 
-$: el && (rect = elementBoundingStore(el));
-$: {
-  const { x, y, top, right, bottom, left, width, height } = rect
-}
-
+    const { x, y, top, right, bottom, left, width, height } = rect ?? {};
 </script>
 
 <div bind:this={el} />

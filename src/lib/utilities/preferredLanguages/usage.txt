@@ -1,7 +1,7 @@
 <script lang="ts">
-import { preferredLanguages } from "@sveltelegos-blue/svelte-legos";
+    import { preferredLanguages } from "@sveltelegos-blue/svelte-legos";
 
-const languages = preferredLanguages();
+    const languages = preferredLanguages();
 
-// $languages => readonly string[]
+    // $languages => readonly string[]
 </script>

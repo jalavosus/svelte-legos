@@ -1,7 +1,7 @@
-<script>
-import { windowSizeStore } from 'svelte-legos';
+<script lang="ts">
+    import { windowSizeStore } from 'svelte-legos';
 
-const size = windowSizeStore()
+    const size = windowSizeStore()
 </script>
 
 <div>Width: {$size.width}</div>

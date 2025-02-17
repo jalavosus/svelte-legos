@@ -1,8 +1,8 @@
 <script lang="ts">
-import { pointerStore } from 'svelte-legos';
+    import { pointerStore } from 'svelte-legos';
 
-const position = pointerStore();
+    const position = pointerStore();
 
-// $position gives the
-// Position { x: number, y: number } of the input pointer
+    // $position gives the
+    // Position { x: number, y: number } of the input pointer
 </script>
