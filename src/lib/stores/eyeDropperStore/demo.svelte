@@ -7,7 +7,7 @@
 </script>
 
 <DemoContainer>
-	<PrimaryButton on:click={open}>Open EyeDropper</PrimaryButton>
+	<PrimaryButton onclick={open}>Open EyeDropper</PrimaryButton>
 
 	<div
 		class="mt-4 flex h-20 w-60 items-center justify-center rounded-md p-4 text-sm"

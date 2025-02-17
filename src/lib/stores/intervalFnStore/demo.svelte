@@ -37,9 +37,9 @@
 	</div>
 	<div>
 		{#if $isActive}
-			<PrimaryButton on:click={pause}>Pause</PrimaryButton>
+			<PrimaryButton onclick={pause}>Pause</PrimaryButton>
 		{:else}
-			<PrimaryButton on:click={resume}>Resume</PrimaryButton>
+			<PrimaryButton onclick={resume}>Resume</PrimaryButton>
 		{/if}
 	</div>
 </DemoContainer>

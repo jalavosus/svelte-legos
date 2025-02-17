@@ -9,11 +9,11 @@
 <DemoContainer>
 	<div>Counter: {$counter}</div>
 	<div class="mt-6 flex flex-col items-start space-y-2">
-		<PrimaryButton on:click={() => inc()}>Increment</PrimaryButton>
-		<PrimaryButton on:click={() => dec()}>Decrement</PrimaryButton>
-		<PrimaryButton on:click={() => inc(5)}>Increment (+5)</PrimaryButton>
-		<PrimaryButton on:click={() => dec(5)}>Decrement (-5)</PrimaryButton>
-		<PrimaryButton on:click={() => set(100)}>Set (100)</PrimaryButton>
-		<PrimaryButton on:click={() => reset()}>Reset</PrimaryButton>
+		<PrimaryButton onclick={() => inc()}>Increment</PrimaryButton>
+		<PrimaryButton onclick={() => dec()}>Decrement</PrimaryButton>
+		<PrimaryButton onclick={() => inc(5)}>Increment (+5)</PrimaryButton>
+		<PrimaryButton onclick={() => dec(5)}>Decrement (-5)</PrimaryButton>
+		<PrimaryButton onclick={() => set(100)}>Set (100)</PrimaryButton>
+		<PrimaryButton onclick={() => reset()}>Reset</PrimaryButton>
 	</div>
 </DemoContainer>

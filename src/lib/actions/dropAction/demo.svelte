@@ -22,8 +22,8 @@
 <DemoContainer>
 	<div
 		use:dropAction={{ onDrop }}
-		on:over-drop-zone={() => (isOverDropZone = true)}
-		on:leave-drop-zone={() => (isOverDropZone = false)}
+		onover-drop-zone={() => (isOverDropZone = true)}
+		onleave-drop-zone={() => (isOverDropZone = false)}
 		class={`flex h-auto min-h-[200px] w-full flex-col items-center justify-center rounded bg-gray-400/10 p-8 ${
 			isOverDropZone && "border-4 border-dashed border-blue-700"
 		}`}>

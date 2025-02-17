@@ -22,7 +22,7 @@
 		<h1 class="text-2xl">{$counter}</h1>
 	</div>
 	<div class="mt-4 space-x-4">
-		<PrimaryButton on:click={() => counter.dispatch("inc")}>+</PrimaryButton>
-		<PrimaryButton on:click={() => counter.dispatch("dec")}>-</PrimaryButton>
+		<PrimaryButton onclick={() => counter.dispatch("inc")}>+</PrimaryButton>
+		<PrimaryButton onclick={() => counter.dispatch("dec")}>-</PrimaryButton>
 	</div>
 </DemoContainer>

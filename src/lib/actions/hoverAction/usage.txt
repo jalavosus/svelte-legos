@@ -9,5 +9,5 @@
 <div
   class="box"
   use:hoverAction
-  on:hover={handleHover}
+  onhover={handleHover}
 />

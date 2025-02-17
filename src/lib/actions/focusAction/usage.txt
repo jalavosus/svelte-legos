@@ -5,7 +5,7 @@
 
 <input use:focusAction={isFocused} />
 <button
-  on:click={() => (isFocused = !isFocused)}
+  onclick={() => (isFocused = !isFocused)}
 >
   Toggle Focus
 </button>

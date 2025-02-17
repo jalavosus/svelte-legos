@@ -17,7 +17,7 @@
 		{counter}
 	</div>
 	<div class="space-x-4">
-		<PrimaryButton on:click={pause}>Pause</PrimaryButton>
-		<PrimaryButton on:click={resume}>Resume</PrimaryButton>
+		<PrimaryButton onclick={pause}>Pause</PrimaryButton>
+		<PrimaryButton onclick={resume}>Resume</PrimaryButton>
 	</div>
 </DemoContainer>

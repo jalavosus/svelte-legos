@@ -11,14 +11,14 @@
 <DemoContainer>
 	<div>
 		<div>
-			<PrimaryButton disabled={!$canUndo} on:click={undo}>Undo</PrimaryButton>
-			<PrimaryButton disabled={!$canRedo} on:click={redo}>Redo</PrimaryButton>
+			<PrimaryButton disabled={!$canUndo} onclick={undo}>Undo</PrimaryButton>
+			<PrimaryButton disabled={!$canRedo} onclick={redo}>Redo</PrimaryButton>
 		</div>
 		<div class="my-8 text-4xl">
 			{$counter}
 		</div>
 		<div>
-			<PrimaryButton on:click={() => $counter++}>Increment</PrimaryButton>
+			<PrimaryButton onclick={() => $counter++}>Increment</PrimaryButton>
 		</div>
 	</div>
 </DemoContainer>

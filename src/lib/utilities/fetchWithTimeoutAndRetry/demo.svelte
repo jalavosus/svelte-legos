@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	<div class="mt-4">
-		<PrimaryButton on:click={handleSendRequest}>Send Request</PrimaryButton>
+		<PrimaryButton onclick={handleSendRequest}>Send Request</PrimaryButton>
 	</div>
 	<div class="mt-4 space-y-2">
 		{#each messages as message}

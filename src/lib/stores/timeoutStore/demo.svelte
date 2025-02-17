@@ -8,5 +8,5 @@
 
 <DemoContainer>
 	<p class="mb-4">Ready: {$ready}</p>
-	<PrimaryButton disabled={!$ready} on:click={start}>Restart</PrimaryButton>
+	<PrimaryButton disabled={!$ready} onclick={start}>Restart</PrimaryButton>
 </DemoContainer>

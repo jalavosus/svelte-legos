@@ -11,7 +11,7 @@
 <div
   class="modal"
   use:clickOutsideAction
-  on:clickoutside={handleClickOutside}
+  onclickoutside={handleClickOutside}
 />
 
 <div
