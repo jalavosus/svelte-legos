@@ -31,7 +31,7 @@ importers:
         specifier: 2.4.2
         version: 2.4.2
       '@shikijs/langs-precompiled':
-        specifier: ^2.4.2
+        specifier: 2.4.2
         version: 2.4.2
       '@shikijs/themes':
         specifier: 2.4.2
