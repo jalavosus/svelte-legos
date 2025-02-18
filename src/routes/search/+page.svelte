@@ -22,7 +22,7 @@
 </script>
 
 <div class="py:20 container mx-auto p-8 lg:py-36">
-	<h1 class="text-2xl font-bold lg:text-4xl dark:text-darktext">
+	<h1 class="dark:text-darktext text-2xl font-bold lg:text-4xl">
 		{#if query}Results for <i class=".prime-text">{query}</i> ({results.length})
 		{:else}Search{/if}
 	</h1>

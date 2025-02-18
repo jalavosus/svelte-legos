@@ -14,22 +14,15 @@
 		<input class="demo-textarea" bind:value={title} />
 	</div>
 	<div class="mb-4">
-		<textarea class="demo-textarea" bind:value={description}
-		></textarea>
+		<textarea class="demo-textarea" bind:value={description}></textarea>
 	</div>
 	<div class="mb-4 flex w-1/6 flex-col">
 		<label for="confirmTextInput">Confirm Button Text</label>
-		<input
-			id="confirmTextInput"
-			class="demo-textarea"
-			bind:value={confirmText} />
+		<input id="confirmTextInput" class="demo-textarea" bind:value={confirmText} />
 	</div>
 	<div class="mb-4 flex w-1/6 flex-col">
 		<label for="cancelTextInput">Cancel Button Text</label>
-		<input
-			id="cancelTextInput"
-			class="demo-textarea"
-			bind:value={cancelText} />
+		<input id="cancelTextInput" class="demo-textarea" bind:value={cancelText} />
 	</div>
 	<button
 		class={PrimaryButtonClassName}

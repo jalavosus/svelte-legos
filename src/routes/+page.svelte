@@ -17,8 +17,8 @@
 			<h1 class="text-second text-2xl font-bold tracking-wider lg:text-5xl dark:text-gray-50">
 				svelte-<b class="text-prime">legos (blue)</b>
 			</h1>
-			<h3 class="text-xl font-light regular-text lg:text-3xl">{SiteTitle}</h3>
-			<h3 class="text-md font-light regular-text lg:text-xl">
+			<h3 class="regular-text text-xl font-light lg:text-3xl">{SiteTitle}</h3>
+			<h3 class="text-md regular-text font-light lg:text-xl">
 				Forked from <a href="https://github.com/ankurrsinghal/svelte-legos" class="text-oldprime"
 					>ankurrsingal/svelte-legos</a
 				>. Give them the credit they are due for building such an incredible library.
@@ -58,8 +58,7 @@
 			class="hover:underline"
 			href="https://github.com/jalavosus/svelte-legos"
 			target="_blank"
-			rel="noreferrer"
-		>
+			rel="noreferrer">
 			Work In Progress! 🚜. Current status: {data.utilsLength} utilities.
 			<br />
 		</a>

@@ -12,8 +12,7 @@
 		<input class="demo-textarea" bind:value={title} />
 	</div>
 	<div class="mb-4">
-		<textarea class="demo-textarea" bind:value={description}
-		></textarea>
+		<textarea class="demo-textarea" bind:value={description}></textarea>
 	</div>
 	<button
 		class={PrimaryButtonClassName}

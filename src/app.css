@@ -23,7 +23,6 @@
 	--font-weight-600: 600;
 
 	--font-fira: Fira;
-
 }
 
 /*
@@ -91,10 +90,10 @@
 }
 
 .search-input {
-	@apply mt-4 w-1/3 p-4 rounded-md border;
+	@apply mt-4 w-1/3 rounded-md border p-4;
 	@apply border-slate-600 bg-slate-100;
 	@apply text-lg;
-	@apply focus:outline-4 focus:outline-primary dark:focus:outline-nice-grey;
+	@apply focus:outline-primary dark:focus:outline-nice-grey focus:outline-4;
 }
 
 .search-brick {
@@ -104,8 +103,8 @@
 
 .demo-textarea {
 	@apply dark:bg-gray-500;
-	@apply rounded-md border border-black dark:border-primary;
-	@apply focus:outline-2 focus:outline-primary;
+	@apply dark:border-primary rounded-md border border-black;
+	@apply focus:outline-primary focus:outline-2;
 	@apply px-3 py-2;
 }
 
