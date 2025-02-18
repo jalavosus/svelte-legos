@@ -1,7 +1,7 @@
 import type { ActionReturn } from "svelte/action";
 
 interface Attributes {
-	"onclickoutside"?: (e: CustomEvent<void>) => void;
+	onclickoutside?: (e: CustomEvent<void>) => void;
 }
 
 type Callback = () => unknown;

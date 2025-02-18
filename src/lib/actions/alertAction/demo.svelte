@@ -9,11 +9,10 @@
 
 <DemoContainer>
 	<div class="mb-4">
-		<input class="text-md rounded-md border border-black px-3 py-2" bind:value={title} />
+		<input class="demo-textarea" bind:value={title} />
 	</div>
 	<div class="mb-4">
-		<textarea class="text-md rounded-md border border-black px-3 py-2" bind:value={description}
-		></textarea>
+		<textarea class="demo-textarea" bind:value={description}></textarea>
 	</div>
 	<button
 		class={PrimaryButtonClassName}

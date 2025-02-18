@@ -3,23 +3,30 @@
 import fs from "fs";
 export const prerender = true;
 
-import { createHighlighterCore } from "shiki/core";
-import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
+import lightTheme from "@shikijs/themes/github-light-default";
+import darkTheme from "@shikijs/themes/github-dark";
+import langSvelte from "@shikijs/langs-precompiled/svelte";
+import langTS from "@shikijs/langs-precompiled/typescript";
+import langJS from "@shikijs/langs-precompiled/javascript";
+
+
+import { createHighlighterCoreSync } from "shiki/core";
+import { createJavaScriptRawEngine } from "shiki/engine/javascript";
 
 const REPO_BASE_URL = "https://github.com/jalavosus/svelte-legos/tree/master/src";
 const REPO_HOOKS_URL = (itemType: string) => REPO_BASE_URL + "/lib/" + itemType;
 
-const SHIKI_DARK_THEME: string = "github-dark",
-	SHIKI_LIGHT_THEME: string = "github-light";
-
-const highlighter = await createHighlighterCore({
-	themes: [import("@shikijs/themes/github-dark"), import("@shikijs/themes/github-light")],
-	langs: [
-		import("@shikijs/langs/svelte"),
-		import("@shikijs/langs/typescript"),
-		import("@shikijs/langs/javascript")
+const highlighter = createHighlighterCoreSync({
+	themes: [
+		lightTheme,
+		darkTheme
 	],
-	engine: createJavaScriptRegexEngine()
+	langs: [
+		langSvelte,
+		langTS,
+		langJS,
+	],
+	engine: createJavaScriptRawEngine()
 });
 
 function last<T>(arr: T[]) {
@@ -83,9 +90,9 @@ export async function load({ route }: any) {
 		res.code = highlighter.codeToHtml(usage.toString(), {
 			lang: "svelte",
 			themes: {
-				light: SHIKI_LIGHT_THEME,
-				dark: SHIKI_DARK_THEME
-			}
+				light: "github-light-default",
+				dark: "github-dark",
+			},
 		});
 
 	return res;

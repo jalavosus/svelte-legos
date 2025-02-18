@@ -22,20 +22,20 @@
 </script>
 
 <div class="py:20 container mx-auto p-8 lg:py-36">
-	<h1 class="text-2xl font-bold lg:text-4xl">
-		{#if query}Results for <i class="text-prime">{query}</i> ({results.length})
+	<h1 class="dark:text-darktext text-2xl font-bold lg:text-4xl">
+		{#if query}Results for <i class=".prime-text">{query}</i> ({results.length})
 		{:else}Search{/if}
 	</h1>
 	<label for="query" class="sr-only">Search Query</label>
 	<input
-		class="mt-4 w-full rounded-md border border-slate-600 bg-slate-100 px-3 py-1 text-lg"
+		class="search-input"
 		type="text"
 		name="query"
 		placeholder="Search Svelte Legos"
 		oninput={handleInput}
 		bind:value={query} />
 	{#if results.length}
-		<ul class="mt-4 space-y-4">
+		<ul class="mt-6 space-y-6 text-xl">
 			{#each results as brick}
 				{@const pre = brick.text.slice(0, brick.text.toLowerCase().indexOf(query.toLowerCase()))}
 
@@ -46,8 +46,8 @@
 				{@const mid = brick.text.replace(pre, "").replace(post, "")}
 
 				<li>
-					<a href={brick.url} class="hover:text-prime">
-						{pre}<span class="text-prime">{mid}</span>{post}
+					<a href={brick.url} class="search-brick">
+						{pre}<span class="primary-text">{mid}</span>{post}
 					</a>
 				</li>
 			{/each}
