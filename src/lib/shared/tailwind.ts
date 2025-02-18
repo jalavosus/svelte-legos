@@ -9,7 +9,7 @@ export const buildClassName = (className: string) => {
 export const PrimaryButtonClassNames = `
     inline-block
     text-sm
-    bg-prime
+    bg-primary
     text-white
     px-4
     py-2

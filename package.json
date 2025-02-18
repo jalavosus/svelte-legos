@@ -25,7 +25,13 @@
 		"docs:watch": "node watch-docs.js"
 	},
 	"devDependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.7.2",
+		"@fortawesome/free-brands-svg-icons": "^6.7.2",
+		"@fortawesome/free-regular-svg-icons": "^6.7.2",
+		"@fortawesome/free-solid-svg-icons": "^6.7.2",
+		"@fortawesome/svelte-fontawesome": "^0.2.3",
 		"@shikijs/langs": "2.4.2",
+		"@shikijs/langs-precompiled": "^2.4.2",
 		"@shikijs/themes": "2.4.2",
 		"@stylistic/eslint-plugin-ts": "3.1.0",
 		"@sveltejs/adapter-static": "3.0.8",
@@ -45,6 +51,7 @@
 		"eslint-config-prettier": "10.0.1",
 		"eslint-plugin-svelte": "2.46.1",
 		"globals": "15.15.0",
+		"material-theme": "link:@shikijs/themes/material-theme",
 		"postcss": "8.5.2",
 		"prettier": "3.5.1",
 		"prettier-plugin-svelte": "3.3.3",

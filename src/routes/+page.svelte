@@ -17,8 +17,8 @@
 			<h1 class="text-second text-2xl font-bold tracking-wider lg:text-5xl dark:text-gray-50">
 				svelte-<b class="text-prime">legos (blue)</b>
 			</h1>
-			<h3 class="text-xl font-light text-white lg:text-3xl">{SiteTitle}</h3>
-			<h3 class="text-md font-light text-white lg:text-xl">
+			<h3 class="text-xl font-light regular-text lg:text-3xl">{SiteTitle}</h3>
+			<h3 class="text-md font-light regular-text lg:text-xl">
 				Forked from <a href="https://github.com/ankurrsinghal/svelte-legos" class="text-oldprime"
 					>ankurrsingal/svelte-legos</a
 				>. Give them the credit they are due for building such an incredible library.
@@ -27,7 +27,7 @@
 		<div class="mt-6 lg:mt-12">
 			<a
 				href="{base}/guides"
-				class="bg-prime inline-block rounded-lg px-4 py-2 text-sm text-white hover:underline lg:px-6 lg:py-3 lg:text-base">
+				class="bg-primary inline-block rounded-lg px-4 py-2 text-sm text-white hover:underline lg:px-6 lg:py-3 lg:text-base">
 				Get Started
 			</a>
 		</div>
@@ -53,15 +53,15 @@
 			description="Documentation of functions also come with interactive demos!" />
 	</section>
 
-	<div class="bg-prime fixed right-0 bottom-0 left-0 z-10 p-4 text-center font-bold text-white">
+	<div class="bg-primary fixed right-0 bottom-0 left-0 z-10 p-4 text-center font-bold text-white">
 		<a
 			class="hover:underline"
 			href="https://github.com/jalavosus/svelte-legos"
 			target="_blank"
-			rel="noreferrer">
+			rel="noreferrer"
+		>
 			Work In Progress! 🚜. Current status: {data.utilsLength} utilities.
 			<br />
-			Dark mode won't suck at some point!
 		</a>
 	</div>
 </section>

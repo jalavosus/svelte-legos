@@ -7,6 +7,11 @@
 	};
 
 	let { data, children }: Props & HTMLButtonAttributes = $props();
+	
+	const links = [
+		{href: data.sourceCodeURL, label: "Source"},
+		{href: data.demoCodeURL, label: "Demo"},
+	]
 </script>
 
 <div id="legos-main-container">
@@ -23,31 +28,27 @@
 		</div>
 	</div>
 	{#if data.code}
-		<div class="my-20" id="usageContainer">
+		<div class="mt-20 mb-10" id="usageContainer">
 			<h1 class="text-xl lg:text-2xl dark:text-gray-50">Usage</h1>
 			<div
-				class="mt-4 overflow-auto rounded-md border border-slate-600 bg-slate-100 p-4 text-sm dark:bg-slate-800 dark:text-gray-50">
-				<pre><code>{@html data.code}</code></pre>
+				class="p-1 mt-4 overflow-auto rounded-md border border-slate-600 text-sm"
+			>
+				{@html data.code}
 			</div>
 		</div>
 	{/if}
 	<div>
 		<h1 class="mb-4 text-xl lg:text-2xl dark:text-gray-50">Code</h1>
 		<ul class="flex space-x-4">
-			<li>
-				<a
-					class="bg-prime rounded-md px-4 py-2 text-sm text-white hover:underline"
-					href={data.sourceCodeURL}
-					target="_blank"
-					rel="noreferrer">Source</a>
-			</li>
-			<li>
-				<a
-					class="bg-prime rounded-md px-4 py-2 text-sm text-white hover:underline"
-					href={data.demoCodeURL}
-					target="_blank"
-					rel="noreferrer">Demo</a>
-			</li>
+			{#each links as link}
+				<li>
+					<a
+						class="bg-primary rounded-md px-4 py-2 text-sm text-white hover:underline"
+						href={link.href}
+						target="_blank"
+						rel="noreferrer">{link.label}</a>
+				</li>
+			{/each}
 		</ul>
 	</div>
 </div>
