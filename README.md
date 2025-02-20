@@ -19,33 +19,45 @@ Collection of essential Svelte Composition Utilities
 
 ```svelte
 <script lang="ts">
-import { counterStore } from "@sveltelegos-blue/svelte-legos";
+    import { loadingAction } from "@sveltelegos-blue/svelte-legos";
 
-const { counter, inc, dec, set, reset } = counterStore();
+    let loading = $state(false);
+
+    handleClick = () => {
+        setTimeout(() => {loading = false}, 5000);
+        loading = true;
+    }
 </script>
 
-<button onclick={() => inc()}>Increment</button>
-
-{counter}
-
-<button onclick={() => dec()}>Decrement</button>
+<button use:loadingAction={loading} onclick={handleClick}>Click me and I'll start loading!</button>
 ```
 
 ```svelte
 <script lang="ts">
-import { clickOutsideAction } from "@sveltelegos-blue/svelte-legos";
-
-let hidden = false;
-
-function handleClickOutside() {
-	hidden = !hidden;
-}
+    import { clickOutsideAction } from "@sveltelegos-blue/svelte-legos";
+    
+    let hidden = false;
+    
+    function handleClickOutside() {
+        hidden = !hidden;
+    }
 </script>
 
-<div class="modal" use:clickOutsideAction on:clickoutside={handleClickOutside} />
+<div class="modal" use:clickOutsideAction onclickoutside={handleClickOutside} />
 ```
 
 Refer to [functions list](https://svelte-legos.surge.sh/guides) or [documentations](https://svelte-legos.surge.sh) for more details.
+
+## UPCOMING DEPRECATION NOTICE!
+
+Since Svelte 5 and its runes have made stores more and more obsolete, it's time to start removing them 
+from this library. For many things, there's no point in specifically using a store
+when a `$state()` or `$derived()` would work better. 
+
+As such, **starting soon, I will be phasing out various legos in `stores`**, getting rid of 
+or rewriting as many as possible.
+
+Yes, this is a breaking change.
 
 ## 📦 Install
 
