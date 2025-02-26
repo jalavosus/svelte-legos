@@ -48,7 +48,7 @@
 		"chokidar": "4.0.3",
 		"concurrently": "9.1.2",
 		"eslint": "9.21.0",
-		"eslint-config-prettier": "10.0.1",
+		"eslint-config-prettier": "10.0.2",
 		"eslint-plugin-svelte": "2.46.1",
 		"globals": "16.0.0",
 		"material-theme": "link:@shikijs/themes/material-theme",
