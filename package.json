@@ -42,7 +42,7 @@
 		"@tailwindcss/postcss": "4.0.9",
 		"@types/canvas-confetti": "1.9.0",
 		"@types/eslint": "9.6.1",
-		"@types/node": "22.13.7",
+		"@types/node": "22.13.8",
 		"@typescript-eslint/eslint-plugin": "8.25.0",
 		"@typescript-eslint/parser": "8.25.0",
 		"chokidar": "4.0.3",
