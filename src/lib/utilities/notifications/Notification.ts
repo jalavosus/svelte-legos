@@ -1,6 +1,8 @@
-export type NotificationType = "success" | "error" | "info" | "warning";
+import type { NotificationType } from "./types";
+
 import { cross, error, info, success, warn } from "../../shared/icons";
-export default class Notification {
+
+export class Notification {
 	title: string;
 	description?: string;
 	type?: NotificationType | undefined;
@@ -13,9 +15,9 @@ export default class Notification {
 	constructor(
 		title: string,
 		description?: string,
-		onUnmount?: () => void,
-		type?: NotificationType | undefined,
-		duration?: number | undefined
+		type?: NotificationType,
+		duration?: number,
+		onUnmount?: () => void
 	) {
 		this.title = title;
 		this.description = description;
@@ -165,3 +167,5 @@ export default class Notification {
 		this.__container.setAttribute("style", styles);
 	}
 }
+
+export default Notification;

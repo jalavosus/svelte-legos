@@ -1,6 +1,7 @@
-import Notification, { type NotificationType } from "./Notification";
+import Notification from "./Notification";
+import type { NotifyActionParams } from "./types";
 
-export default class NotificationManager {
+export class NotificationManager {
 	private static __instance: NotificationManager;
 	private __container: HTMLDivElement | undefined;
 
@@ -24,22 +25,11 @@ export default class NotificationManager {
 		document.body.appendChild(this.__container);
 	}
 
-	createNotification(
-		title: string,
-		description?: string,
-		type?: NotificationType,
-		duration?: number | undefined
-	) {
+	createNotification({ title, description, type, duration }: NotifyActionParams) {
 		this.createContainer();
-		const notification = new Notification(
-			title,
-			description,
-			() => {
-				this.checkAndUnmount();
-			},
-			type,
-			duration
-		);
+		const notification = new Notification(title, description, type, duration, () => {
+			this.checkAndUnmount();
+		});
 
 		notification.mount(this.__container!);
 		requestAnimationFrame(() => {
@@ -61,3 +51,5 @@ export default class NotificationManager {
 		return this.__instance;
 	}
 }
+
+export default NotificationManager;

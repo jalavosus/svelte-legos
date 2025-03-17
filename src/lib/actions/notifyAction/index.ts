@@ -1,13 +1,5 @@
 import { eventListenerStore } from "$lib/stores/eventListenerStore";
-import type { NotificationType } from "./Notification";
-import NotificationManager from "./NotificationManager";
-
-interface NotifyActionParams {
-	title: string;
-	description?: string;
-	type?: NotificationType | undefined;
-	duration?: number | undefined;
-}
+import { NotificationManager, type NotifyActionParams } from "$lib/utilities/notifications";
 
 export function notifyAction<T extends HTMLElement>(node: T, params: NotifyActionParams) {
 	let stop: () => void;
@@ -19,12 +11,7 @@ export function notifyAction<T extends HTMLElement>(node: T, params: NotifyActio
 	const update = (params: NotifyActionParams) => {
 		destroy();
 		function handleClick() {
-			NotificationManager.getInstance().createNotification(
-				params.title,
-				params.description,
-				params.type,
-				params.duration
-			);
+			NotificationManager.getInstance().createNotification(params);
 		}
 
 		({ stop } = eventListenerStore("click", handleClick, node));
