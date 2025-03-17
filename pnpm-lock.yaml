@@ -90,9 +90,6 @@ importers:
       globals:
         specifier: 16.0.0
         version: 16.0.0
-      material-theme:
-        specifier: link:@shikijs/themes/material-theme
-        version: link:@shikijs/themes/material-theme
       postcss:
         specifier: 8.5.3
         version: 8.5.3
