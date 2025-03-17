@@ -89,6 +89,6 @@
 	"types": "./dist/index.d.ts",
 	"peerDependencies": {
 		"svelte": "5.23.1",
-		"@sveltejs/kit": "2.19.2"
+		"@sveltejs/kit": "2.20.0"
 	}
 }
