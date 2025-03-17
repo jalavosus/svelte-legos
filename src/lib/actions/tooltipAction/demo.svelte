@@ -13,7 +13,7 @@
 <DemoContainer>
 	<div class="flex flex-col space-y-10 space-x-8">
 		<div class="flex flex-row space-x-12">
-			{#each variants as v}
+			{#each variants as v, idx (idx)}
 				<button
 					class="rounded-md border border-slate-600 bg-white px-5 py-2 dark:bg-black"
 					use:tooltipAction={{
@@ -32,7 +32,7 @@
 					placement: "left",
 					pointer: false
 				}}>
-				{"Left, No Tail/Pointer"}
+				Left, No Tail/Pointer
 			</button>
 		</div>
 	</div>

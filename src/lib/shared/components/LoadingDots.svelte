@@ -21,7 +21,7 @@
 </script>
 
 <span class="inline-block w-5">
-	{#each dots as dot}
+	{#each dots as dot, idx (idx)}
 		<span>{dot}</span>
 	{/each}
 </span>

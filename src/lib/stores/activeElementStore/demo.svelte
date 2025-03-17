@@ -12,7 +12,7 @@
 	<Text>Select the inputs below to see the changes</Text>
 	<div class="my-4 flex flex-col space-y-2">
 		<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-		{#each Array(4).fill(0) as el, index}
+		{#each Array(4).fill(0) as el, index (index)}
 			<div>
 				<input
 					placeholder={`Input with id ${"input-" + (index + 1)}`}

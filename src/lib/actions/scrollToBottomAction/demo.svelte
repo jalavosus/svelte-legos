@@ -22,7 +22,7 @@
 	<div
 		class="flex h-60 flex-col items-start space-y-4 overflow-auto rounded-md bg-slate-200 p-4"
 		use:scrollToBottomAction>
-		{#each messages as message}
+		{#each messages as message, idx (idx)}
 			<div class="bg-prime rounded-md px-3 py-2 text-sm text-white">{message}</div>
 		{/each}
 	</div>

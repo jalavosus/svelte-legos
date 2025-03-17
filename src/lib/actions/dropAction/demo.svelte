@@ -29,7 +29,7 @@
 		}`}>
 		<div class="text-2xl font-bold">DropZone</div>
 		<div class="mt-4 flex flex-col space-y-2 self-start">
-			{#each filesData as file}
+			{#each filesData as file (file.name)}
 				<div class="w-200px bg-black-200/10 ma-2 pa-6">
 					<p>Name: {file.name}</p>
 					<p>Size: {file.size}</p>
