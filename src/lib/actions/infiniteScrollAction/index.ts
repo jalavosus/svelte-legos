@@ -145,13 +145,14 @@ export function infiniteScrollAction<T extends HTMLElement>(
 			check.bind(null, { ...params, scrollEventTarget, element: node }),
 			params.delay
 		);
-		document.addEventListener(scrollEventTarget, "scroll", scrollEventListener);
+		
+		scrollEventTarget.addEventListener("scroll", scrollEventListener);
 		if (params.immediate) {
 			check({ ...params, scrollEventTarget, element: node });
 		}
 
 		stop = () => {
-			document.removeEventListener(scrollEventTarget, "scroll", scrollEventListener);
+			scrollEventTarget.removeEventListener("scroll", scrollEventListener);
 		};
 	};
 
