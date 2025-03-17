@@ -10,7 +10,7 @@
 <DemoContainer>
 	<div>
 		<ul class="m-0!">
-			{#each Object.keys($params) as key}
+			{#each Object.keys($params) as key (key)}
 				<li>
 					{key}={$params[key]}
 				</li>

@@ -145,7 +145,7 @@ export function infiniteScrollAction<T extends HTMLElement>(
 			check.bind(null, { ...params, scrollEventTarget, element: node }),
 			params.delay
 		);
-		
+
 		scrollEventTarget.addEventListener("scroll", scrollEventListener);
 		if (params.immediate) {
 			check({ ...params, scrollEventTarget, element: node });

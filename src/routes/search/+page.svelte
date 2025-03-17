@@ -36,7 +36,7 @@
 		bind:value={query} />
 	{#if results.length}
 		<ul class="mt-6 space-y-6 text-xl">
-			{#each results as brick}
+			{#each results as brick, idx (idx)}
 				{@const pre = brick.text.slice(0, brick.text.toLowerCase().indexOf(query.toLowerCase()))}
 
 				{@const post = brick.text.substring(
