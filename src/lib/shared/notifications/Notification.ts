@@ -1,6 +1,6 @@
-import type { NotificationType } from "./types";
+import type { NotificationType } from "./types.ts";
 
-import { cross, error, info, success, warn } from "../../shared/icons";
+import { cross, error, info, success, warn } from "../icons";
 
 export class Notification {
 	title: string;

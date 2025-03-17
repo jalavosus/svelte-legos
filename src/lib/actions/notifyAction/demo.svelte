@@ -2,7 +2,7 @@
 	import { notifyAction } from "$lib";
 	import DemoContainer from "$lib/shared/components/DemoContainer.svelte";
 	import { PrimaryButtonClassName } from "$lib/shared/tailwind";
-	import type { NotificationType } from "$lib/utilities/notifications";
+	import type { NotificationType } from "$lib/shared/notifications";
 
 	let title = $state("Title");
 	let description = $state("You can put your little description here.");

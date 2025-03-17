@@ -1,14 +1,14 @@
 import { eventListenerStore } from "$lib/stores/eventListenerStore";
-import { NotificationManager, type NotifyActionParams } from "$lib/utilities/notifications";
+import { NotificationManager, type NotificationParams } from "$lib/shared/notifications";
 
-export function notifyAction<T extends HTMLElement>(node: T, params: NotifyActionParams) {
+export function notifyAction<T extends HTMLElement>(node: T, params: NotificationParams) {
 	let stop: () => void;
 
 	const destroy = () => {
 		stop?.();
 	};
 
-	const update = (params: NotifyActionParams) => {
+	const update = (params: NotificationParams) => {
 		destroy();
 		function handleClick() {
 			NotificationManager.getInstance().createNotification(params);

@@ -1,6 +1,6 @@
 export type NotificationType = "success" | "error" | "info" | "warning";
 
-export interface NotifyActionParams {
+export interface NotificationParams {
 	title: string;
 	description?: string;
 	type?: NotificationType;

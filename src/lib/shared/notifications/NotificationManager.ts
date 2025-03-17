@@ -1,5 +1,5 @@
-import Notification from "./Notification";
-import type { NotifyActionParams } from "./types";
+import Notification from "./Notification.ts";
+import type { NotificationParams } from "./types.ts";
 
 export class NotificationManager {
 	private static __instance: NotificationManager;
@@ -25,7 +25,7 @@ export class NotificationManager {
 		document.body.appendChild(this.__container);
 	}
 
-	createNotification({ title, description, type, duration }: NotifyActionParams) {
+	createNotification({ title, description, type, duration }: NotificationParams) {
 		this.createContainer();
 		const notification = new Notification(title, description, type, duration, () => {
 			this.checkAndUnmount();
