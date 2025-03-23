@@ -88,7 +88,7 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"peerDependencies": {
-		"svelte": "5.25.2",
+		"svelte": "5.25.3",
 		"@sveltejs/kit": "2.20.2"
 	}
 }
