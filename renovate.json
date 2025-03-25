@@ -3,6 +3,13 @@
 	"extends": ["config:recommended"],
 	"rangeStrategy": "pin",
 	"lockFileMaintenance": { "enabled": true },
+	"pin": {
+		"rebaseWhen": "behind-base-branch",
+		"groupName": "Pin Dependencies",
+		"groupSlug": "pin-dependencies",
+		"commitMessageAction": "Pin",
+		"group": {"commitMessageTopic": "dependencies", "commitMessageExtra": ""}
+	},
 	"packageRules": [
 		{
 			"groupName": "Dev Dependencies - Minor/Patch",
@@ -17,10 +24,9 @@
 			"automerge": true
 		},
 		{
-			"groupName": "Peer Dependencies - Minor/Patch",
+			"groupName": "Peer Dependencies",
 			"matchDepTypes": ["peerDependencies"],
-			"matchUpdateTypes": ["patch", "minor"],
-			"automerge": true
+			"rangeStrategy": "in-range-only"
 		}
 	]
 }
