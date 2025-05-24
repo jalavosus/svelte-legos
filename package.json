@@ -33,7 +33,7 @@
 		"@shikijs/langs": "3.4.2",
 		"@shikijs/langs-precompiled": "3.4.2",
 		"@shikijs/themes": "3.4.2",
-		"@stylistic/eslint-plugin-ts": "4.2.0",
+		"@stylistic/eslint-plugin-ts": "4.4.0",
 		"@sveltejs/adapter-static": "3.0.8",
 		"@sveltejs/adapter-vercel": "5.7.2",
 		"@sveltejs/kit": "2.21.1",
