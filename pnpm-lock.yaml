@@ -85,8 +85,8 @@ importers:
         specifier: 10.1.5
         version: 10.1.5(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-svelte:
-        specifier: 3.10.0
-        version: 3.10.0(eslint@9.29.0(jiti@2.4.2))(svelte@5.34.8)
+        specifier: 3.10.1
+        version: 3.10.1(eslint@9.29.0(jiti@2.4.2))(svelte@5.34.8)
       globals:
         specifier: 16.2.0
         version: 16.2.0
@@ -94,14 +94,14 @@ importers:
         specifier: 8.5.6
         version: 8.5.6
       prettier:
-        specifier: 3.6.1
-        version: 3.6.1
+        specifier: 3.6.2
+        version: 3.6.2
       prettier-plugin-svelte:
         specifier: 3.4.0
-        version: 3.4.0(prettier@3.6.1)(svelte@5.34.8)
+        version: 3.4.0(prettier@3.6.2)(svelte@5.34.8)
       prettier-plugin-tailwindcss:
         specifier: 0.6.13
-        version: 0.6.13(prettier-plugin-svelte@3.4.0(prettier@3.6.1)(svelte@5.34.8))(prettier@3.6.1)
+        version: 0.6.13(prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.34.8))(prettier@3.6.2)
       shiki:
         specifier: 3.7.0
         version: 3.7.0
@@ -1265,8 +1265,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.10.0:
-    resolution: {integrity: sha512-Jj7WAY0PmAvom61t2+SzT9PXnpcAaLMnDn9ejzhKVnMxVWyGhSQ6ileMT/o9IHq9opw0iDDpVUfZwGoWquZpQg==}
+  eslint-plugin-svelte@3.10.1:
+    resolution: {integrity: sha512-csCh2x0ge/DugXC7dCANh46Igi7bjMZEy6rHZCdS13AoGVJSu7a90Kru3I8oMYLGEemPRE1hQXadxvRPVMAAXQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0
@@ -1855,8 +1855,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.6.1:
-    resolution: {integrity: sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3314,7 +3314,7 @@ snapshots:
     dependencies:
       eslint: 9.29.0(jiti@2.4.2)
 
-  eslint-plugin-svelte@3.10.0(eslint@9.29.0(jiti@2.4.2))(svelte@5.34.8):
+  eslint-plugin-svelte@3.10.1(eslint@9.29.0(jiti@2.4.2))(svelte@5.34.8):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.29.0(jiti@2.4.2))
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -3823,18 +3823,18 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.4.0(prettier@3.6.1)(svelte@5.34.8):
+  prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.34.8):
     dependencies:
-      prettier: 3.6.1
+      prettier: 3.6.2
       svelte: 5.34.8
 
-  prettier-plugin-tailwindcss@0.6.13(prettier-plugin-svelte@3.4.0(prettier@3.6.1)(svelte@5.34.8))(prettier@3.6.1):
+  prettier-plugin-tailwindcss@0.6.13(prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.34.8))(prettier@3.6.2):
     dependencies:
-      prettier: 3.6.1
+      prettier: 3.6.2
     optionalDependencies:
-      prettier-plugin-svelte: 3.4.0(prettier@3.6.1)(svelte@5.34.8)
+      prettier-plugin-svelte: 3.4.0(prettier@3.6.2)(svelte@5.34.8)
 
-  prettier@3.6.1: {}
+  prettier@3.6.2: {}
 
   property-information@7.0.0: {}
 
