@@ -38,7 +38,7 @@
 		"@sveltejs/adapter-vercel": "5.7.2",
 		"@sveltejs/kit": "2.22.5",
 		"@sveltejs/package": "2.3.12",
-		"@sveltejs/vite-plugin-svelte": "5.1.0",
+		"@sveltejs/vite-plugin-svelte": "5.1.1",
 		"@tailwindcss/postcss": "4.1.11",
 		"@types/canvas-confetti": "1.9.0",
 		"@types/eslint": "9.6.1",
