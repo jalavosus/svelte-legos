@@ -35,7 +35,7 @@
 		"@shikijs/themes": "3.8.1",
 		"@stylistic/eslint-plugin-ts": "4.4.1",
 		"@sveltejs/adapter-static": "3.0.8",
-		"@sveltejs/adapter-vercel": "5.8.0",
+		"@sveltejs/adapter-vercel": "5.8.1",
 		"@sveltejs/kit": "2.26.0",
 		"@sveltejs/package": "2.4.0",
 		"@sveltejs/vite-plugin-svelte": "5.1.1",
