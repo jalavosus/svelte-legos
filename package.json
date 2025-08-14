@@ -36,7 +36,7 @@
 		"@stylistic/eslint-plugin-ts": "4.4.1",
 		"@sveltejs/adapter-static": "3.0.9",
 		"@sveltejs/adapter-vercel": "5.8.2",
-		"@sveltejs/kit": "2.30.0",
+		"@sveltejs/kit": "2.30.1",
 		"@sveltejs/package": "2.4.1",
 		"@sveltejs/vite-plugin-svelte": "5.1.1",
 		"@tailwindcss/postcss": "4.1.12",
