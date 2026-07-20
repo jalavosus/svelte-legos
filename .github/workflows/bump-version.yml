@@ -19,11 +19,11 @@ jobs:
     if: ${{ contains(github.event.label.name, 'bump-version') }}
 
     steps:
-      - uses: 'actions/checkout@v4'
+      - uses: 'actions/checkout@v4.4.0'
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: 'actions/setup-node@v4'
+      - uses: 'actions/setup-node@v4.4.0'
         with:
           node-version-file: '.nvmrc'
 
