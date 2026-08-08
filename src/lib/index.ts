@@ -92,3 +92,5 @@ export { watch } from "./watchers/watch";
 export { watchOnce } from "./watchers/watchOnce";
 export { watchWithFilter } from "./watchers/watchWithFilter";
 export { pausableWatch } from "./watchers/pausableWatch";
+
+export { type NotificationType, type NotificationParams, Notification, NotificationManager } from "./shared/notifications"
